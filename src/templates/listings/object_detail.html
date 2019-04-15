@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+{% load i18n %}
+{% block content %}
+{% language 'cs' %}
+
+
+
+
+<br>
+{% if user == object.owner %}
+<div class="alert alert-success" role="alert">
+  Vlastníš tento produkt
+</div>
+{% endif %}
+
+<div class="row" {% if user != object.owner %} style="margin-top:20px;"{% endif %}>
+
+    <div class="col-sm-2"></div>
+
+    <div class="col-sm-4">
+        <div class="row" style="margin-left:10px; ">
+            <div class="container">
+                <div class="carousel" id="projectCarousel">
+                    <ol class="carousel-indicators">
+
+                        {% for x in object.images_set.all %}
+                        <li data-target="#projectCarousel2" data-slide-to="{{ forloop.counter }}"{% if forloop.counter == 1 %} class="active"{% endif %}></li>
+                        {% endfor %}
+
+                    </ol>
+
+                    <div class="carousel-inner">
+                        {% for x in object.images_set.all %}
+                                    <div class="{% if forloop.counter == 1 %}carousel-item active{% else %}carousel-item{% endif %}" style="height:575px;">
+                                      <a href="{{ x.images.url }}" target="_blank"><img class="" width="520px" src="{{ x.images.url }}" alt="Slide{{ forloop.counter }}" style="height:575px"></a>
+                                    </div>
+                        {% empty %}
+                            <img src="{% static 'personal/img/no_image.png' %}" width="500px" style="height:575px">
+                        {% endfor %}
+                    </div>
+
+                    <a class="carousel-control-prev" href="#projectCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#projectCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="col-sm-4" style="text-align:left">
+        <div class="container">
+
+
+            <h2>{{ object.name }}</h2>
+
+            {% for x in profile %}
+                {% if x.user == object.owner %}
+                <h4><a href="/profiles/{{ object.owner }}/"><img class="rounded-circle" style="margin-bottom:5px" src="{{ x.image.url }}" width="50" height="50" > {{ object.owner }}</a></h4>
+                {% endif %}
+            {% endfor %}
+
+            <hr>
+
+            <div class="product-description" style="font-style:italic;" >
+                <p>{% if object.price == None %}Cena dohodou{% else %}Cena: {{ object.price }}Kč{% endif %}</p>
+                {% if object.price != None %}<p>Velikost: {{ object.size }}</p>{% endif %}
+                <p><b>Stav:</b> {{ object.condition }}</p>
+                <p>Přidáno před {{ object.created|timesince }}</p>
+                {% if object.created != object.updated %}<p>Naposledy aktualizováno před  {{ object.updated|timesince }}</p>{% endif %}
+                <hr>
+            </div>
+
+                <h5><u>Popis:</u></h5>
+                <p>{% if object.description %}{{ object.description }}{% else %}Nebyl přidán žádný popis.{% endif %}</p>
+                <hr>
+
+            {% if user == object.owner %}
+                <div class="detail-btns">
+                    <a href="/listings/{{ object.pk }}/proc/" class="btn btn-outline-info my-2 my-sm-0" style="margin-right:10px">
+                        Smazat
+                    </a>
+                    <a href="/listings/{{ object.pk }}/update/" class="btn btn-outline-info my-2 my-sm-0" style="margin-right:10px">
+                        Upravit
+                    </a>
+                </div>
+            {% else %}
+                <button class="btn btn-outline-danger" type="button" data-toggle="modal" data-target="#Modal"><i class="far fa-flag"></i></button>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="col-sm-2"></div>
+
+</div>
+
+
+<!-- Modal REPORT -->
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true" style="margin-top:10%">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Nahlásit zboží</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+         <form method='POST' action='{% url "ReportObject" %}'> {% csrf_token %}
+             <div class="select-box">
+                <label for="category" class="label category"><span class="label-desc">Vyber kategorii</span> </label>
+                    <select name="category" id="category" class="select">
+                        <option value="Fake">Fake</option>
+                        <option value="Cizi fotky">Cizi fotky</option>
+                        <option value="Nepravdivý popis">Nepravdivý popis</option>
+                    </select>
+            </div>
+
+             <p><textarea name="reason" cols="40" rows="5" class="description" placeholder="Přibliž nám důvod nahlášení."></textarea></p>
+             <input type="hidden" name="object" value="{{ object.name }}"/>
+      </div>
+
+
+          <button type="submit" class="btn btn-danger">Nahlásit</button></form>
+
+
+    </div>
+  </div>
+</div>
+<!-- Modal REPORT end -->
+
+
+
+
+
+{% endlanguage %}
+{% endblock %}

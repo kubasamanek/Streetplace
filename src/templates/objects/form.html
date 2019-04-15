@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+{% load widget_tweaks %}
+
+<style type="text/css">
+body {
+  background: url(https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-opacity: 0,5;
+  color:white;
+}
+</style>
+
+<div class="transbox">
+<br><br>
+
+<h1 style="color:white">Přidat zboží:</h1>
+
+{% if form.errors %}
+{{ form.errors}}
+{% endif %}
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <p><input type="text" name="name" placeholder="Název" required="required" style="width:250px"></p>
+    <p>
+        <input type="number" name="price" placeholder="Cena" style="display:inline">
+        <input type="text" name="size" placeholder="Velikost" style="display:inline">
+    </p>
+
+    <div class="select-box">
+        <label for="category" class="label category"><span class="label-desc">Vyber kategorii</span> </label>
+            <select name="category" id="category" class="select">
+                <option value="Boty">Boty</option>
+                <option value="Trika">Trika</option>
+                <option value="Mikiny">Mikiny</option>
+                <option value="Kalhoty">Kalhoty</option>
+                <option value="Bundy">Bundy</option>
+                <option value="Košile">Košile</option>
+                <option value="Doplňky">Doplňky</option>
+            </select>
+    </div>
+
+    <div class="select-box">
+        <label for="condition" class="label condition"><span class="label-desc">Vyber stav</span> </label>
+        <p>
+            <select name="condition" id="condition" class="select">
+            {% for x in condition %}
+            <option value="{{x}}">{{x}}</option>
+            {% endfor %}
+            </select>
+        </p>
+    </div>
+
+    <p>
+        <input style="color:transparent" type="file" name="image" id="image" class="inputfile"/>
+        <label for="image">Vyber úvodní fotku</label>
+    </p>
+
+    <p><textarea name="description" cols="40" rows="5" class="description"></textarea></p>
+
+    {{ formset.management_form }}
+    {% for form in formset %}
+        <label class="inputfile_label">{{ form.images|add_class:"inputfile"|attr:"id:images"}}Vyber fotku</label>
+    {% endfor %}
+
+    <p><button type="submit" class="btn btn-dark" style="margin-top:20px">Přidat</button></p>
+
+</form>
+</div>
+{% endblock content %}

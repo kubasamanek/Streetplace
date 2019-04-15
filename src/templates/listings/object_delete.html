@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br>
+
+{% if user == object.owner %}
+
+    <form action="." method="POST">    {% csrf_token %}
+        <h1>Opravdu chcete smazat toto zboží?</h1>
+        <p><input type="submit" value="Ano"/> <a href="/listings/">Ne, zrušit</a></p>
+    </form>
+
+{% else %}
+
+    <div class="alert alert-danger" role="alert">
+      Nemáš povolení odstranit tento produkt.
+    </div>
+
+{% endif %}
+{% endblock content %}

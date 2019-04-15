@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<br>
+<h1>{{ object.name }}</h1>
+<h4>Kategorie: {{ object.category }}</h4>
+<p>Cena: {{ object.price }}Kč</p>
+<p><img src="{{ object.image.url }}" width="250" height="250"> </p>
+
+{% endblock %}

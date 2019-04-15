@@ -1,0 +1,16 @@
+{% extends "profiles/user_detail.html" %}
+
+
+{% block content2 %}
+{% load widget_tweaks %}
+<form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+    <p>{{ u_form.email|add_class:"niceinput" }}</p>
+    <p>{{ u_form.first_name|add_class:"niceinput" }}</p>
+    <p>{{ u_form.last_name|add_class:"niceinput" }}</p>
+    <p>{{ p_form.shoe_size|add_class:"niceinput" }}</p>
+    <p>{{ p_form.clothes_size|add_class:"niceinput" }}</p>
+    <input style="color:transparent" type="file" name="image" id="image" class="inputfile"/>
+    <label for="image">Vyber úvodní fotku</label>
+<p><input class="my-button" type="submit" value="Update" /></p>
+</form>
+{% endblock content2 %}
