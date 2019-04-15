@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br>
+{% if user == object.owner %} <!-- Pokud vlastní produkt -->
+<h1> Add object</h1>
+
+{% if form.errors %}
+{{ form.errors}}
+{% endif %}
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ formset }}
+    <input type="submit" value="Update" />
+</form>
+
+{% else %} <!-- Pokud NEvlastní produkt -->
+
+    <div class="alert alert-danger" role="alert">
+      Nemáš povolení upravit tento produkt. {{ user }} {{ owner }}
+    </div>
+
+{% endif %}
+{% endblock content %}

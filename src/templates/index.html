@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+<!-- Carousel -->
+<div class="col-md-15 bounceIn">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner tada">
+
+            <div class="carousel-item active " style="height:575px;">
+              <img class="d-block w-100" src="{% static 'personal/img/tnf.jpg' %}" alt="First slide" style="height:575px; opacity:0.3">
+                 <div class="carousel-caption d-md-block">
+                     <h1 class="animated fadeInUp" style="animation-duration:1.8s; animation-delay:0.5s; color: white" >První online resell market v ČR!</h1>
+                     <h5 class="animated fadeInUp" style="animation-delay:1.2s; color: white">Prodávej, nakupuj, vyměňuj</h5>
+                 </div>
+            </div>
+
+            <div class="carousel-item" style="height:575px;">
+              <img class="d-block w-100" src="{% static 'personal/img/carousel2.jpg' %}" alt="Second slide" style="height:575px; opacity:0.5">
+                 <div class="carousel-caption d-md-block align-items-center">
+                        <h1 class="animated rollIn" style="animation-duration:1.8s; animation-delay:0.5s; color: white" >Tvoříme pro Vás komunitu</h1>
+                        <h5 class="animated fadeInUp" style="animation-delay:1.5s; color: white">Vytváříme přátelské a dostupné prostředí pro reselling. </h5>
+                 </div>
+            </div>
+
+            <div class="carousel-item" style="height:575px;">
+              <img class="d-block w-100" src="{% static 'personal/img/hu.jpg' %}" alt="Third slide" style="height:575px; opacity:0.3">
+                 <div class="carousel-caption d-md-block">
+                     <h1 class="animated rollIn" style="animation-duration:1.8s; animation-delay:0.5s; color: white" >Nakupujte a prodávejte s klidem z pohodlí domova.</h1>
+                     <h5 class="animated fadeInUp" style="animation-delay:1.5s; color: white">O vše ostatní se postaráme my.</h5>
+                 </div>
+            </div>
+
+        </div>
+
+        <!-- Šipky na stranách -->
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-2"></div>
+
+          <div class="col-lg-2">
+            <img class="rounded-circle wow bounceInUp" style="animation-delay:0.3s" src="{% static 'personal/img/buy.png' %}" alt="BUY" width="140" height="140">
+            <h3 class="animated fadeIn" style="font-size:1.5rem; font-family:Courier; padding-top:0.4rem; animation-delay:1.4s; animation-duration:2s">Nakupuj</h3>
+            <p class="wow fadeIn" style="animation-delay:0.2s">Tady si na své přijde každý! Najdi, co potřebuješ, a domluv se na způsobu platby a předání. Vše přes naši stránku!</p>
+            <p class="wow bounceInUp" style="animation-duration:2s"><a class="btn btn-secondary" href="#" role="button">Ukaž víc &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-1"></div>
+
+          <div class="col-lg-2">
+            <img class="rounded-circle wow bounceInUp" style="animation-delay:0.6s" src="{% static 'personal/img/sell.png' %}" alt="Generic placeholder image" width="140" height="140">
+             <h3 class="animated fadeIn" style="font-size:1.5rem; font-family:Courier; padding-top:0.4rem; animation-delay:1.4s; animation-duration:2s">Prodávej</h3>
+            <p class="wow fadeIn" style="animation-delay:0.2s">Potřebuješ se něčeho zbavit a trochu si přivydělat? Nenajdeš lepší místo než náš StreetPlace. Vše je rychlé a jednoduché. </p>
+            <p class="wow bounceInUp" style="animation-duration:2s"><a class="btn btn-secondary" href="#" role="button">Ukaž víc &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+
+            <div class="col-lg-1"></div>
+
+          <div class="col-lg-2  ">
+            <img class="rounded-circle wow bounceInUp" style="animation-delay:0.9s" src="{% static 'personal/img/trade.png' %}" alt="Generic placeholder image" width="160" height="140">
+             <h3 class="animated fadeIn" style="font-size:1.5rem; font-family:Courier; padding-top:0.4rem; animation-delay:1.4s; animation-duration:2s">Vyměňuj</h3>
+            <p class="wow fadeIn" style="animation-delay:0.2s">Naše stránka disponuje i funkčním chatem, tudíž dáváme možnost komunikace mezi lidmi. Proto je možné dohodnout se i na výměně.</p>
+            <p class="wow bounceInUp" style="animation-duration:2s"><a class="btn btn-secondary" href="#" role="button">Ukaž víc &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+
+    <div class="col-lg-2"></div>
+</div><!-- /.row -->
+
+
+{% endblock %}
+

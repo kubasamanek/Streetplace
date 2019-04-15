@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-2">
+    {% include "snippets/sidebar.html" %}
+    </div>
+
+    <div class="col-sm-10">
+        <div class="row">
+        <h1 style="margin-top:30px">LIST OF ITEMS</h1>  <a href="/listings/add/" class="btn btn-outline-success my-2 my-sm-0">PŘIDAT</a>
+        </div>
+        <br><br>
+
+        <div class="card-deck">
+        {% for obj in object_list %}
+                <div class="card" style="width: 20px; margin: 5px">
+                    <center><img class="card-img-top" src="{{ obj.image.url }}" style="width:200px;height:200px;margin-top:10px" alt=""></center>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ obj }}</h5>
+                        <p class="card-text">{{ obj.category }}</p>
+                        <br>
+                        <a href="/listings/{{ obj.pk }}/" class="btn btn-primary btn-sm" >Zobrazit produkt</a>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:"4"  %}
+                    </div><div class="card-deck">
+                {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

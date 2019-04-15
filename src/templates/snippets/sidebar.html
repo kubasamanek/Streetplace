@@ -1,0 +1,67 @@
+
+<div class="sidebaros">
+    <div class="well bs-sidebar" id="sidebar">
+        <div class="sidebar-header">
+                    <h3>Filtry</h3>
+        </div>
+
+        <div class="sidebar_inside">
+            <ul class="nav flex-column" style="text-align:left;margin-left:30px;margin-top:0px;font-size:20px;color:black;" >
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-home"></i>
+                    Kategorie
+                </a>
+
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li><a href="/listings/">Vše</a></li>
+
+                    {% for cat in categories %}
+                        <li>
+                            <a href="/listings/{{ cat }}/">{{ cat }}</a>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+
+
+                <a href="#seradit" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fab fa-android"></i>
+                    Seřadit od
+                </a>
+
+                <ul class="collapse list-unstyled" id="seradit">
+                     <form method="GET">
+                    <li><a href="/listings/filter=nejlevnejsich/">Od nejlevnejsich</a> </li>
+                    <li><a href="/listings/filter=nejdrazsich/">Od nejdražších</a> </li>
+                    <li><a href="/listings/filter=nejstarsich/">Od nejstarších</a> </li>
+                    <li><a href="/listings/filter=nejnovejsich/">Od nejnovějších</a> </li>
+
+
+                </ul>
+
+                <a href="#velikost" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fab fa-accessible-icon"></i>
+                    Velikost
+                </a>
+
+                <ul class="collapse list-unstyled" id="velikost">
+
+                    <li><input type="radio" name="XS"><label>s</label></li>
+                    <li><input type="radio" name="S"><label>s</label></li>
+                    <li><input type="radio" name="M"><label>s</label></li>
+                    <li><input type="radio" name="nejstarsich"><label>s</label></li>
+                    <p><button type="submit" class="btn btn-dark" style="margin-top:20px">Přidat</button></p>
+
+
+                </ul>
+
+                <a href="#s" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-air-freshener"></i>
+                    Veci
+                </a>
+                <p><button type="submit" class="btn btn-dark" style="margin-top:20px">Potvrdit filtry</button></p></form>
+            </ul>
+        </div>
+    </div>
+</div>
+

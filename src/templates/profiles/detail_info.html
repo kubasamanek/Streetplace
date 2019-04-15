@@ -1,0 +1,31 @@
+{% extends "profiles/user_detail.html" %}
+
+
+{% block content2 %}
+
+<div class="row" style="tex t-align:left">
+    <div class="col-sm-1 col-md-2 col-lg-3" ></div>
+    <div class="col-sm-5 col-md-4 col-lg-4" >
+        <p><img src="{{ user.profile.image.url }}" width="250" height="250" style="margin-left:10px"> </a></p>
+    </div>
+    <div class="col-sm-5 col-md-4 col-lg-2">
+
+      <p><big>Jméno:</big> {{ user.first_name }} {{ user.last_name }}</p>
+      <p><big>Mail:</big> {{ user.email }}</p>
+      {% if user.profile.city %}
+      <p><big>Město:</big> {{ user.profile.city }}</p>
+      {% endif %}
+
+      {% if user.profile.clothes_size %}
+      <p><big>Velikost oblečení:</big> {{ user.profile.clothes_size }}</p>
+      {% endif %}
+
+      {% if user.profile.shoe_size %}
+      <p><big>Velikost bot:</big> {{ user.profile.shoe_size }}</p>
+      {% endif %}
+
+
+    </div>
+</div>
+
+{% endblock content2 %}

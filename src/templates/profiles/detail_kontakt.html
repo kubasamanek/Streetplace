@@ -1,0 +1,11 @@
+{% extends "profiles/user_detail.html" %}
+
+
+{% block content2 %}
+
+<p>{{ user.email }}</p>
+<p><a href="/dialogs/{{ user }}" class="btn my-2 my-sm-0" style="margin-right:10px">
+    <u>Napsat uživateli {{ user }}</u>
+</a></p>
+
+{% endblock content2 %}
