@@ -1,117 +1,296 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+
 {% block content %}
 
-<br>
-<style>
-    a {
-    font-size:13px
-    }
-</style>
 
-<div class="container-fluid"> <!-- horní panel -->
-    <div class="row" style="margin-top:20px">
 
-        <div class="col-sm-2"></div>
 
-        <div class="col-sm-6 ">
-            <div class="row">
-                <p><img class="rounded-circle" src="{{ user.profile.image.url }}" width="100" height="100"> </a></p>
-                <div class="col-sm-8" >
-                    <div id="name"> <h3>{{ user.first_name }} {{ user.last_name }}</h3>
-                        <p id="deals_and_rating">Obchodů:{{user.profile.deals_counter}} |
-                            {% if user.profile.deals_counter > 0 %}
-                                {% if rating < 1.25 %}<i class="fas fa-star"></i>
-                                {% elif rating < 1.75 %}<i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                {% elif rating < 2.25 %}<i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                {% elif rating < 2.75 %}<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                {% elif rating < 3.25 %}<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                {% elif rating < 3.75 %}<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                {% elif rating < 4.25 %}<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                {% elif rating < 4.75 %}<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                {% else %}<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas  fa-star"></i> {% endif %}|
-                            {% endif %}
-                        </p>
+
+<link rel='stylesheet' id='hyperon-edgtf-woo-css'
+      href='https://hyperon.edge-themes.com/wp-content/themes/hyperon/assets/css/woocommerce.min.css' type='text/css'
+      media='all'/>
+
+
+
+
+
+{% include "snippets/nav.html" %}
+<a id='edgtf-back-to-top' href='#'>
+                <span class="edgtf-icon-stack">
+                                     </span>
+</a>
+
+<div class="edgtf-content">
+    <div class="edgtf-content-inner">
+
+
+        <div class="edgtf-full-width">
+            <div class="edgtf-full-width-inner">
+                <div class="edgtf-grid-row" style="margin-top:-150px">
+                    <div class="edgtf-page-content-holder edgtf-grid-col-12">
+                        <div class="vc_row wpb_row vc_row-fluid">
+                            <div class="wpb_column vc_column_container vc_col-sm-12">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="edgtf-row-grid-section-wrapper ">
+                                            <div class="edgtf-row-grid-section">
+                                                <div class="vc_custom_1519048341165">
+                                                    <div class="wpb_column vc_column_container vc_col-sm-12">
+                                                        <div class="vc_column-inner">
+                                                            <div class="wpb_wrapper">
+                                                                <div class="edgtf-product-info-carousel edgtf-pic-white-skin-nav">
+                                                                    <div class="edgtf-product-info-carousel-images edgtf-owl-slider"
+                                                                         data-slider-animate-out="fadeOut">
+                                                                        <div class="edgtf-pic-images"><img width="602"
+                                                                                                           height="600"
+                                                                                                           src="{{ user.profile.image.url }}"
+                                                                                                           alt="n"
+                                                                                                           sizes="(max-width: 602px) 100vw, 602px"/>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="edgtf-pic-content">
+                                                                        <div class="edgtf-pic-content-inner">
+                                                                            <div class="edgtf-pic-price">
+
+                                                                                <ins><span
+                                                                                        class="woocommerce-Price-amount amount">{{user.profile.deals_counter}} obchodů
+                                                                                </ins>
+                                                                            </div>
+                                                                            <h2 itemprop="name"
+                                                                                class="edgtf-pic-title entry-title"><a
+                                                                                    itemprop="url">{{ user.first_name }} {{ user.last_name }}</a></h2>
+                                                                            <div class="edgtf-pic-rating"><span
+                                                                                    style="width:{{ rating }}%"></span></div>
+                                                                            <div class="edgtf-pic-excerpt">{% if user.profile.description %}<p
+                                                                                    itemprop="description"
+                                                                                    class="edgtf-pic-excerpt-item">
+                                                                                {{user.profile.description}}</p>{% endif %}
+                                                                            {% if user.profile.shoe_size %}<p>Velikost bot: <b>{{user.profile.shoe_size}}</b></p>{% endif %}
+                                                                            {% if user.profile.clothes_size %}<p>Velikost oblečení: <b>{{user.profile.clothes_size}}</b></p>{% endif %}</div>
+                                                                            {% if request.user == user %}
+                                                                            <div class="edgtf-pic-add-to-cart"><a
+                                                                                    rel="nofollow"
+                                                                                    href="/profiles/{{request.user}}/edit/"
+                                                                                    data-quantity="1"
+                                                                                    data-product_id="3939"
+                                                                                    data-product_sku="007"
+                                                                                    class="button add_to_cart_button ajax_add_to_cart edgtf-btn edgtf-btn-simple">Upravit
+                                                                                profil</a></div>
+                                                                        </div>
+                                                                        {% else %}
+                                                                        <div class="edgtf-pic-add-to-cart"><a
+                                                                                rel="nofollow"
+                                                                                href="/chat/{{user}}"
+                                                                                data-quantity="1"
+                                                                                data-product_id="3939"
+                                                                                data-product_sku="007"
+                                                                                class="button add_to_cart_button ajax_add_to_cart edgtf-btn edgtf-btn-simple">Kontaktovat</a>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="edgtf-pic-add-to-cart"><a
+                                                                                rel="nofollow"
+                                                                                href="report/"
+                                                                                data-quantity="1"
+                                                                                data-product_id="3939"
+                                                                                data-product_sku="007"
+                                                                                class="button add_to_cart_button ajax_add_to_cart edgtf-btn edgtf-btn-simple">Nahlásit</a>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="edgtf-pic-add-to-cart"><a
+                                                                                rel="nofollow"
+                                                                                href="rating/"
+                                                                                data-quantity="1"
+                                                                                data-product_id="3939"
+                                                                                data-product_sku="007"
+                                                                                class="button add_to_cart_button ajax_add_to_cart edgtf-btn edgtf-btn-simple">Ohodnotit</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                    <div class="edgtf-row-grid-section-wrapper ">
+                        <div class="edgtf-row-grid-section">
+                            <div class="vc_row wpb_row vc_row-fluid vc_custom_1521196448011">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1513603063516">
+                                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                                    <div class="vc_column-inner">
+                                                        <div class="wpb_wrapper">
+                                                            <div class="edgtf-tabs  edgtf-tabs-standard">
+                                                                <ul class="edgtf-tabs-nav clearfix">
+                                                                    <li>
+                                                                        <a href="#tab-services">zboží</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#tab-shop">hodnocení</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#tab-product">stížnosti</a>
+                                                                    </li>
+                                                                </ul>
+                                                                <div class="edgtf-tab-container" id="tab-services-315">
+                                                                    <div class="wpb_text_column wpb_content_element ">
+                                                                        <div class="wpb_wrapper">
 
-        <div class="col-sm-4">
-            {% if request.user == user %} <!-- pokud je muj profil, potom EDIT-->
+                                                                            <div class="edgtf-full-width">
+                                                                                <div class="edgtf-full-width-inner">
+                                                                                    <div class="edgtf-grid-row">
+                                                                                        <div class="edgtf-page-content-holder edgtf-grid-col-12">
+                                                                                            <div class="vc_row wpb_row vc_row-fluid vc_custom_1520413464033">
+                                                                                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                                                                                    <div class="vc_column-inner">
+                                                                                                        <div class="wpb_wrapper">
+                                                                                                            <div class="edgtf-pl-holder edgtf-standard-layout edgtf-normal-space edgtf-four-columns edgtf-info-on-image    "
+                                                                                                                 data-type="standard"
+                                                                                                                 data-animated-list="no"
+                                                                                                                 data-animated-hover="no"
+                                                                                                                 data-info-position="info-on-image"
+                                                                                                                 data-number-of-posts="15"
+                                                                                                                 data-number-of-columns="5"
+                                                                                                                 data-space-between-items="normal"
+                                                                                                                 data-orderby="date"
+                                                                                                                 data-order="ASC"
+                                                                                                                 data-show-category-filter="no"
+                                                                                                                 data-show-all-item-in-filter="yes"
+                                                                                                                 data-taxonomy-to-display="category"
+                                                                                                                 data-taxonomy-values="fall-winter,next-season"
+                                                                                                                 data-image-size="square"
+                                                                                                                 data-display-title="yes"
+                                                                                                                 data-product-info-hover-skin="dark"
+                                                                                                                 data-title-tag="h4"
+                                                                                                                 data-display-category="no"
+                                                                                                                 data-display-excerpt="no"
+                                                                                                                 data-excerpt-length="20"
+                                                                                                                 data-display-rating="no"
+                                                                                                                 data-display-price="yes"
+                                                                                                                 data-display-pattern="no"
+                                                                                                                 data-display-button="yes"
+                                                                                                                 data-button-skin="default"
+                                                                                                                 data-shader-background-color="rgba(255,255,255,0.8)"
+                                                                                                                 data-class-name="pli">
+                                                                                                                <div class="edgtf-prl-loading">
+                                                                                                                    <span class="edgtf-prl-loading-msg">Loading...</span>
+                                                                                                                </div>
+                                                                                                                <div class="edgtf-pl-outer">
+                                                                                                                    {% for obj in qs %}
+                                                                                                                    <div class="edgtf-pli edgtf-item-space ">
+                                                                                                                        <div class="edgtf-pli-outer">
+                                                                                                                            <div class="edgtf-pli-inner">
+                                                                                                                                <div class="edgtf-pli-image" id="user_product_image">
+                                                                                                                                    <img width="500"
+                                                                                                                                         height="500"
+                                                                                                                                         src="{{obj.image.url}}"
+                                                                                                                                         class="attachment-hyperon_edgtf_square size-hyperon_edgtf_square wp-post-image"
+                                                                                                                                         alt="m"
+                                                                                                                                         srcset="{{obj.image.url}}"
+                                                                                                                                         sizes="(max-width: 550px) 100vw, 550px"/>
+                                                                                                                                </div>
+                                                                                                                                <div class="edgtf-pli-text"
+                                                                                                                                     style="background-color: rgba(255,255,255,0.8)">
+                                                                                                                                    <div class="edgtf-pli-text-outer">
+                                                                                                                                        <div class="edgtf-pli-text-inner">
+                                                                                                                                            <h4 itemprop="name"
+                                                                                                                                                class="entry-title edgtf-pli-title">
+                                                                                                                                                <a itemprop="url"
+                                                                                                                                                   href="/listings/{{obj.pk}}">{{obj}} {% if obj.size %} / {{obj.size}} {% endif %}</a>
+                                                                                                                                            </h4>
 
-            <p style="margin-top:20px;margin-right:150px"><a href="/profiles/{{request.user}}/edit/"
-                                                             class="btn btn-outline-success my-2 my-sm-0">EDIT</a></p>
-            {% else %} <!-- pokud není muj profil, potom FOLLOW -->
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                </div>
 
-            <div class="row" style="margin-top:10px">
-                <p style="margin-top:10px">{% include "snippets/follow_form.html" with username=user.username is_following=is_following %} </p>
-                <p><button class="btn btn-outline-danger" style="margin:10px"><i class="far fa-flag"></i></button></p>
-            </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    {% empty %}
+                                                                                                                    <h3>Uživatel zatím nepřidal žádné zboží.</h3>
+                                                                                                                    {% endfor %}
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
 
-            {% endif %}
-        </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="edgtf-tab-container" id="tab-shop-808">
+                                                                    <div class="wpb_text_column wpb_content_element ">
+                                                                        <div class="wpb_wrapper" style="text-align:center;">
+
+                                                                            {% for deal in deals %}
+
+                                                                            <p>{{ deal.user_rating }}<i class="far fa-star"></i> <b>od {{ deal.seller }}</b></p>
+                                                                            {% if deal.why_user_rating %}<p><i>{{ deal.why_user_rating }}</i></p>{% endif %}
+
+                                                                            <hr>
+
+                                                                            {% empty %}
+                                                                            <h1>Uživatel zatím nemá žádné hodnocení</h1>
+
+                                                                            {% endfor %}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="edgtf-tab-container" id="tab-product-543">
+                                                                     <div class="wpb_text_column wpb_content_element ">
+                                                                        <div class="wpb_wrapper" style="text-align:center;">
+
+                                                                            {% for report in reports %}
+
+                                                                            <p><b>od {{ report.owner }} | {{ report.category }}</b></p>
+                                                                            {% if report.reason %}<p><i>{{ report.reason }}</i></p>{% endif %}
+
+                                                                            <hr>
+
+                                                                            {% empty %}
+                                                                            <h1>Na uživatele zatím nejsou žádné stížnosti</h1>
+
+                                                                            {% endfor %}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="vc_empty_space" style="height: 80px"><span
+                                                                class="vc_empty_space_inner"></span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
 
+                                        </div>
+                                    </div>
+                                </div>
 
-    </div>
-{% if request.user == user %}
-<div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <ul class="nav justify-content-center" id="user-navbar">
-          <li class="nav-item">
-            <a class="nav-link" href="/profiles/{{ user.username }}/">Mé informace</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/profiles/{{ user.username }}/produkty">Mé zboží</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/profiles/{{ user.username }}/kontakt/">Stížnosti na mě</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/profiles/{{ user.username }}/hodnoceni/">Mé hodnocení</a>
-          </li>
-        </ul>
-    </div>
-    <div class="col-md-2"></div>
-</div>
-</div>
+                            </div>
 
-{% else %} <!-- pokud není muj profil sidebar -->
+                        </div> <!-- close div.content_inner -->
+                    </div>  <!-- close div.content -->
+                    {% include "snippets/footer.html" %}
+                </div> <!-- close div.edgtf-wrapper-inner  -->
+            </div> <!-- close div.edgtf-wrapper -->
 
-<div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <ul class="nav justify-content-center" id="user-navbar">
-          <li class="nav-item">
-            <a class="nav-link" href="/profiles/{{ user.username }}/">Informace</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/profiles/{{ user.username }}/produkty">Zboží</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/profiles/{{ user.username }}/kontakt/">Stížnosti</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/profiles/{{ user.username }}/hodnoceni/">Hodnocení</a>
-          </li>
-        </ul>
-    </div>
-    <div class="col-md-2"></div>
-</div>
-</div>
 
-{% endif %}
+            {% include "snippets/script.html" %}
 
-<hr>
-
-                    {% block content2 %}
-                    {% endblock content2 %}
-
-            </div>
-        </div>
-    </div>
-</div>
-
-    {% endblock %}
+            {% endblock %}

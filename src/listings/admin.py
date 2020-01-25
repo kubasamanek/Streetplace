@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Object, Images, Reports
+from .models import Object, Images, Reports, Question
 from .forms import AddObjectFormMeta
 
 # Register your models here.
@@ -20,3 +20,4 @@ class ObjectAdmin(admin.ModelAdmin):
 
 admin.site.register(Object, ObjectAdmin)
 admin.site.register(Reports)
+admin.site.register(Question)

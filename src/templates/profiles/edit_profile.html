@@ -1,16 +1,58 @@
-{% extends "profiles/user_detail.html" %}
 
 
-{% block content2 %}
+
+
+{% extends "base.html" %}
+{% load staticfiles %}
 {% load widget_tweaks %}
-<form method="POST" enctype="multipart/form-data"> {% csrf_token %}
-    <p>{{ u_form.email|add_class:"niceinput" }}</p>
-    <p>{{ u_form.first_name|add_class:"niceinput" }}</p>
-    <p>{{ u_form.last_name|add_class:"niceinput" }}</p>
-    <p>{{ p_form.shoe_size|add_class:"niceinput" }}</p>
-    <p>{{ p_form.clothes_size|add_class:"niceinput" }}</p>
-    <input style="color:transparent" type="file" name="image" id="image" class="inputfile"/>
-    <label for="image">Vyber úvodní fotku</label>
-<p><input class="my-button" type="submit" value="Update" /></p>
+{% block content %}
+
+
+
+{% include "snippets/nav.html"%}
+
+
+
+ <div class="edgtf-content" >
+            <div class="edgtf-content-inner">
+
+
+<div class="edgtf-full-width">
+                <div class="edgtf-full-width-inner" style="text-align:center">
+                                        <div class="edgtf-grid-row">
+                    <div class="edgtf-page-content-holder edgtf-grid-col-12">
+                        <div class="edgtf-row-grid-section-wrapper "  ><div class="edgtf-row-grid-section-wrapper "  ><div class="edgtf-row-grid-section"><div class="vc_row wpb_row vc_row-fluid vc_custom_1521196516131" ><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1513603063516" ><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="edgtf-tabs  edgtf-tabs-standard">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+      Email: {% render_field u_form.email placeholder="Email:" %}
+      Velikost bot:{% render_field p_form.shoe_size placeholder="Velikost bot:" %}
+      Velikost oblečení:
+      <p>{{ p_form.clothes_size|add_class:"custom-select" }}</p>
+      Popis: {% render_field p_form.description placeholder="Popisek:" %}
+
+      <p>{{ u_form.category|add_class:"custom-select" }}
+          {{ u_form.condition|add_class:"custom-select" }}</p>
+      <div class="custom-file">
+          {% render_field p_form.image name="image" id="image" class="custom-file-input" %}
+          <label class="custom-file-label" for="image">Vyber úvodní fotku</label>
+      </div>
+      <br>
+
+
+    <input type="submit" value="Potvrdit" />
 </form>
-{% endblock content2 %}
+                            <div class="vc_empty_space"   style="height: 44px" ><span class="vc_empty_space_inner"></span></div>
+
+                        </div></div></div></div></div></div></div></div></div></div>
+    {% include "snippets/footer.html" %}
+
+
+
+<script type='text/javascript' src='{% static "assets/js/modules.min.js" %}'></script>
+
+
+
+
+
+{% include 'snippets/script.html' %}
+{% endblock content %}

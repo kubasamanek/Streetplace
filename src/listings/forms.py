@@ -1,5 +1,5 @@
 from django import forms
-from .models import Object, Images, Reports
+from .models import Object, Images, Reports, Question
 from .choices import CHOICES
 from clever_selects.form_fields import ChainedChoiceField
 from django.core.urlresolvers import reverse_lazy
@@ -20,7 +20,7 @@ class AddObjectForm(forms.Form):
 
 
 class AddObjectFormMeta(forms.ModelForm):
-
+    image = forms.ImageField()
 
     class Meta:
         model = Object
@@ -32,15 +32,10 @@ class AddObjectFormMeta(forms.ModelForm):
             "size",
             "description",
             "condition",
-
-
+            "predani"
         ]
 
-class ImageForm(forms.ModelForm):
-    images = forms.ImageField(label="Image")
-    class Meta:
-        model = Images
-        fields = ("images", )
+
 
 
 
@@ -52,7 +47,17 @@ class ReportObjectForm(forms.ModelForm):
                   "object", )
 
 
+class UpdateImages(forms.ModelForm):
+    class Meta:
+        model = Images
+        fields = ("images",)
 
 
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Question
+        fields = ("name",
+                  "email",
+                  "message")
 
 

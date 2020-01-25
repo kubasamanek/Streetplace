@@ -2,84 +2,1313 @@
 {% load staticfiles %}
 
 {% block content %}
+<style>
+    .button-msg {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-align:left;
+  cursor: pointer;
+}
+</style>
+<body class="home page-template page-template-full-width page-template-full-width-php page page-id-7 edgtf-core-1.0 hyperon-ver-1.0 edgtf-grid-1200 edgtf-light-header edgtf-sticky-header-on-scroll-down-up edgtf-dropdown-animate-height edgtf-header-standard edgtf-menu-area-shadow-disable edgtf-menu-area-in-grid-shadow-disable edgtf-menu-area-border-disable edgtf-menu-area-in-grid-border-disable edgtf-logo-area-border-disable edgtf-header-vertical-shadow-disable edgtf-header-vertical-border-disable edgtf-side-menu-slide-from-right edgtf-woocommerce-columns-3 edgtf-woo-normal-space edgtf-woo-pl-info-below-image edgtf-woo-single-thumb-below-image edgtf-woo-single-has-pretty-photo edgtf-default-mobile-header edgtf-sticky-up-mobile-header wpb-js-composer js-comp-ver-5.4.5 vc_responsive edgtf-fullscreen-search edgtf-search-fade" itemscope itemtype="http://schema.org/WebPage">
+
+<section class="edgtf-side-menu">
+    <div class="edgtf-close-side-menu-holder">
+        <a class="edgtf-close-side-menu edgtf-close-side-menu-svg-path" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="22.081px" height="17.735px" viewBox="0 0 22.081 17.735" enable-background="new 0 0 22.081 17.735" xml:space="preserve">
+<polygon points="4.375,17.735 22.081,0 17.789,0 0,17.735 "/>
+<polygon points="17.705,17.735 0,0 4.292,0 22.081,17.735 "/>
+</svg>
+        </a>
+    </div>
+    <div class="widget edgtf-separator-widget">
+        <div class="edgtf-separator-holder clearfix  edgtf-separator-center">
+            <div class="edgtf-separator" style="color: #ffffff;margin-top: 45px">
+                <svg x="0px" y="0px" width="65px" height="3px" viewBox="0 0 65 3" enable-background="new 0 0 65 3" xml:space="preserve">
+            <g>
+                <polygon class="edgtf-polygon edgtf-polygon-1" points="0,0 16.021,0 12.958,3 0,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-2" points="16.268,3 19.299,0 29.562,0 26.5,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-3" points="29.969,3 33,0 40,0 37.031,3 "/>
+                <polyline class="edgtf-polygon edgtf-polygon-4" points="41.031,3 44,0 49.031,0 46.031,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-5" points="50.969,3 54.031,0 58.031,0 55,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-6" points="59.96,3 62.96,0 65,0 61.992,3 "/>
+            </g>
+        </svg>
+            </div>
+        </div>
+    </div>
+    <div id="media_image-4" class="widget edgtf-sidearea widget_media_image"><img width="280" height="51"
+                                                                                  src="{% static 'personal/img/color_sp.png' %}"
+                                                                                  class="image wp-image-4979  attachment-full size-full"
+                                                                                  alt="m"
+                                                                                  style="max-width: 100%; height: auto;"/>
+    </div>
+    <div id="edgtf_instagram_widget-6" class="widget edgtf-sidearea widget_edgtf_instagram_widget">
+        <ul class="edgtf-instagram-feed clearfix edgtf-col-3 edgtf-instagram-gallery edgtf-tiny-space">
+            <li>
+                <a href="https://www.instagram.com/p/Bf8f_qAgOjn/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/24cc64783132a2ee80eca6234ff8edc7/5D9A4627/t51.2885-15/e35/28155923_573088169732076_3550334672565174272_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8f9zhAUVC/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/2a85f97cfd92671b9405b4429f6a9dba/5D882E36/t51.2885-15/e35/28432589_579897699041976_7787560144769908736_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8f5_0g8aH/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/8bba946f0c2837fada334fb8475c1ea3/5D912A3B/t51.2885-15/e35/28428643_356588078189644_3471710962589892608_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8f3sOAr0L/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/77eb649ad7f901dc13301e5445e7bee8/5D868C4C/t51.2885-15/e35/28155913_2408081782551091_1069149700801691648_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8f0s6A9oz/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/56b6f2b37fa86508d93da55366a35e31/5D65CAD3/t51.2885-15/e35/28436223_1625257334220956_8618578102559178752_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8fvs5Alc3/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/fddc29db93b0996ad4c2639f4c97181e/5D9AA2A0/t51.2885-15/e35/28433896_683514592038942_8924365884110143488_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8ftEZA7XR/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/41225e238af99b3c3a497bf53646960e/5D861E80/t51.2885-15/e35/28428103_2090118434541911_1071684302736982016_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8fVYJAFAe/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/a3cc2ffa588f0df1a485003e8648bd4d/5D9D2733/t51.2885-15/e35/28155968_153780441987256_3628144563547275264_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8fTLKAyB2/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/6ad016fae62c9b42264f0d14270b898b/5D8A3C67/t51.2885-15/e35/28155270_162415311234875_6451454707280904192_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+        </ul>
+    </div>
+    <div class="widget edgtf-separator-widget">
+        <div class="edgtf-separator-holder clearfix  edgtf-separator-center">
+            <div class="edgtf-separator" style="color: #ffffff;margin-top: 50px">
+                <svg x="0px" y="0px" width="65px" height="3px" viewBox="0 0 65 3" enable-background="new 0 0 65 3" xml:space="preserve">
+            <g>
+                <polygon class="edgtf-polygon edgtf-polygon-1" points="0,0 16.021,0 12.958,3 0,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-2" points="16.268,3 19.299,0 29.562,0 26.5,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-3" points="29.969,3 33,0 40,0 37.031,3 "/>
+                <polyline class="edgtf-polygon edgtf-polygon-4" points="41.031,3 44,0 49.031,0 46.031,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-5" points="50.969,3 54.031,0 58.031,0 55,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-6" points="59.96,3 62.96,0 65,0 61.992,3 "/>
+            </g>
+        </svg>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="edgtf-wrapper">
+    <div class="edgtf-wrapper-inner">
+        <div class="edgtf-fullscreen-search-holder">
+            <a class="edgtf-search-close edgtf-search-close-svg-path" href="javascript:void(0)">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="22.081px" height="17.735px" viewBox="0 0 22.081 17.735" enable-background="new 0 0 22.081 17.735" xml:space="preserve">
+<polygon points="4.375,17.735 22.081,0 17.789,0 0,17.735 "/>
+<polygon points="17.705,17.735 0,0 4.292,0 22.081,17.735 "/>
+</svg>
+            </a>
+
+        </div>
+        <header class="edgtf-page-header">
 
 
-<!-- Carousel -->
-<div class="col-md-15 bounceIn">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner tada">
+            <div class="edgtf-menu-area edgtf-menu-left">
 
-            <div class="carousel-item active " style="height:575px;">
-              <img class="d-block w-100" src="{% static 'personal/img/tnf.jpg' %}" alt="First slide" style="height:575px; opacity:0.3">
-                 <div class="carousel-caption d-md-block">
-                     <h1 class="animated fadeInUp" style="animation-duration:1.8s; animation-delay:0.5s; color: white" >První online resell market v ČR!</h1>
-                     <h5 class="animated fadeInUp" style="animation-delay:1.2s; color: white">Prodávej, nakupuj, vyměňuj</h5>
-                 </div>
+
+                <div class="edgtf-vertical-align-containers">
+                    <div class="edgtf-position-left">
+                        <div class="edgtf-position-left-inner">
+
+
+                            <div class="edgtf-logo-wrapper">
+                                <a itemprop="url" href="/" style="height: 25px;">
+                                    <img itemprop="image" class="edgtf-normal-logo"
+                                         src="{% static 'personal/img/color_sp.png' %}" width="280" height="51"
+                                         alt="logo"/>
+                                    <img itemprop="image" class="edgtf-dark-logo"
+                                         src="{% static 'personal/img/color_sp.png' %}" width="280" height="51"
+                                         alt="dark logo"/> <img itemprop="image" class="edgtf-light-logo"
+                                                                src="{% static 'personal/img/white_sp.png' %}"
+                                                                width="280" height="51" alt="light logo"/> </a>
+                            </div>
+
+
+                            <nav class="edgtf-main-menu edgtf-drop-down edgtf-default-nav">
+                                <ul id="menu-main-menu" class="clearfix">
+                                    <li id="nav-menu-item-10"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children edgtf-active-item has_sub narrow">
+                                        <a href="/" class=" current  no_link"><span class="item_outer"><span
+                                                class="item_text">Domů</span><i
+                                                class="edgtf-menu-arrow fa fa-angle-down"></i></span></a>
+
+                                    </li>
+                                    <li id="nav-menu-item-11"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub narrow">
+                                        <a href="#" class=" no_link" onclick="JavaScript: return false;"><span
+                                                class="item_outer"><span class="item_text">nakupovat</span><i
+                                                class="edgtf-menu-arrow fa fa-angle-down"></i></span></a>
+                                        <div class="second">
+                                            <div class="inner">
+                                                <ul>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/listings/vse/1/nevybrano/" class=""><span class="item_outer"><span class="item_text">vše</span></span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/listings/boty/1/nevybrano/" class=""><span class="item_outer"><span class="item_text">Boty</span></span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/listings/trika/1/nevybrano/" class=""><span class="item_outer"><span class="item_text">Trika</span></span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/listings/kosile/1/nevybrano/" class=""><span class="item_outer"><span class="item_text">Košile</span></span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/listings/mikiny/1/nevybrano/" class=""><span class="item_outer"><span class="item_text">Mikiny</span></span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/listings/bundy/1/nevybrano/" class=""><span class="item_outer"><span class="item_text">Bundy</span></span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/listings/kalhoty/1/nevybrano/" class=""><span class="item_outer"><span class="item_text">Kalhoty</span></span></a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/listings/kratasy/1/nevybrano/" class=""><span class="item_outer"><span class="item_text">Kraťasy</span></span></a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/listings/spodnipradloponozky/1/nevybrano/" class=""><span class="item_outer"><span class="item_text">Spodní prádlo, ponožky</span></span></a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/listings/plavky/1/nevybrano/" class=""><span class="item_outer"><span class="item_text">Plavky</span></span></a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/listings/sport/1/nevybrano/" class=""><span class="item_outer"><span class="item_text">Sport</span></span></a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/listings/doplnky/1/nevybrano/" class=""><span class="item_outer"><span class="item_text">Doplňky</span></span></a></li>
+
+</ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li id="nav-menu-item-14"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub wide">
+                                        <a href="/listings/add/"><span
+                                                class="item_outer"><span class="item_text">prodávat</span><i
+                                                class="edgtf-menu-arrow fa fa-angle-down"></i></span></a>
+
+                                    </li>
+                                    <li id="nav-menu-item-14"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub wide">
+                                        <a href="/about/"><span
+                                                class="item_outer"><span class="item_text">o nás</span><i
+                                                class="edgtf-menu-arrow fa fa-angle-down"></i></span></a>
+
+                                    </li>
+                                    <li id="nav-menu-item-11"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub narrow">
+                                        <a href="#" class=" no_link" onclick="JavaScript: return false;"><span
+                                                class="item_outer"><span class="item_text">další</span><i
+                                                class="edgtf-menu-arrow fa fa-angle-down"></i></span></a>
+                                        <div class="second">
+                                            <div class="inner">
+                                                <ul>
+                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/hledatprofil/" class=""><span class="item_outer"><span class="item_text">najít uživatele</span></span></a></li>
+                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/faq/" class=""><span class="item_outer"><span class="item_text">FAQ</span></span></a></li>
+                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/kontakt/" class=""><span class="item_outer"><span class="item_text">Kontakt</span></span></a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                            </nav>
+
+                        </div>
+                    </div>
+                    <div class="edgtf-position-right">
+                        <div class="edgtf-position-right-inner">
+
+                            {% if user.is_authenticated %}<div class="edgtf-wishlist-widget-holder">
+                                <a href="/logout/" class="edgtf-wishlist-widget-link">
+                                    <span class="edgtf-text-no-icon">odhlásit se</span>
+                                </a></div>
+                            {% else %}
+                            <div class="edgtf-wishlist-widget-holder">
+                                <a href="/login/" class="edgtf-wishlist-widget-link">
+                                    <span class="edgtf-text-no-icon">login/register</span>
+                                </a></div>
+                            {% endif %}
+
+                            {% if user.is_authenticated %}<div class="edgtf-shopping-cart-holder">
+                                <div class="edgtf-shopping-cart-inner">
+                                                <a itemprop="url" class="edgtf-header-cart edgtf-header-cart-icon-pack"
+                                                   href="/chat/{{last_message_user}}/">
+                                                    <span class="edgtf-text-no-icon">zprávy</span>
+                                                    <span class="edgtf-cart-number">({{pocet_zprav}})</span>
+                                                </a>
+                                                {% if pocet_zprav > 0 %}
+                                                    <div class="edgtf-shopping-cart-dropdown">
+                                                        <ul>
+                                                            {% for message in unread_messages%}
+                                                            <form method="post" action="{% url 'precteno' message.sender %}">{% csrf_token %}<button class="button-msg" type="submit"><li class="edgtf-empty-cart"><b>{{message.sender.first_name}} {{message.sender.last_name}} </b>: {{message.text}}</li></button></form>
+                                                            <hr>
+                                                            {%endfor%}
+                                                        </ul>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                            </div>
+                            <div class="edgtf-wishlist-widget-holder">
+                                <a href="/profiles/{{user}}/" class="edgtf-wishlist-widget-link">
+                                    <span class="edgtf-text-no-icon">Vítej {{user}}!</span>
+                                </a></div>
+                            {% endif %}
+
+                            <a class="edgtf-side-menu-button-opener edgtf-icon-has-hover edgtf-side-menu-button-opener-svg-path"
+                               href="javascript:void(0)">
+                        <span class="edgtf-side-menu-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="27.883px" height="17px" viewBox="0 0 27.883 17" enable-background="new 0 0 27.883 17" xml:space="preserve">
+<rect x="0.008" width="27.875" height="3"/>
+<rect x="0.008" y="14" width="27.875" height="3"/>
+<polygon points="10.401,10.023 0,10.023 0,7.023 13.401,7.023 "/>
+<polygon points="17.375,7.023 27.891,7.023 27.891,10.023 14.375,10.023 "/>
+</svg>            </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="carousel-item" style="height:575px;">
-              <img class="d-block w-100" src="{% static 'personal/img/carousel2.jpg' %}" alt="Second slide" style="height:575px; opacity:0.5">
-                 <div class="carousel-caption d-md-block align-items-center">
-                        <h1 class="animated rollIn" style="animation-duration:1.8s; animation-delay:0.5s; color: white" >Tvoříme pro Vás komunitu</h1>
-                        <h5 class="animated fadeInUp" style="animation-delay:1.5s; color: white">Vytváříme přátelské a dostupné prostředí pro reselling. </h5>
-                 </div>
+
+            <div class="edgtf-sticky-header">
+                <div class="edgtf-sticky-holder edgtf-menu-left">
+                    <div class="edgtf-vertical-align-containers">
+                        <div class="edgtf-position-left">
+                            <div class="edgtf-position-left-inner">
+
+
+                                <div class="edgtf-logo-wrapper">
+                                    <a itemprop="url" href="/" style="height: 25px;">
+                                        <img itemprop="image" class="edgtf-normal-logo"
+                                             src="{% static 'personal/img/color_sp.png' %}" width="280" height="51"
+                                             alt="logo"/>
+                                        <img itemprop="image" class="edgtf-dark-logo"
+                                             src="{% static 'personal/img/color_sp.png' %}" width="280" height="51"
+                                             alt="dark logo"/> <img itemprop="image" class="edgtf-light-logo"
+                                                                    src="{% static 'personal/img/color_sp.png' %}"
+                                                                    width="280" height="51" alt="light logo"/> </a>
+                                </div>
+
+
+                                <nav class="edgtf-main-menu edgtf-drop-down edgtf-sticky-nav">
+                                    <ul id="menu-main-menu-1" class="clearfix">
+
+                                        <li id="sticky-nav-menu-item-11"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub narrow">
+                                            <a href="/listings/vse/1/nevybrano/"><span
+                                                    class="item_outer"><span class="item_text">nakupovat</span><span
+                                                    class="plus"></span><i
+                                                    class="edgtf-menu-arrow fa fa-angle-down"></i></span></a>
+                                        </li>
+                                        <li id="sticky-nav-menu-item-14"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                                            <a href="/listings/add/"><span
+                                                    class="item_outer"><span class="item_text">prodávat</span><span
+                                                    class="plus"></span></span></a>
+                                        </li>
+                                        <li id="sticky-nav-menu-item-14"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                                            <a href="/about/"><span
+                                                    class="item_outer"><span class="item_text">o nás</span><span
+                                                    class="plus"></span></span></a>
+                                        </li>
+                                        <li id="sticky-nav-menu-item-15"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub narrow">
+                                        <a href="#" class=" no_link" onclick="JavaScript: return false;"><span
+                                                class="item_outer"><span class="item_text">další</span><i
+                                                class="edgtf-menu-arrow fa fa-angle-down"></i></span></a>
+                                        <div class="second">
+                                            <div class="inner">
+                                                <ul>
+                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/hledatprofil/" class=""><span class="item_outer"><span class="item_text">najít uživatele</span></span></a></li>
+                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/faq/" class=""><span class="item_outer"><span class="item_text">FAQ</span></span></a></li>
+                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/kontakt/" class=""><span class="item_outer"><span class="item_text">Kontakt</span></span></a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+
+                                    </ul>
+                                </nav>
+
+                            </div>
+                        </div>
+                        <div class="edgtf-position-right">
+                            <div class="edgtf-position-right-inner">
+
+                                {% if user.is_authenticated %}<div class="edgtf-wishlist-widget-holder">
+                                <a href="/logout/" class="edgtf-wishlist-widget-link">
+                                    <span class="edgtf-text-no-icon">odhlásit se</span>
+                                </a></div>
+                            {% else %}
+                            <div class="edgtf-wishlist-widget-holder">
+                                <a href="/login/" class="edgtf-wishlist-widget-link">
+                                    <span class="edgtf-text-no-icon">login/register</span>
+                                </a></div>
+                            {% endif %}
+
+                            {% if user.is_authenticated %}<div class="edgtf-shopping-cart-holder">
+                                <div class="edgtf-shopping-cart-inner">
+                                                <a itemprop="url" class="edgtf-header-cart edgtf-header-cart-icon-pack"
+                                                   href="/chat/{{last_message_user}}/">
+                                                    <span class="edgtf-text-no-icon">zprávy</span>
+                                                    <span class="edgtf-cart-number">({{pocet_zprav}})</span>
+                                                </a>
+                                                {% if pocet_zprav > 0 %}
+                                                    <div class="edgtf-shopping-cart-dropdown">
+                                                        <ul>
+                                                            {% for message in unread_messages%}
+                                                            <form method="post" action="{% url 'precteno' message.sender %}">{% csrf_token %}<button class="button-msg" type="submit"><li class="edgtf-empty-cart"><b>{{message.sender.first_name}} {{message.sender.last_name}} </b>: {{message.text}}</li></button></form>
+                                                            <hr>
+                                                            {%endfor%}
+                                                        </ul>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                            </div>
+                                <div class="edgtf-wishlist-widget-holder">
+                                <a href="/profiles/{{user}}/" class="edgtf-wishlist-widget-link">
+                                    <span class="edgtf-text-no-icon">Vítej {{user}}!</span>
+                                </a></div>
+                            {% endif %}
+
+
+                                <a class="edgtf-side-menu-button-opener edgtf-icon-has-hover edgtf-side-menu-button-opener-svg-path"
+                                   href="javascript:void(0)">
+                        <span class="edgtf-side-menu-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="27.883px" height="17px" viewBox="0 0 27.883 17" enable-background="new 0 0 27.883 17" xml:space="preserve">
+<rect x="0.008" width="27.875" height="3"/>
+<rect x="0.008" y="14" width="27.875" height="3"/>
+<polygon points="10.401,10.023 0,10.023 0,7.023 13.401,7.023 "/>
+<polygon points="17.375,7.023 27.891,7.023 27.891,10.023 14.375,10.023 "/>
+</svg>            </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="carousel-item" style="height:575px;">
-              <img class="d-block w-100" src="{% static 'personal/img/hu.jpg' %}" alt="Third slide" style="height:575px; opacity:0.3">
-                 <div class="carousel-caption d-md-block">
-                     <h1 class="animated rollIn" style="animation-duration:1.8s; animation-delay:0.5s; color: white" >Nakupujte a prodávejte s klidem z pohodlí domova.</h1>
-                     <h5 class="animated fadeInUp" style="animation-delay:1.5s; color: white">O vše ostatní se postaráme my.</h5>
-                 </div>
+
+        </header>
+
+
+        <header class="edgtf-mobile-header">
+
+            <div class="edgtf-mobile-header-inner">
+                <div class="edgtf-mobile-header-holder">
+                    <div class="edgtf-grid">
+                        <div class="edgtf-vertical-align-containers">
+                            <div class="edgtf-vertical-align-containers">
+                                <div class="edgtf-mobile-menu-opener edgtf-mobile-menu-opener-icon-pack">
+                                    <a href="javascript:void(0)">
+									<span class="edgtf-mobile-menu-icon">
+										<i class="edgtf-icon-ion-icon ion-navicon "></i>									</span>
+                                    </a>
+                                </div>
+                                <div class="edgtf-position-center">
+                                    <div class="edgtf-position-center-inner">
+
+
+                                        <div class="edgtf-mobile-logo-wrapper">
+                                            <a itemprop="url" href="/"
+                                               style="height: 25px">
+                                                <img itemprop="image" src="{% static 'personal/img/color_sp.png' %}"
+                                                     width="280" height="51" alt="Mobile Logo"/>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="edgtf-position-right">
+                                    <div class="edgtf-position-right-inner">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="edgtf-mobile-nav">
+                    <div class="edgtf-grid">
+                        <ul id="menu-mobile-menu" class="">
+                            <a href="/"><li id="mobile-menu-item-24" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub"><h6 style="margin-left:3px"><span>domů</span></h6></li></a>
+
+                            </li>
+                           <a href="/listings/vse/1/nevybrano/"> <li id="mobile-menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub"><h6><span>nakupovat</span></h6><span class="mobile_arrow"></span></li></a>
+                           				<a href="/listings/add/"><li id="mobile-menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><h6 style="margin-left:3px"><span>prodávat</span></h6></li></a>
+                           				<a href="/about/"><li id="mobile-menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><h6 style="margin-left:3px"><span>o nás</span></h6></li></a>
+                                         <li id="mobile-menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub"><h6><span>další</span></h6><span class="mobile_arrow"><i class="edgtf-sub-arrow fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span>
+                                    <ul class="sub_menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/hledatprofil/" class=""><span class="item_outer"><span class="item_text">Hledat uživatele</span></span></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page "><a href="/faq/" class=""><span class="item_outer"><span class="item_text">FAQ</span></span></a></li>
+                                        <li class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/kontakt/" class=""><span class="item_outer"><span class="item_text">Kontakt</span></span></a></li>
+                                    </ul>
+                                    </li>
+
+
+
+
+                             {% if user.is_authenticated %}
+                            <a href="/logout/"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                            <h6><span>odhlásit se</span></h6><span class="mobile_arrow"></span>
+                            </li></a>
+                            <a href="/chat/{{last_message_user}}/"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                            <h6><span>zprávy</span></h6><span class="mobile_arrow">({{pocet_zprav}})</span>
+                            </li></a>
+                            {% else %}
+                            <a href="/login/"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                            <h6><span>login/register</span></h6><span class="mobile_arrow"></span>
+                            </li></a>
+
+                            {% endif %}
+
+
+                        </ul>
+                    </div>
+                </nav>
+
             </div>
+
+        </header>
+
+        <a id='edgtf-back-to-top' href='#'>
+                <span class="edgtf-icon-stack">
+                                     </span>
+        </a>
+
+        <div class="edgtf-content" style="margin-top: -90px">
+            <div class="edgtf-content-inner">
+
+                <div class="edgtf-slider">
+                    <div class="edgtf-slider-inner">
+                        <link href="https://fonts.googleapis.com/css?family=Poppins:600%2C400" rel="stylesheet"
+                              property="stylesheet" type="text/css" media="all">
+                        <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullscreen-container"
+                             data-source="gallery" style="background:transparent;padding:0px;">
+                            <!-- START REVOLUTION SLIDER 5.4.6.4 fullscreen mode -->
+                            <div id="rev_slider_4_1" class="rev_slider fullscreenbanner" style="display:none;"
+                                 data-version="5.4.6.4">
+                                <ul>    <!-- SLIDE  -->
+                                    <li data-index="rs-3" data-transition="fade" data-slotamount="default"
+                                        data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
+                                        data-easeout="default" data-masterspeed="300"
+                                        data-thumb="{% static 'personal/img/jordan.jpeg' %}" data-rotate="0"
+                                        data-saveperformance="off" data-title="Slide" data-param1="01" data-param2=""
+                                        data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
+                                        data-param8="" data-param9="" data-param10="" data-description="">
+                                        <!-- MAIN IMAGE -->
+                                        <img src="{% static 'personal/img/test3.jpg' %}" alt="b"
+                                             title="mainhome-slider-img1" width="1956" height="1100"
+                                             data-bgposition="center center" data-bgfit="cover"
+                                             data-bgrepeat="no-repeat" data-bgparallax="7" class="rev-slidebg"
+                                             data-no-retina>
+                                        <!-- LAYERS -->
+
+                                        <!-- LAYER NR. 1 -->
+                                        <div class="tp-caption  "
+                                             id="slide-3-layer-1"
+                                             data-x="['center','center','center','center']"
+                                             data-hoffset="['34','20','12','0']"
+                                             data-y="['middle','middle','middle','middle']"
+                                             data-voffset="['-24','-23','0','3']"
+                                             data-fontsize="['77','77','60','40']"
+                                             data-letterspacing="['40','25','10','-1']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+
+                                             data-type="text"
+                                             data-basealign="slide"
+                                             data-responsive_offset="off"
+                                             data-responsive="off"
+                                             data-frames='[{"delay":300,"speed":800,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                             data-textAlign="['inherit','inherit','inherit','inherit']"
+                                             data-paddingtop="[0,0,0,0]"
+                                             data-paddingright="[0,0,0,0]"
+                                             data-paddingbottom="[0,0,0,0]"
+                                             data-paddingleft="[0,0,0,0]"
+
+                                             style="z-index: 5; white-space: nowrap; font-size: 77px; line-height: 79px; font-weight: 600; color: #ffffff; letter-spacing: 0px;font-family:Poppins;">
+                                            tvoříme komunitu
+                                        </div>
+
+                                        <!-- LAYER NR. 2 -->
+                                        <div class="tp-caption  "
+                                             id="slide-3-layer-2"
+                                             data-x="['center','center','center','center']"
+                                             data-hoffset="['-380','-291','-215','-70']"
+                                             data-y="['middle','middle','middle','middle']"
+                                             data-voffset="['-79','-77','-52','-40']"
+                                             data-fontsize="['16','16','16','10']"
+                                             data-letterspacing="['30','25','10','10']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+
+                                             data-type="text"
+                                             data-basealign="slide"
+                                             data-responsive_offset="off"
+                                             data-responsive="off"
+                                             data-frames='[{"delay":200,"speed":800,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                             data-textAlign="['inherit','inherit','inherit','inherit']"
+                                             data-paddingtop="[0,0,0,0]"
+                                             data-paddingright="[0,0,0,0]"
+                                             data-paddingbottom="[0,0,0,0]"
+                                             data-paddingleft="[0,0,0,0]"
+
+                                             style="z-index: 6; white-space: nowrap; font-size: 16px; line-height: 18px; font-weight: 600; color: #ffffff; letter-spacing: 48px;font-family:Poppins;">
+                                            s vaší pomocí
+                                        </div>
+
+                                        <!-- LAYER NR. 3 -->
+                                        <div class="tp-caption  "
+                                             id="slide-3-layer-3"
+                                             data-x="['center','center','center','center']"
+                                             data-hoffset="['-560','-445','-260','-90']"
+                                             data-y="['middle','middle','middle','middle']"
+                                             data-voffset="['64','62','85','69']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+
+                                             data-type="text"
+                                             data-basealign="slide"
+                                             data-responsive_offset="off"
+                                             data-responsive="off"
+                                             data-frames='[{"delay":400,"speed":800,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                             data-textAlign="['inherit','inherit','inherit','inherit']"
+                                             data-paddingtop="[0,0,0,0]"
+                                             data-paddingright="[0,0,0,0]"
+                                             data-paddingbottom="[0,0,0,0]"
+                                             data-paddingleft="[0,0,0,0]"
+
+                                             style="z-index: 7; white-space: nowrap; font-size: 16px; line-height: 16px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Poppins;">
+                                            <a itemprop="url"
+                                               href="/hledatprofil/"
+                                               target="_self" style="color: #ffffff;font-size: 16px"
+                                               class="edgtf-btn edgtf-btn-medium edgtf-btn-simple">
+                                                <span class="edgtf-btn-text">vyhledej uživatele</span>
+
+                                                <br>
+                                                <svg height="2" width="32">
+                                                    <path d="M0 0 L0 2 L32 2 L32 0 Z"/>
+                                                </svg>
+
+                                            </a></div>
+                                    </li>
+                                    <!-- SLIDE  -->
+                                    <li data-index="rs-8" data-transition="fade" data-slotamount="default"
+                                        data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
+                                        data-easeout="default" data-masterspeed="300"
+                                        data-thumb="{% static 'personal/img/carousel2.jpg' %}" data-rotate="0"
+                                        data-saveperformance="off" data-title="Slide" data-param1="02" data-param2=""
+                                        data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
+                                        data-param8="" data-param9="" data-param10="" data-description="">
+                                        <!-- MAIN IMAGE -->
+                                        <img src="{% static 'personal/img/carousel2.jpg' %}" alt="a"
+                                             title="h1-slider-background-img-2" width="1920" height="1100"
+                                             data-bgposition="center center" data-bgfit="cover"
+                                             data-bgrepeat="no-repeat" data-bgparallax="7" class="rev-slidebg"
+                                             data-no-retina>
+                                        <!-- LAYERS -->
+
+                                        <!-- LAYER NR. 4 -->
+                                        <div class="tp-caption  "
+                                             id="slide-8-layer-1"
+                                             data-x="['center','center','center','center']"
+                                             data-hoffset="['8','10','0','0']"
+                                             data-y="['middle','middle','middle','middle']"
+                                             data-voffset="['-23','-23','0','3']"
+                                             data-fontsize="['77','64','60','37']"
+                                             data-letterspacing="['30','25','5','-1']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+
+                                             data-type="text"
+                                             data-basealign="slide"
+                                             data-responsive_offset="off"
+                                             data-responsive="off"
+                                             data-frames='[{"delay":300,"speed":800,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                             data-textAlign="['inherit','inherit','inherit','inherit']"
+                                             data-paddingtop="[0,0,0,0]"
+                                             data-paddingright="[0,0,0,0]"
+                                             data-paddingbottom="[0,0,0,0]"
+                                             data-paddingleft="[0,0,0,0]"
+
+                                             style="z-index: 5; white-space: nowrap; font-size: 77px; line-height: 79px; font-weight: 600; color: #ffffff; letter-spacing: 56px;font-family:Poppins;">
+                                            nakupuj streetwear
+                                        </div>
+
+                                        <!-- LAYER NR. 5 -->
+                                        <div class="tp-caption  "
+                                             id="slide-8-layer-2"
+                                             data-x="['center','center','center','center']"
+                                             data-hoffset="['-380','-291','-205','-51']"
+                                             data-y="['middle','middle','middle','middle']"
+                                             data-voffset="['-79','-77','-52','-40']"
+                                             data-fontsize="['16','16','16','10']"
+                                             data-letterspacing="['48','40','20','20']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+
+                                             data-type="text"
+                                             data-basealign="slide"
+                                             data-responsive_offset="off"
+                                             data-responsive="off"
+                                             data-frames='[{"delay":200,"speed":800,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                             data-textAlign="['inherit','inherit','inherit','inherit']"
+                                             data-paddingtop="[0,0,0,0]"
+                                             data-paddingright="[0,0,0,0]"
+                                             data-paddingbottom="[0,0,0,0]"
+                                             data-paddingleft="[0,0,0,0]"
+
+                                             style="z-index: 6; white-space: nowrap; font-size: 16px; line-height: 18px; font-weight: 600; color: #ffffff; letter-spacing: 48px;font-family:Poppins;">
+                                            neváhej a
+                                        </div>
+
+                                        <!-- LAYER NR. 6 -->
+                                        <div class="tp-caption  "
+                                             id="slide-8-layer-3"
+                                             data-x="['center','center','center','center']"
+                                             data-hoffset="['-577','-445','-279','-100']"
+                                             data-y="['middle','middle','middle','middle']"
+                                             data-voffset="['63','62','85','69']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+
+                                             data-type="text"
+                                             data-basealign="slide"
+                                             data-responsive_offset="off"
+                                             data-responsive="off"
+                                             data-frames='[{"delay":400,"speed":800,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                             data-textAlign="['inherit','inherit','inherit','inherit']"
+                                             data-paddingtop="[0,0,0,0]"
+                                             data-paddingright="[0,0,0,0]"
+                                             data-paddingbottom="[0,0,0,0]"
+                                             data-paddingleft="[0,0,0,0]"
+
+                                             style="z-index: 7; white-space: nowrap; font-size: 16px; line-height: 16px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Poppins;">
+                                            <a itemprop="url" href="/listings/vse/1/nevybrano/" target="_self"
+                                               style="color: #ffffff;font-size: 16px"
+                                               class="edgtf-btn edgtf-btn-medium edgtf-btn-simple">
+                                                <span class="edgtf-btn-text">pusť se do toho</span>
+
+                                                <br>
+                                                <svg height="2" width="32">
+                                                    <path d="M0 0 L0 2 L32 2 L32 0 Z"/>
+                                                </svg>
+
+                                            </a></div>
+                                    </li>
+                                    <!-- SLIDE  -->
+                                    <li data-index="rs-9" data-transition="fade" data-slotamount="default"
+                                        data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
+                                        data-easeout="default" data-masterspeed="300"
+                                        data-thumb="{% static 'personal/img/jordan.jpeg' %}" data-rotate="0"
+                                        data-saveperformance="off" data-title="Slide" data-param1="03" data-param2=""
+                                        data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
+                                        data-param8="" data-param9="" data-param10="" data-description="">
+                                        <!-- MAIN IMAGE -->
+                                        <img src="{% static 'personal/img/jordan.jpeg' %}" alt="a"
+                                             title="h1-slider-background-img-3" width="1920" height="1100"
+                                             data-bgposition="center center" data-bgfit="cover"
+                                             data-bgrepeat="no-repeat" data-bgparallax="7" class="rev-slidebg"
+                                             data-no-retina>
+                                        <!-- LAYERS -->
+
+                                        <!-- LAYER NR. 7 -->
+                                        <div class="tp-caption  "
+                                             id="slide-9-layer-1"
+                                             data-x="['center','center','center','center']"
+                                             data-hoffset="['-50','-42','-10','0 ']"
+                                             data-y="['middle','middle','middle','middle']"
+                                             data-voffset="['-23','-23','0','3']"
+                                             data-fontsize="['77','77','60','40']"
+                                             data-letterspacing="['56','35','20','2']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+
+                                             data-type="text"
+                                             data-basealign="slide"
+                                             data-responsive_offset="off"
+                                             data-responsive="off"
+                                             data-frames='[{"delay":300,"speed":800,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                             data-textAlign="['inherit','inherit','inherit','inherit']"
+                                             data-paddingtop="[0,0,0,0]"
+                                             data-paddingright="[0,0,0,0]"
+                                             data-paddingbottom="[0,0,0,0]"
+                                             data-paddingleft="[0,0,0,0]"
+
+                                             style="z-index: 5; white-space: nowrap; font-size: 77px; line-height: 79px; font-weight: 600; color: #ffffff; letter-spacing: 56px;font-family:Poppins;">
+                                            prodávej zde
+                                        </div>
+
+                                        <!-- LAYER NR. 8 -->
+                                        <div class="tp-caption  "
+                                             id="slide-9-layer-2"
+                                             data-x="['center','center','center','center']"
+                                             data-hoffset="['-393','-280','-205','-45']"
+                                             data-y="['middle','middle','middle','middle']"
+                                             data-voffset="['-79','-77','-52','-40']"
+                                             data-fontsize="['16','16','16','10']"
+                                             data-letterspacing="['30','30','10','10']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+
+                                             data-type="text"
+                                             data-basealign="slide"
+                                             data-responsive_offset="off"
+                                             data-responsive="off"
+                                             data-frames='[{"delay":200,"speed":800,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                             data-textAlign="['inherit','inherit','inherit','inherit']"
+                                             data-paddingtop="[0,0,0,0]"
+                                             data-paddingright="[0,0,0,0]"
+                                             data-paddingbottom="[0,0,0,0]"
+                                             data-paddingleft="[0,0,0,0]"
+
+                                             style="z-index: 6; white-space: nowrap; font-size: 16px; line-height: 18px; font-weight: 600; color: #ffffff; letter-spacing: 48px;font-family:Poppins;">
+                                            na co čekáš?
+                                        </div>
+
+                                        <!-- LAYER NR. 9 -->
+                                        <div class="tp-caption  "
+                                             id="slide-9-layer-3"
+                                             data-x="['center','center','center','center']"
+                                             data-hoffset="['-578','-445','-279','-95']"
+                                             data-y="['middle','middle','middle','middle']"
+                                             data-voffset="['63','62','85','69']"
+                                             data-width="none"
+                                             data-height="none"
+                                             data-whitespace="nowrap"
+
+                                             data-type="text"
+                                             data-basealign="slide"
+                                             data-responsive_offset="off"
+                                             data-responsive="off"
+                                             data-frames='[{"delay":400,"speed":800,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                             data-textAlign="['inherit','inherit','inherit','inherit']"
+                                             data-paddingtop="[0,0,0,0]"
+                                             data-paddingright="[0,0,0,0]"
+                                             data-paddingbottom="[0,0,0,0]"
+                                             data-paddingleft="[0,0,0,0]"
+
+                                             style="z-index: 7; white-space: nowrap; font-size: 16px; line-height: 16px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Poppins;">
+                                            <a itemprop="url"
+                                               href="/listings/add/"
+                                               target="_self" style="color: #ffffff;font-size: 16px"
+                                               class="edgtf-btn edgtf-btn-medium edgtf-btn-simple">
+                                                <span class="edgtf-btn-text">klikni sem</span>
+
+                                                <br>
+                                                <svg height="2" width="32">
+                                                    <path d="M0 0 L0 2 L32 2 L32 0 Z"/>
+                                                </svg>
+
+                                            </a></div>
+                                    </li>
+                                </ul>
+                                <script>var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss="";
+						if(htmlDiv) {
+							htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+						}else{
+							var htmlDiv = document.createElement("div");
+							htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+							document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+						}
+
+                                </script>
+                                <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+                            </div>
+                            <script>var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss="";
+				if(htmlDiv) {
+					htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+				}else{
+					var htmlDiv = document.createElement("div");
+					htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+					document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+				}
+
+                            </script>
+                            <script type="text/javascript">
+setREVStartSize({c: jQuery('#rev_slider_4_1'), responsiveLevels: [1920,1601,778,480], gridwidth: [1920,1441,778,480], gridheight: [1100,800,960,720], sliderLayout: 'fullscreen', fullScreenAutoWidth:'off', fullScreenAlignForce:'off', fullScreenOffsetContainer:'.touch .edgtf-mobile-header', fullScreenOffset:''});
+
+var revapi4,
+	tpj=jQuery;
+
+tpj(document).ready(function() {
+	if(tpj("#rev_slider_4_1").revolution == undefined){
+		revslider_showDoubleJqueryError("#rev_slider_4_1");
+	}else{
+		revapi4 = tpj("#rev_slider_4_1").show().revolution({
+			sliderType:"standard",
+			jsFileLocation:"//hyperon.edge-themes.com/wp-content/plugins/revslider/public/assets/js/",
+			sliderLayout:"fullscreen",
+			dottedOverlay:"none",
+			delay:3000,
+			navigation: {
+				keyboardNavigation:"off",
+				keyboard_direction: "horizontal",
+				mouseScrollNavigation:"off",
+ 							mouseScrollReverse:"default",
+				onHoverStop:"off",
+				arrows: {
+					style:"hyperon",
+					enable:true,
+					hide_onmobile:true,
+					hide_under:1025,
+					hide_onleave:false,
+					tmp:'<div class="navigation-number">{{param1}}</div>',
+					left: {
+						h_align:"left",
+						v_align:"center",
+						h_offset:20,
+						v_offset:0
+					},
+					right: {
+						h_align:"right",
+						v_align:"center",
+						h_offset:20,
+						v_offset:0
+					}
+				}
+			},
+			responsiveLevels:[1920,1601,778,480],
+			visibilityLevels:[1920,1601,778,480],
+			gridwidth:[1920,1441,778,480],
+			gridheight:[1100,800,960,720],
+			lazyType:"none",
+			parallax: {
+				type:"mouse",
+				origo:"enterpoint",
+				speed:400,
+				speedbg:0,
+				speedls:0,
+				levels:[5,10,15,20,25,30,35,40,45,46,47,48,49,50,51,55],
+			},
+			shadow:0,
+			spinner:"off",
+			stopLoop:"off",
+			stopAfterLoops:-1,
+			stopAtSlide:-1,
+			shuffle:"off",
+			autoHeight:"off",
+			fullScreenAutoWidth:"off",
+			fullScreenAlignForce:"off",
+			fullScreenOffsetContainer: ".touch .edgtf-mobile-header",
+			fullScreenOffset: "",
+			disableProgressBar:"on",
+			hideThumbsOnMobile:"off",
+			hideSliderAtLimit:0,
+			hideCaptionAtLimit:0,
+			hideAllCaptionAtLilmit:0,
+			debugMode:false,
+			fallbacks: {
+				simplifyAll:"off",
+				nextSlideOnWindowFocus:"off",
+				disableFocusListener:false,
+			}
+		});
+	}
+
+});	/*ready*/
+
+                            </script>
+                            <script>
+					var htmlDivCss = unescape("%23rev_slider_4_1%20.hyperon.tparrows%20%7B%0A%20%20%20%20cursor%3Apointer%3B%0A%20%20%20%20background%3Atransparent%3B%0A%20%20%20%20position%3Aabsolute%3B%0A%20%20%20%20display%3Ablock%3B%0A%20%20%20%20z-index%3A100%3B%0A%20%20%20%20width%3A%2080px%3B%0A%7D%0A%0A%23rev_slider_4_1%20.hyperon.tparrows.tp-leftarrow%3Abefore%2C%0A%23rev_slider_4_1%20.hyperon.tparrows.tp-rightarrow%3Abefore%20%7B%0A%20%20%20%20display%3A%20none%3B%0A%7D%0A%0A%23rev_slider_4_1%20.hyperon.tparrows%20.navigation-number%20%7B%0A%20%20%20%20top%3A%205px%3B%0A%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20font-family%3A%20%27Montserrat%27%2C%20sans-serif%3B%0A%20%20%20%20font-size%3A%2020px%3B%0A%20%20%20%20font-weight%3A%20700%3B%0A%7D%0A%0A%23rev_slider_4_1%20.hyperon.tparrows.tp-leftarrow%20.navigation-number%20%7B%0A%20%20%20%20left%3A%2055px%3B%0A%7D%0A%0A%23rev_slider_4_1%20.hyperon.tparrows.tp-leftarrow%20.navigation-number%3Abefore%2C%0A%23rev_slider_4_1%20.hyperon.tparrows.tp-leftarrow%20.navigation-number%3Aafter%20%7B%0A%20%20%20%20content%3A%20%27%27%3B%0A%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20left%3A%20-17px%3B%0A%20%20%20%20top%3A%2040%25%3B%0A%20%20%20%20width%3A%202px%3B%0A%20%20%20%20height%3A%2015px%3B%0A%20%20%20%20background-color%3A%20%23fff%3B%0A%20%20%20%20-webkit-transform-origin%3A%2021px%200%3B%0A%20%20%20%20-moz-transform-origin%3A%2021px%200%3B%0A%20%20%20%20transform-origin%3A%2021px%200%3B%0A%20%20%20%20-webkit-transition%3A%20transform%20.2s%3B%0A%20%20%20%20-moz-transition%3A%20transform%20.2s%3B%0A%20%20%20%20transition%3A%20transform%20.2s%3B%0A%7D%0A%0A%23rev_slider_4_1%20.hyperon.tparrows.tp-leftarrow%3Ahover%20.navigation-number%3Abefore%20%7B%0A%20%20%20%20-webkit-transform%3A%20translate%28-14px%2C-12px%29%20rotate%28-40deg%29%3B%0A%20%20%20%20-moz-transform%3A%20translate%28-14px%2C-12px%29%20rotate%28-40deg%29%29%3B%0A%20%20%20%20transform%3A%20translate%28-14px%2C-12px%29%20rotate%28-40deg%29%3B%0A%7D%0A%0A%23rev_slider_4_1%20.hyperon.tparrows.tp-leftarrow%20.navigation-number%3Aafter%20%7B%0A%20%20%20%20top%3A%20-5px%3B%0A%20%20%20%20-webkit-transform-origin%3A%203px%200%3B%0A%20%20%20%20-moz-transform-origin%3A%203px%200%3B%0A%20%20%20%20transform-origin%3A%203px%200%3B%0A%7D%0A%0A%23rev_slider_4_1%20.hyperon.tparrows.tp-leftarrow%3Ahover%20.navigation-number%3Aafter%20%7B%0A%20%20%20%20-webkit-transform%3A%20translate%280px%2C6px%29%20rotate%2840deg%29%3B%0A%20%20%20%20-moz-transform%3A%20translate%280px%2C6px%29%20rotate%2840deg%29%3B%0A%20%20%20%20transform%3A%20translate%280px%2C6px%29%20rotate%2840deg%29%3B%0A%7D%0A%0A%23rev_slider_4_1%20.hyperon.tparrows.tp-rightarrow%20.navigation-number%20%7B%0A%20%20%20%20right%3A%2055px%3B%0A%7D%0A%0A%23rev_slider_4_1%20.hyperon.tparrows.tp-rightarrow%20.navigation-number%3Abefore%2C%0A%23rev_slider_4_1%20.hyperon.tparrows.tp-rightarrow%20.navigation-number%3Aafter%20%7B%0A%20%20%20%20content%3A%20%27%27%3B%0A%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20right%3A%20-17px%3B%0A%20%20%20%20top%3A%2040%25%3B%0A%20%20%20%20width%3A%202px%3B%0A%20%20%20%20height%3A%2015px%3B%0A%20%20%20%20background-color%3A%20%23fff%3B%0A%20%20%20%20-webkit-transform-origin%3A%2021px%200%3B%0A%20%20%20%20-moz-transform-origin%3A%2021px%200%3B%0A%20%20%20%20transform-origin%3A%2021px%200%3B%0A%20%20%20%20-webkit-transition%3A%20transform%20.2s%3B%0A%20%20%20%20-moz-transition%3A%20transform%20.2s%3B%0A%20%20%20%20transition%3A%20transform%20.2s%3B%0A%7D%0A%0A%23rev_slider_4_1%20.hyperon.tparrows.tp-rightarrow%20.navigation-number%3Aafter%20%7B%0A%20%20%20%20top%3A%20-5px%3B%0A%20%20%20%20-webkit-transform-origin%3A%203px%200%3B%0A%20%20%20%20-moz-transform-origin%3A%203px%200%3B%0A%20%20%20%20transform-origin%3A%203px%200%3B%0A%7D%0A%0A%23rev_slider_4_1%20.hyperon.tparrows.tp-rightarrow%3Ahover%20.navigation-number%3Abefore%20%7B%0A%20%20%20%20-webkit-transform%3A%20translate%285px%2C13px%29%20rotate%2840deg%29%3B%0A%20%20%20%20-moz-transform%3A%20translate%285px%2C13px%29%20rotate%2840deg%29%3B%0A%20%20%20%20transform%3A%20translate%285px%2C13px%29%20rotate%2840deg%29%3B%0A%7D%0A%0A%23rev_slider_4_1%20.hyperon.tparrows.tp-rightarrow%3Ahover%20.navigation-number%3Aafter%20%7B%0A%20%20%20%20-webkit-transform%3A%20translate%28-1px%2C3px%29%20rotate%28-40deg%29%3B%0A%20%20%20%20-moz-transform%3A%20translate%28-1px%2C3px%29%20rotate%28-40deg%29%3B%0A%20%20%20%20transform%3A%20translate%28-1px%2C3px%29%20rotate%28-40deg%29%3B%0A%7D%0A");
+					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+					if(htmlDiv) {
+						htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+					}
+					else{
+						var htmlDiv = document.createElement('div');
+						htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+					}
+
+                            </script>
+                        </div><!-- END REVOLUTION SLIDER -->        </div>
+                </div>
+
+                <div class="edgtf-full-width">
+                    <div class="edgtf-full-width-inner">
+                        <div class="edgtf-grid-row">
+
+                            <div class="edgtf-page-content-holder edgtf-grid-col-12">
+                                <div class="vc_row wpb_row vc_row-fluid vc_custom_1517839951624"
+                                     style="background-image: url(https://hyperon.edge-themes.com/wp-content/uploads/2018/02/image-mainhome-3.jpg)">
+                                    <div class="wpb_column vc_column_container vc_col-sm-12">
+                                        <div class="vc_column-inner ">
+                                            <div class="wpb_wrapper">
+                                                <div class="edgtf-row-grid-section-wrapper ">
+                                                    <div class="edgtf-row-grid-section">
+                                                        <div style="padding-top:50px; margin-bottom:-80px;"
+                                                             class="edgtf-accordion-holder edgtf-accordion edgtf-ac-boxed clearfix">
+                                                            <h5 class="edgtf-accordion-title">
+                                                                <span class="edgtf-tab-title">jak na to?</span>
+                                                                <span class="edgtf-accordion-mark">
+		<span class="edgtf-icon-plus ion-ios-plus-empty"></span>
+		<span class="edgtf-icon-minus ion-ios-close-empty"></span>
+	</span>
+                                                            </h5>
+                                                            <div class="edgtf-accordion-content">
+                                                                <div class="edgtf-accordion-content-inner">
+
+                                                                    <div class="wpb_text_column wpb_content_element ">
+                                                                        <div class="wpb_wrapper">
+                                                                            <p style="text-align:center;font-size:18px">
+                                                                                Vytvořili jsme tyto stránky, abychom
+                                                                                zjednodušili proces domluvy obchodu v
+                                                                                československé streetwear komunitě. Celé
+                                                                                je to velmi jednoduché - pokud chcete
+                                                                                něco prodat, <a href="/listings/add/">zde</a>
+                                                                                vyplňte formulář se všemi potřebnými
+                                                                                údaji pro kupce a zboží bude přidáno do
+                                                                                zobrazené nabídky <a
+                                                                                    href="/listings/vse/1/nevybrano/">zde</a>.
+                                                                                V této nabídce, si také můžete prohlížet
+                                                                                zboží ostatních uživatelů a v případě
+                                                                                zájmu prodejce kontaktovat přes náš
+                                                                                zabudovaný chat a následně se domluvit
+                                                                                na obchodu. Pokud potřebuješ vědět více,
+                                                                                klikni <a href="/faq/">zde</a>. </p>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1520954536201">
+                                                            <div class="vc_row wpb_row vc_row-fluid vc_custom_1521198401440 vc_row-has-fill edgtf-content-aligment-center">
+                                    <div class="wpb_column vc_column_container vc_col-sm-12">
+                                        <div class="vc_column-inner ">
+                                            <div class="wpb_wrapper">
+                                                <div class="edgtf-row-grid-section-wrapper ">
+                                                    <div class="edgtf-row-grid-section">
+                                                        <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                                                            <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
+                                                                <div class="vc_column-inner ">
+                                                                    <div class="wpb_wrapper">
+                                                                        <div class="edgtf-counter-holder  edgtf-align-center">
+                                                                            <div class="edgtf-counter-inner">
+
+                                                                                <span class="edgtf-counter edgtf-random-counter"
+                                                                                      style="font-size: 45px;color: black">{{pocet_zbozi}}</span>
+
+                                                                                <h4 class="edgtf-counter-title"
+                                                                                    style="color: black">
+                                                                                    dostupných položek </h4>
+                                                                                <div class="edgtf-separator-holder clearfix  edgtf-separator-center">
+                                                                                    <div class="edgtf-separator"
+                                                                                         style="color: black">
+                                                                                        <svg x="0px" y="0px" width="65px" height="3px" viewBox="0 0 65 3" enable-background="new 0 0 65 3" xml:space="preserve">
+            <g>
+                <polygon class="edgtf-polygon edgtf-polygon-1" points="0,0 16.021,0 12.958,3 0,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-2" points="16.268,3 19.299,0 29.562,0 26.5,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-3" points="29.969,3 33,0 40,0 37.031,3 "/>
+                <polyline class="edgtf-polygon edgtf-polygon-4" points="41.031,3 44,0 49.031,0 46.031,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-5" points="50.969,3 54.031,0 58.031,0 55,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-6" points="59.96,3 62.96,0 65,0 61.992,3 "/>
+            </g>
+        </svg>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="vc_empty_space"
+                                                                             style="height: 35px"><span
+                                                                                class="vc_empty_space_inner"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
+                                                                <div class="vc_column-inner ">
+                                                                    <div class="wpb_wrapper">
+                                                                        <div class="edgtf-counter-holder  edgtf-align-center">
+                                                                            <div class="edgtf-counter-inner">
+
+                                                                                <span class="edgtf-counter edgtf-random-counter"
+                                                                                      style="font-size: 45px;color: black">{{pocet_lidi}}</span>
+
+                                                                                <h4 class="edgtf-counter-title"
+                                                                                    style="color: black">
+                                                                                     aktivních uživatelů</h4>
+                                                                                <div class="edgtf-separator-holder clearfix  edgtf-separator-center">
+                                                                                    <div class="edgtf-separator"
+                                                                                         style="color: black">
+                                                                                        <svg x="0px" y="0px" width="65px" height="3px" viewBox="0 0 65 3" enable-background="new 0 0 65 3" xml:space="preserve">
+            <g>
+                <polygon class="edgtf-polygon edgtf-polygon-1" points="0,0 16.021,0 12.958,3 0,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-2" points="16.268,3 19.299,0 29.562,0 26.5,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-3" points="29.969,3 33,0 40,0 37.031,3 "/>
+                <polyline class="edgtf-polygon edgtf-polygon-4" points="41.031,3 44,0 49.031,0 46.031,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-5" points="50.969,3 54.031,0 58.031,0 55,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-6" points="59.96,3 62.96,0 65,0 61.992,3 "/>
+            </g>
+        </svg>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="vc_empty_space"
+                                                                             style="height: 35px"><span
+                                                                                class="vc_empty_space_inner"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
+                                                                <div class="vc_column-inner ">
+                                                                    <div class="wpb_wrapper">
+                                                                        <div class="edgtf-counter-holder  edgtf-align-center">
+                                                                            <div class="edgtf-counter-inner">
+
+                                                                                <span class="edgtf-counter edgtf-random-counter"
+                                                                                      style="font-size: 45px;color: black">{{uzavrene_obchody}}</span>
+
+                                                                                <h4 class="edgtf-counter-title"
+                                                                                    style="color: black">
+                                                                                    uzavřených obchodů </h4>
+                                                                                <div class="edgtf-separator-holder clearfix  edgtf-separator-center">
+                                                                                    <div class="edgtf-separator"
+                                                                                         style="color: black">
+                                                                                        <svg x="0px" y="0px" width="65px" height="3px" viewBox="0 0 65 3" enable-background="new 0 0 65 3" xml:space="preserve">
+            <g>
+                <polygon class="edgtf-polygon edgtf-polygon-1" points="0,0 16.021,0 12.958,3 0,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-2" points="16.268,3 19.299,0 29.562,0 26.5,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-3" points="29.969,3 33,0 40,0 37.031,3 "/>
+                <polyline class="edgtf-polygon edgtf-polygon-4" points="41.031,3 44,0 49.031,0 46.031,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-5" points="50.969,3 54.031,0 58.031,0 55,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-6" points="59.96,3 62.96,0 65,0 61.992,3 "/>
+            </g>
+        </svg>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                            <div class="wpb_column vc_column_container vc_col-sm-12">
+                                                                <div class="vc_column-inner ">
+                                                                    <div class="wpb_wrapper">
+                                                                        <div class="edgtf-section-title-holder  "
+                                                                             style="padding: 0 26%;text-align: center">
+
+
+
+
+
+
+
+
+<div class="edgtf-st-inner">
+                                                                                <h1 class="edgtf-st-title" style="padding-top:50px;">
+                                                                                    Nedávno přidané zboží </h1>
+
+                                                                                <div class="edgtf-separator-holder clearfix  edgtf-separator-center">
+                                                                                    <div class="edgtf-separator">
+                                                                                        <svg x="0px" y="0px" width="65px" height="3px" viewBox="0 0 65 3" enable-background="new 0 0 65 3" xml:space="preserve">
+            <g>
+                <polygon class="edgtf-polygon edgtf-polygon-1" points="0,0 16.021,0 12.958,3 0,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-2" points="16.268,3 19.299,0 29.562,0 26.5,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-3" points="29.969,3 33,0 40,0 37.031,3 "/>
+                <polyline class="edgtf-polygon edgtf-polygon-4" points="41.031,3 44,0 49.031,0 46.031,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-5" points="50.969,3 54.031,0 58.031,0 55,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-6" points="59.96,3 62.96,0 65,0 61.992,3 "/>
+            </g>
+        </svg>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <h5 class="edgtf-st-text">
+                                                                                    Na co ještě čekáš? Zde je pár nejaktuálnějších položek, více zobrazíš kliknutím <a href="/listings/vse/1/nevybrano/">zde</a>. </h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="vc_empty_space"
+                                                                             style="height: 73px"><span
+                                                                                class="vc_empty_space_inner"></span>
+                                                                        </div>
+                                                                        <div class="edgtf-pl-holder edgtf-standard-layout edgtf-normal-space edgtf-three-columns edgtf-info-below-image    edgtf-border-pattern"
+                                                                             data-type="standard"
+                                                                             data-animated-list="no"
+                                                                             data-animated-hover="no"
+                                                                             data-info-position="info-below-image"
+                                                                             data-number-of-posts="6"
+                                                                             data-number-of-columns="3"
+                                                                             data-space-between-items="normal"
+                                                                             data-orderby="date" data-order="DESC"
+                                                                             data-show-category-filter="no"
+                                                                             data-show-all-item-in-filter="yes"
+                                                                             data-taxonomy-to-display="category"
+                                                                             data-taxonomy-values="new-arrivals"
+                                                                             data-image-size="full"
+                                                                             data-display-title="yes"
+                                                                             data-title-tag="h4"
+                                                                             data-display-category="no"
+                                                                             data-display-excerpt="no"
+                                                                             data-excerpt-length="20"
+                                                                             data-display-rating="no"
+                                                                             data-display-price="yes"
+                                                                             data-display-pattern="yes"
+                                                                             data-display-button="yes"
+                                                                             data-button-skin="default"
+                                                                             data-shader-background-color="rgba(255,255,255,0.01)"
+                                                                             data-class-name="pli">
+                                                                            <div class="edgtf-prl-loading">
+                                                                                <span class="edgtf-prl-loading-msg">Loading...</span>
+                                                                            </div>
+                                                                            <div class="edgtf-pl-outer">
+
+
+
+
+                                                                                {% for obj in recent_items %}
+                                                                                <div class="edgtf-pli edgtf-item-space ">
+                                                                                    <div class="edgtf-pli-inner">
+                                                                                        <div class="edgtf-pli-image">
+
+                                                                                            <img width="602"
+                                                                                                 height="600"
+                                                                                                 src="{{obj.image.url}}"
+                                                                                                 class="attachment-full size-full wp-post-image"
+                                                                                                 alt="u"
+                                                                                                />
+                                                                                        </div>
+                                                                                        <div class="edgtf-pli-buttons">
+                                                                                            <div class="edgtf-pli-buttons-outer">
+                                                                                                <div class="edgtf-pli-buttons-inner">
+
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <a class="edgtf-pli-link"
+                                                                                           itemprop="url"
+                                                                                           href="https://hyperon.edge-themes.com/product/ordinary-day/"
+                                                                                           style="background-color: rgba(255,255,255,0.01)"></a>
+                                                                                    </div>
+                                                                                    <div class="edgtf-pli-text-wrapper">
+                                                                                        <h4 itemprop="name"
+                                                                                            class="entry-title edgtf-pli-title">
+                                                                                            <a itemprop="url"
+                                                                                               href="https://hyperon.edge-themes.com/product/ordinary-day/">{{obj.name}}</a>
+                                                                                        </h4>
+
+
+                                                                                        <div class="edgtf-pli-price">
+                                                                                            <span class="woocommerce-Price-amount amount">{% if obj.price %}{{obj.price}}<span
+                                                                                                    class="woocommerce-Price-currencySymbol">Kč</span>{%else%}cena dohodou{%endif%}</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                {% endfor %}
+
+
+
+
+
+
+
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> <!-- close div.content_inner -->
+        </div>  <!-- close div.content -->
+        {% include "snippets/footer.html"%}
+    </div> <!-- close div.edgtf-wrapper-inner  -->
+</div> <!-- close div.edgtf-wrapper -->
+<div class="rbt-toolbar" data-theme="Hyperon" data-featured="" data-button-position="55%" data-button-horizontal="right"
+     data-button-alt="no"></div>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5T772QJ"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="yith-quick-view-modal">
+
+    <div class="yith-quick-view-overlay"></div>
+
+    <div class="yith-wcqv-wrapper">
+
+        <div class="yith-wcqv-main">
+
+            <div class="yith-wcqv-head">
+                <a href="#" id="yith-quick-view-close" class="yith-wcqv-close">X</a>
+            </div>
+
+            <div id="yith-quick-view-content" class="woocommerce single-product"></div>
 
         </div>
 
-        <!-- Šipky na stranách -->
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-
     </div>
+
 </div>
 
-
-<div class="row">
-    <div class="col-lg-2"></div>
-
-          <div class="col-lg-2">
-            <img class="rounded-circle wow bounceInUp" style="animation-delay:0.3s" src="{% static 'personal/img/buy.png' %}" alt="BUY" width="140" height="140">
-            <h3 class="animated fadeIn" style="font-size:1.5rem; font-family:Courier; padding-top:0.4rem; animation-delay:1.4s; animation-duration:2s">Nakupuj</h3>
-            <p class="wow fadeIn" style="animation-delay:0.2s">Tady si na své přijde každý! Najdi, co potřebuješ, a domluv se na způsobu platby a předání. Vše přes naši stránku!</p>
-            <p class="wow bounceInUp" style="animation-duration:2s"><a class="btn btn-secondary" href="#" role="button">Ukaž víc &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-
-        <div class="col-lg-1"></div>
-
-          <div class="col-lg-2">
-            <img class="rounded-circle wow bounceInUp" style="animation-delay:0.6s" src="{% static 'personal/img/sell.png' %}" alt="Generic placeholder image" width="140" height="140">
-             <h3 class="animated fadeIn" style="font-size:1.5rem; font-family:Courier; padding-top:0.4rem; animation-delay:1.4s; animation-duration:2s">Prodávej</h3>
-            <p class="wow fadeIn" style="animation-delay:0.2s">Potřebuješ se něčeho zbavit a trochu si přivydělat? Nenajdeš lepší místo než náš StreetPlace. Vše je rychlé a jednoduché. </p>
-            <p class="wow bounceInUp" style="animation-duration:2s"><a class="btn btn-secondary" href="#" role="button">Ukaž víc &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-
-            <div class="col-lg-1"></div>
-
-          <div class="col-lg-2  ">
-            <img class="rounded-circle wow bounceInUp" style="animation-delay:0.9s" src="{% static 'personal/img/trade.png' %}" alt="Generic placeholder image" width="160" height="140">
-             <h3 class="animated fadeIn" style="font-size:1.5rem; font-family:Courier; padding-top:0.4rem; animation-delay:1.4s; animation-duration:2s">Vyměňuj</h3>
-            <p class="wow fadeIn" style="animation-delay:0.2s">Naše stránka disponuje i funkčním chatem, tudíž dáváme možnost komunikace mezi lidmi. Proto je možné dohodnout se i na výměně.</p>
-            <p class="wow bounceInUp" style="animation-duration:2s"><a class="btn btn-secondary" href="#" role="button">Ukaž víc &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-
-    <div class="col-lg-2"></div>
-</div><!-- /.row -->
-
+{% include 'snippets/script.html'%}
 
 {% endblock %}
-

@@ -1,116 +1,186 @@
+
+
 {% extends "base.html" %}
 {% load staticfiles %}
-{% load widget_tweaks %}
-{% load crispy_forms_tags %}
+
 {% block content %}
 
-<style>
-.col-container {
-  display: flex;
-  width: 100%;
-}
-.col {
-  flex: 1;
-  padding: 16px;
-}
-</style>
 
-<hr class="shine">
 
-<div class="row">
-
-    <!-- Sidebar -->
-    <div class="col-sm-1">
-        {% include "snippets/sidebar.html" %}
-    </div>
-
-    <!-- Hledat -->
-    <div class="col-sm-6">
-        <div class="search_form">
-            <form method="GET">
-                    <input class="textbox" name="search" placeholder="Hledat zboží">
-                <input value="✔" type="submit" class="button">
-            </form>
+{% include "snippets/nav.html"%}
+        
+        <div class="edgtf-content" >
+            <div class="edgtf-content-inner">
+<div class="edgtf-title-holder edgtf-breadcrumbs-type edgtf-title-va-header-bottom" style="height: 120px" data-height="120">
+        <div class="edgtf-title-wrapper" style="height: 120px">
+        <div class="edgtf-title-inner">
+            <div class="edgtf-grid">
+                <div itemprop="breadcrumb" class="edgtf-breadcrumbs "><a itemprop="url" href="/">Domů</a><span class="edgtf-delimiter">&nbsp; / &nbsp;</span><span class="edgtf-current">Nakupovat</span></div>            </div>
         </div>
-    </div>
-
-    <!-- Přidat -->
-    <div class="col-sm-4">
-
-    </form>
-
-        <p><a href="/listings/add/" class="btn btn-success" style="margin-bottom:10px;position:flex;" >Přidat vlastní zboží</a></p>
     </div>
 </div>
 
-<hr class="flair">
+    <div class="edgtf-container">
+        <div class="edgtf-container-inner clearfix">
+            <div class="edgtf-grid-row">
+                <div class="edgtf-page-content-holder edgtf-grid-col-9">
+                    <p class="woocommerce-result-count">Zobrazeno {% if page_obj.has_next %}{{results_page}}{%else%}{{results}}{%endif%} z {{results}} výsledků</p>
+<div class="woocommerce-ordering">
+	<a href="/listings/vse/1/nevybrano/"><b>Vymazat veškeré filtry</b> |</a>
+	<select name="orderby" class="orderby" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+		<option value="/listings/{{ current_slug }}/1/{{ current_size }}/filter=nejstarsich/{% if search %}?search={{search}}{% endif %}"><a href="wtf" {% if current_filter == "nejnovejsich" %}selected='selected'{% endif %}>Seřadit od nejnovějších</a></option>
+					<option value="/listings/{{ current_slug }}/1/{{ current_size }}/filter=nejstarsich/{% if search %}?search={{search}}{% endif %}" {% if current_filter == "nejstarsich" %}selected='selected'{% endif %}>Seřadit od nejstarších</option>
+					<option value="/listings/{{ current_slug }}/1/{{ current_size }}/filter=nejlevnejsich/{% if search %}?search={{search}}{% endif %}" {% if current_filter == "nejlevnejsich" %}selected='selected'{% endif %}>Seřadit od nejlevnějších</option>
+					<option value="/listings/{{ current_slug }}/1/{{ current_size }}/filter=nejdrazsich/{% if search %}?search={{search}}{% endif %}" {% if current_filter == "nejdrazsich" %}selected='selected'{% endif %}>Seřadit od nejdražších</option>
+			</select>
+	</div>
+<div class="smazat-kdyz-na-mobilu"> <div class="edgtf-pl-main-holder"><ul class="products columns-3">
 
-<div class="row">
-    <div class="col-sm-2">
+	{% for object in obj_list%}
+	<li class="product type-product status-publish has-post-thumbnail product_cat-outwear instock shipping-taxable purchasable product-type-simple">
+    <div style="margin-left:-10px;" class="edgtf-pl-inner"><div class="edgtf-pl-image"><img src="{{object.image.url}}" class="attachment-woocommerce_thumbnail  wp-post-image" alt="c"/><div class="edgtf-pl-text"><a href="/listings/{{object.pk}}/"> <div class="edgtf-pl-text-outer"><div class="edgtf-pl-text-inner"><div class="edgtf-pl-button-holder">
 
-        <div class="vl"></div> <!-- Vertical line -->
-    </div>
 
-    <div class="col-sm-9">
-        <div class="container">
-             <div class="row justify-content-left">
-                    {% for obj in obj_list %}
-                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom:10px;">
-                            <div class="card h-100">
-                                <img class="card-img" src="{{ obj.image.url }}" style="width:100%;height:250px;" alt="">
-                                <div class="card-body">
 
-                                    <div class="title">
-                                    <h5 class="card-title" style="text-overflow:ellipsis">{{ obj }}</h5>
-                                    </div>
 
-                                    <p style="margin-bottom:0px"><i>{{ obj.owner.first_name }} {{ obj.owner.last_name }}</i></p>
-                                    <p style="margin:0px"><big>{% if obj.price == None %}Cena dohodou{% else %}{{ obj.price }} Kč{% endif %}</big></p>
-                                    <p><small>{{ obj.created|timesince }}</small></p>
-                                    <br>
+<div class="clear"></div></div></div></div></a></div></div></div><div class="edgtf-pl-text-wrapper"><h4 class="edgtf-product-list-title"><a href="/listings/{{object.pk}}/">{{object.name}}</a></h4><div class="edgtf-pl-rating-holder">Přidal <a href="/profiles/{{object.owner}}/"> <b>{{object.owner.first_name}} {{object.owner.last_name}}</b></a> {% if object.size %} | Velikost: <b>{{object.size}}</b> {%endif%}</div>
+	<span class="price"><span class="woocommerce-Price-amount amount">{% if object.price %}{{object.price}}<span class="woocommerce-Price-currencySymbol">Kč</span>{% else %}cena dohodou{% endif %}</span></span>
+</div><a href="/listings/{{object.pk}}" class="button yith-wcqv-button" data-product_id="4189">Quick View</a></li>
+{% endfor %}
+</ul>
 
-                                    <div class="show-product-btn">
-                                    <p><a href="/listings/{{ obj.pk }}/" class="btn btn-primary btn-sm" style="width:100px;">Zobrazit</a></p>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    {% endfor %}
-
-            {% if not filter.qs %}
-                <h3 style="margin-top:150px">Vašemu vyhledávání neodpovídá žádný z produktů</h3>
+	{% if not filter.qs %}
+                <h4 class="woocommerce-info">Vašemu vyhledávání neodpovídá žádný z produktů</h4>
             {% endif %}
 
-            </div></div>
+</div><div class="edgtf-woo-pagination-holder"><div class="edgtf-woo-pagination-inner"><nav class="woocommerce-pagination">
+	<ul class='page-numbers'>
+	{% for page in page_obj.paginator.page_range %} {% if page == page_obj.number %}
+	<li><span aria-current='page' class='page-numbers current'><a class="page-link" href="#">{{ page }}</a></span></li>
+	{% else %}
+	<li><a class='page-numbers' href='/listings/{{ current_slug }}/{{ page }}/{{ current_size }}/{% if current_filter %}filter={{current_filter}}/{% endif %}{% if search %}?search={{search}}{% endif %}'>{{ page }}</a></li>
+	{% endif %} {% endfor %}
 
-            <form method="get">
-            <nav aria-label="Page navigation">
-              <ul class="pagination">
-                <li class="page-item {% if not page_obj.has_previous %}disabled{%endif%}">
-                  <a class="page-link" {% if page_obj.has_previous %} href="?page={{ page_obj.previous_page_number }}" {% endif %} aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                      </a>
-                </li>
-                {% for page in page_obj.paginator.page_range %} {% if page == page_obj.number %}
-                <li class="page-item active"><a class="page-link" href="#">{{ page }}</a></li>
-                {% else %}
-                <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
-                {% endif %} {% endfor %}
-                <li class="page-item {% if not page_obj.has_next %}disabled{%endif%}">
-                  <a class="page-link" {% if page_obj.has_next %} href="?page={{ page_obj.next_page_number }}" {% endif %} aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                      </a>
-                </li>
-              </ul>
-            </nav>
-            </form>
-
-
-
-        </div>
+</ul>
+</nav>
+<div class="edgtf-woo-view-all-pagination"><a href="/listings/everything/1/">procházet vše</a></div></div></div>                </div></div>
+                                    <div class="edgtf-sidebar-holder edgtf-grid-col-3">
+                        <aside class="edgtf-sidebar">
+    <div class="widget edgtf-separator-widget"><div class="edgtf-separator-holder clearfix  edgtf-separator-center">
+    <div class="edgtf-separator" style="color: #ffffff;margin-top: 35px;margin-bottom: 10px">
+        <svg x="0px" y="0px" width="65px" height="3px" viewBox="0 0 65 3" enable-background="new 0 0 65 3" xml:space="preserve">
+            <g>
+                <polygon class="edgtf-polygon edgtf-polygon-1" points="0,0 16.021,0 12.958,3 0,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-2" points="16.268,3 19.299,0 29.562,0 26.5,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-3" points="29.969,3 33,0 40,0 37.031,3 "/>
+                <polyline class="edgtf-polygon edgtf-polygon-4" points="41.031,3 44,0 49.031,0 46.031,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-5" points="50.969,3 54.031,0 58.031,0 55,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-6" points="59.96,3 62.96,0 65,0 61.992,3 "/>
+            </g>
+        </svg>
     </div>
 </div>
+</div><div class="widget woocommerce widget_price_filter"><div class="edgtf-widget-title-holder"><h3 class="edgtf-widget-title">cenové rozpětí</h3></div><form method="get">
+			<div class="price_slider_wrapper">
+				<div class="price_slider" style="display:none;"></div>
+				<div class="price_slider_amount">
+					<input type="text" id="min_price" name="min_price" {%if min_price %}value="{{min_price}}"{% else %}value="0"{% endif %} data-min="0" placeholder="Min price" />
+					<input type="text" id="max_price" name="max_price" {%if min_price %}value="{{max_price}}"{% else %}value="20000"{% endif %} data-max="20000" placeholder="Max price" />
+					<button type="submit" class="button">potvrdit</button>
+					<div class="price_label" style="display:none;">
+						Cena: <span class="from"></span> &mdash; <span class="to"></span>
+					</div>
+
+					<div class="clear"></div>
+				</div>
+			</div>
+		</form></div><div class="widget woocommerce widget_product_search"><form role="search" class="edgtf-searchform woocommerce-product-search">
+    <div class="input-holder clearfix">
+        <input type="search" class="search-field" placeholder="Hledat zboží..." {% if search %} value="{{search}}" style="color:orange;font-weight:bold" {%endif%} name="search"/>
+        <button type="submit" class="edgtf-woo-search-widget-button"></button>
+		{% if search %}<a class="cross" href="/listings/{{ current_slug }}/1/{{ current_size }}/"> <i class="fas fa-times"></i></a>{%endif%}
+    </div>
+</form></div><div class="widget woocommerce widget_product_categories"><div class="edgtf-widget-title-holder"><h3 class="edgtf-widget-title">Kategorie</h3></div><ul class="product-categories"><li class="cat-item cat-item-63"><a href="/listings/vse/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}" {% if current_slug == "vse" %}style="color:orange;font-weight:bold;"{% endif %}">vše</a></li>
+<li class="cat-item cat-item-33 cat-parent"><a href="/listings/boty/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}" {% if current_slug == "boty" %}style="color:orange;font-weight:bold;"{% endif %}>boty</a>{% if current_slug == "boty" %} <a href="/listings/vse/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-76"><a href="/listings/trika/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}" {% if current_slug == "trika" %}style="color:orange;font-weight:bold;"{% endif %}>trika</a>{% if current_slug == "trika" %} <a href="/listings/vse/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-42"><a href="/listings/kosile/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}" {% if current_slug == "kosile" %}style="color:orange;font-weight:bold;"{% endif %}>košile</a>{% if current_slug == "kosile" %} <a href="/listings/vse/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-17"><a href="/listings/mikiny/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}" {% if current_slug == "mikiny" %}style="color:orange;font-weight:bold;"{% endif %}>mikiny</a>{% if current_slug == "mikiny" %} <a href="/listings/vse/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-50"><a href="/listings/bundy/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}" {% if current_slug == "bundy" %}style="color:orange;font-weight:bold;"{% endif %}>bundy</a>{% if current_slug == "bundy" %} <a href="/listings/vse/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-28"><a href="/listings/kalhoty/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}" {% if current_slug == "kalhoty" %}style="color:orange;font-weight:bold;"{% endif %}>kalhoty</a>{% if current_slug == "kalhoty" %} <a href="/listings/vse/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-64"><a href="/listings/kratasy/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}" {% if current_slug == "kratasy" %}style="color:orange;font-weight:bold;"{% endif %}>kraťasy</a>{% if current_slug == "kratasy" %} <a href="/listings/vse/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-60"><a href="/listings/spodnipradloponozky/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}" {% if current_slug == "spodnipradloponozky" %}style="color:orange;font-weight:bold;"{% endif %}>spodní prádlo, ponožky</a>{% if current_slug == "spodnipradloponozky" %} <a href="/listings/vse/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-75"><a href="/listings/plavky/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}" {% if current_slug == "plavky" %}style="color:orange;font-weight:bold;"{% endif %}>plavky</a>{% if current_slug == "plavky" %} <a href="/listings/vse/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-66 cat-parent"><a href="/listings/sport/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}" {% if current_slug == "sport" %}style="color:orange;font-weight:bold;"{% endif %}>sport</a>{% if current_slug == "sport" %} <a href="/listings/vse/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-74"><a href="/listings/doplnky/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}" {% if current_slug == "doplnky" %}style="color:orange;font-weight:bold;"{% endif %}>doplňky</a>{% if current_slug == "doplnky" %} <a href="/listings/vse/1/{{ current_size }}/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+</ul></div>
+
+							<div class="widget woocommerce widget_product_categories"><div class="edgtf-widget-title-holder"><h3 class="edgtf-widget-title">Velikost</h3></div><ul class="product-categories">
+								<li class="cat-item cat-item-33 cat-parent"><a href="/listings/boty/1/nevybrano/{% if search %}?search={{search}}{% endif %}"{% if current_size == "nevybrano" %}style="color:orange;font-weight:bold;"{% endif %}>jakákoliv</a></li>
+<li class="cat-item cat-item-63"><a href="/listings/{{current_slug}}/1/xs/{% if search %}?search={{search}}{% endif %}" {% if current_size == "xs" %}style="color:orange;font-weight:bold;"{% endif %}>XS</a>{% if current_size == "xs" %} <a href="/listings/{{current_slug}}/1/nevybrano/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-33 cat-parent"><a href="/listings/boty/1/S/{% if search %}?search={{search}}{% endif %}" {% if current_size == "S" %}style="color:orange;font-weight:bold;"{% endif %}>S</a>{% if current_size == "S" %} <a href="/listings/{{current_slug}}/1/nevybrano/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-76"><a href="/listings/{{current_slug}}/1/M/{% if search %}?search={{search}}{% endif %}" {% if current_size == "M" %}style="color:orange;font-weight:bold;"{% endif %}>M</a>{% if current_size == "M" %} <a href="/listings/{{current_slug}}/1/nevybrano/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-42"><a href="/listings/{{current_slug}}/1/L/{% if search %}?search={{search}}{% endif %}" {% if current_size == "L" %}style="color:orange;font-weight:bold;"{% endif %}>L</a>{% if current_size == "L" %} <a href="/listings/{{current_slug}}/1/nevybrano/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-17"><a href="/listings/{{current_slug}}/1/XL/{% if search %}?search={{search}}{% endif %}" {% if current_size == "XL" %}style="color:orange;font-weight:bold;"{% endif %}>XL</a>{% if current_size == "XL" %} <a href="/listings/{{current_slug}}/1/nevybrano/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-50"><a href="/listings/{{current_slug}}/1/XXL/{% if search %}?search={{search}}{% endif %}" {% if current_size == "XXL" %}style="color:orange;font-weight:bold;"{% endif %}>XXL</a>{% if current_size == "XXL" %} <a href="/listings/{{current_slug}}/1/nevybrano/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{% endif %}</li>
+<li class="cat-item cat-item-64"><div class="widget woocommerce widget_product_search"><form onsubmit="location.href='/listings/{{ current_slug }}/1/' + document.getElementById('botysize').value; + '/{% if search %}?search={{search}}{% endif %}'; return false;" class="edgtf-searchform woocommerce-product-search">
+    <div class="input-holder clearfix">
+        <input class="search-field" placeholder="Velikost bot (pouze celá čísla)" title="Velikost bot:" id="botysize" {% if size_jsou_boty == True %}value="{{current_size}}" style="color:orange;font-weight:bold" {%endif%}"/>
+        <button type="submit" class="edgtf-woo-search-widget-button"></button>
+		{% if size_jsou_boty == True %}<a class="cross" href="/listings/{{ current_slug }}/1/nevybrano/{% if search %}?search={{search}}{% endif %}"> <i class="fas fa-times"></i></a>{%endif%}
+    </div>
+</form></div></li>
+</ul></div>
+    </div>
+				<div class="ukazat-kdyz-na-mobilu"> <div class="edgtf-pl-main-holder"><ul class="products columns-3">
+
+	{% for object in obj_list%}
+	<li class="product type-product status-publish has-post-thumbnail product_cat-outwear instock shipping-taxable purchasable product-type-simple">
+    <div style="margin-left:10px;" class="edgtf-pl-inner"><div class="edgtf-pl-image"><img src="{{object.image.url}}" class="attachment-woocommerce_thumbnail  wp-post-image" alt="c"/><div class="edgtf-pl-text"><a href="/listings/{{object.pk}}/"><div class="edgtf-pl-text-outer"><div class="edgtf-pl-text-inner"><div class="edgtf-pl-button-holder">
+
+
+</div></div></div></div></div></div><div class="edgtf-pl-text-wrapper"><h4 class="edgtf-product-list-title"><a href="/listings/{{object.pk}}/">{{object.name}}</a></h4><div class="edgtf-pl-rating-holder">Přidal <a href="/profiles/{{object.owner}}/"> <b>{{object.owner.first_name}} {{object.owner.last_name}}</b></a> {% if object.size %} | Velikost: <b>{{object.size}}</b> {%endif%}</div>
+	<span class="price"><span class="woocommerce-Price-amount amount">{% if object.price %}{{object.price}}<span class="woocommerce-Price-currencySymbol">Kč</span>{% else %}cena dohodou{% endif %}</span></span>
+</div><a href="/listings/{{object.pk}}" class="button yith-wcqv-button" data-product_id="4189">Quick View</a></li>
+{% endfor %}
+</ul>
+
+				{% if not filter.qs %}
+                <h4 class="woocommerce-info">Vašemu vyhledávání neodpovídá žádný z produktů</h4>
+            {% endif %}
+
+</div><div class="edgtf-woo-pagination-holder"><div class="edgtf-woo-pagination-inner"><nav class="woocommerce-pagination">
+	<ul class='page-numbers'>
+	{% for page in page_obj.paginator.page_range %} {% if page == page_obj.number %}
+	<li><span aria-current='page' class='page-numbers current'><a class="page-link" href="#">{{ page }}</a></span></li>
+	{% else %}
+	<li><a class='page-numbers' href='/listings/{{ current_slug }}/{{ page }}/{{ current_size }}/{% if current_filter %}filter={{current_filter}}/{% endif %}{% if search %}?search={{search}}{% endif %}'>{{ page }}</a></li>
+	{% endif %} {% endfor %}
+
+</ul>
+</nav>
+<div class="edgtf-woo-view-all-pagination"><a href="/listings/everything/1/">procházet vše</a></div></div></div>     </div>
+				</div>
+</div> <!-- close div.content_inner -->
+</div>  <!-- close div.content -->
+    {% include "snippets/footer.html" %}
+</div> <!-- close div.edgtf-wrapper-inner  -->
+</div> <!-- close div.edgtf-wrapper -->
+
+
+
+<script type='text/javascript' src='{% static "assets/js/widget.min.js" %}'></script>
+
+<script type='text/javascript' src='{% static "assets/js/mouse.min.js" %}'></script>
+<script type='text/javascript' src='{% static "assets/js/slider.min.js" %}'></script>
+<script type='text/javascript' src='{% static "assets/js/accounting.min.js" %}'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_price_slider_params = {"currency_format_num_decimals":"0","currency_format_symbol":"$","currency_format_decimal_sep":".","currency_format_thousand_sep":",","currency_format":"%v%s"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='{% static "assets/plugins/woocommerce/assets/js/frontend/price-slider.js" %}'></script>
+
+
+{% include 'snippets/script.html' %}
 
 {% endblock %}

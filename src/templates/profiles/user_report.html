@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+
+{% include "snippets/nav.html"%}
+
+
+<div class="edgtf-content">
+    <div class="edgtf-content-inner">
+
+
+        <div class="edgtf-full-width">
+            <div class="edgtf-full-width-inner" style="text-align:center">
+                <div class="edgtf-grid-row">
+                    <div class="edgtf-page-content-holder edgtf-grid-col-12">
+                        <div class="edgtf-row-grid-section-wrapper ">
+                            <div class="edgtf-row-grid-section-wrapper ">
+                                <div class="edgtf-row-grid-section">
+                                    <div class="vc_row wpb_row vc_row-fluid vc_custom_1521196516131">
+                                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                                            <div class="vc_column-inner ">
+                                                <div class="wpb_wrapper">
+                                                    <div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1513603063516">
+                                                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                                                            <div class="vc_column-inner ">
+                                                                <div class="wpb_wrapper">
+                                                                    <div class="edgtf-tabs  edgtf-tabs-standard">
+
+                                                                        <form method="post"> {% csrf_token %}
+                                                                            <label for="category" class="label category" style="display:block"><span class="label-desc">Důvod</span> </label>
+                                                                            <select name="category" id="category" class="custom-select">
+                                                                                <option value="Nevhodne fotky">Nevhodné fotky</option>
+                                                                                <option value="Prodava fakes">Prodává fakes</option>
+                                                                                <option value="Nevhodny popis">Nevhodný popis</option>
+                                                                                <option value="jeste neco">jeste neco</option>
+                                                                            </select>
+
+                                                                            <p><textarea name="reason" cols="40" rows="5" class="description" placeholder="Přibliž nám prosím důvod nahlášení."></textarea></p>
+                                                                            <button type="submit">Potvrdit</button>
+
+                                                                        </form>
+                                                                        <br>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include "snippets/footer.html" %}
+        {% include 'snippets/script.html' %}
+        {% endblock content %}

@@ -1,26 +1,63 @@
+
+
 {% extends "base.html" %}
-
+{% load staticfiles %}
+{% load widget_tweaks %}
 {% block content %}
-<br><br>
-{% if user == object.owner %} <!-- Pokud vlastní produkt -->
-<h1> Add object</h1>
 
-{% if form.errors %}
-{{ form.errors}}
-{% endif %}
 
-<form method="post" enctype="multipart/form-data">
+
+{% include "snippets/nav.html"%}
+
+
+
+ <div class="edgtf-content" >
+            <div class="edgtf-content-inner">
+
+
+<div class="edgtf-full-width">
+                <div class="edgtf-full-width-inner" style="text-align:center">
+                                        <div class="edgtf-grid-row">
+                    <div class="edgtf-page-content-holder edgtf-grid-col-12">
+                        <div class="edgtf-row-grid-section-wrapper "  ><div class="edgtf-row-grid-section-wrapper "  ><div class="edgtf-row-grid-section"><div class="vc_row wpb_row vc_row-fluid vc_custom_1521196516131" ><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1513603063516" ><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="edgtf-tabs  edgtf-tabs-standard">
+  <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.as_p }}
-    {{ formset }}
-    <input type="submit" value="Update" />
+      {% render_field u_form.name placeholder="Název:" %}
+      {% render_field u_form.price class="numberinput" placeholder="Cena:" %}
+      {% render_field u_form.size placeholder="Velikost:" %}
+      {% render_field u_form.predani placeholder="Způsob předání:" %}
+
+      <p>{{ u_form.category|add_class:"custom-select" }}
+          {{ u_form.condition|add_class:"custom-select" }}</p>
+      <div class="custom-file">
+          {% render_field u_form.image name="image" id="image" class="custom-file-input" %}
+          <label class="custom-file-label" for="image">Vyber úvodní fotku</label>
+      </div>
+      <br>
+
+      <div class="custom-file">
+         <p>Přidat fotky: <input type="file" name="images" id="images" class="custom-file-input" multiple>
+             <label class="custom-file-label" for="images">Přidat fotky</label>
+        <br>
+        <input type="checkbox" name="smazatpuvodni" value="yes"> Smazat puvodni </p>
+      </div>
+      <br><br>
+       {% render_field u_form.description placeholder="Popis zboží:" %}
+
+    <input type="submit" value="Potvrdit" />
 </form>
+                            <div class="vc_empty_space"   style="height: 44px" ><span class="vc_empty_space_inner"></span></div>
 
-{% else %} <!-- Pokud NEvlastní produkt -->
+                        </div></div></div></div></div></div></div></div></div></div>
+    {% include "snippets/footer.html" %}
 
-    <div class="alert alert-danger" role="alert">
-      Nemáš povolení upravit tento produkt. {{ user }} {{ owner }}
-    </div>
 
-{% endif %}
+
+<script type='text/javascript' src='{% static "assets/js/modules.min.js" %}'></script>
+
+
+
+
+
+{% include 'snippets/script.html' %}
 {% endblock content %}
