@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Grid System responsive style - begin
+   ========================================================================== */
+
+@include laptop-landscape-medium {
+
+    /*
+    * If you changed some value for space do the same thing in masonry-type, product-list-main-and-vc scss files
+    */
+    $columns_space_label: ('huge');
+    $columns_space_width: (25);
+
+    @for $i from 0 to length($columns_space_label) {
+        .edgtf-#{nth($columns_space_label,$i+1)}-space {
+            $column_width: nth($columns_space_width, $i+1);
+            $column_width_margin: $column_width * 2;
+
+            &.edgtf-disable-bottom-space {
+                margin-bottom: -#{$column_width_margin}px;
+            }
+
+            .edgtf-outer-space {
+                margin: 0 -#{$column_width}px;
+
+                .edgtf-item-space {
+                    padding: 0 #{$column_width}px;
+                    margin: 0 0 #{$column_width_margin}px;
+                }
+            }
+        }
+    }
+}
+
+@include phone-landscape {
+    .edgtf-two-columns-form-without-space {
+        .edgtf-column-left {
+            display: inline-block;
+            margin-bottom: 10px;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        .edgtf-column-right {
+            display: inline-block;
+            width: 100%;
+            vertical-align: middle;
+        }
+    }
+
+    .edgtf-two-columns-form-with-space {
+        .edgtf-column-left {
+            display: inline-block;
+            width: 100%;
+            vertical-align: middle;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        .edgtf-column-right {
+            display: inline-block;
+            width: 100%;
+            vertical-align: middle;
+            padding: 0;
+        }
+    }
+}
+
+/* ==========================================================================
+   Grid System responsive style - end
+   ========================================================================== */

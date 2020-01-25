@@ -2,7 +2,71 @@
 {% load staticfiles %}
 
 {% block content %}
-<h1>CONTACT</h1>
-<p>CONTACT US HERE</p>
+{% include "snippets/nav.html"%}
+
+
+
+<div class="edgtf-row-grid-section-wrapper "  ><br><div class="edgtf-row-grid-section" style="margin-top:30px"><div class="vc_row wpb_row vc_row-fluid vc_custom_1519136214752" ><div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-12 vc_col-xs-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="edgtf-section-title-holder  " >
+    <div class="edgtf-st-inner">
+                    <h1 class="edgtf-st-title" style="color: #0d0d0d">
+            napiš nám            </h1>
+
+
+                    <h5 class="edgtf-st-text" style="color: #0d0d0d;font-size: 15px;line-height: 30px;font-weight: 300">
+            Budeme rádi za jakoukoliv zpětnou vazbu a bez pochyby odpovíme na všechny vaše dotazy.     </h5>
+            </div>
+</div><div class="vc_empty_space"   style="height: 15px" ><span class="vc_empty_space_inner"></span></div>
+<div class="edgtf-single-image-holder   ">
+    <div class="edgtf-si-inner" >
+                                            <img width="65" height="3" src="https://hyperon.edge-themes.com/wp-content/uploads/2018/02/inner-separator.png" class="attachment-full size-full" alt="m" />                                    </div>
+</div><div class="vc_empty_space"   style="height: 48px" ><span class="vc_empty_space_inner"></span></div>
+
+<div class="edgtf-icon-list-holder " >
+    <div class="edgtf-il-icon-holder">
+        <i class="edgtf-icon-ion-icon ion-clock " style="color: #0d0d0d;font-size: 25px"></i>    </div>
+    <p class="edgtf-il-text" style="color: #0d0d0d;font-size: 15px;padding-left: 36px">Pište kdykoliv</p>
+</div><div class="vc_empty_space"   style="height: 4px" ><span class="vc_empty_space_inner"></span></div>
+<div class="edgtf-icon-list-holder " >
+    <div class="edgtf-il-icon-holder">
+        <i class="edgtf-icon-ion-icon ion-android-mail " style="color: #0d0d0d;font-size: 25px"></i>    </div>
+    <p class="edgtf-il-text" style="color: #0d0d0d;font-size: 15px;padding-left: 36px">jakub.samanek@streetplace.cz</p>
+</div><div class="vc_empty_space"   style="height: 32px" ><span class="vc_empty_space_inner"></span></div>
+
+	<div class="wpb_text_column wpb_content_element " >
+		<div class="wpb_wrapper">
+			<p><a href="https://www.facebook.com/streetplace.cz/" target="_blank" rel="noopener"><i class="fab fa-facebook-square" style="font-size:30px;margin-right:5px;"></i></a> <a href="https://www.instagram.com/streetplace.cz" target="_blank" rel="noopener"><i class="fab fa-instagram" style="font-size:30px;"></i></a>  </p>
+
+		</div>
+	</div>
+<div class="vc_empty_space"   style="height: 40px" ><span class="vc_empty_space_inner"></span></div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-8 vc_col-md-12 vc_col-xs-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div role="form" class="wpcf7" id="wpcf7-f4673-p4510-o2" lang="en-US" dir="ltr">
+<div class="screen-reader-response"></div>
+<form method="post" class="wpcf7-form">{% csrf_token %}
+
+<p><span class="wpcf7-form-control-wrap your-name"><input type="text" name="name" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Jméno *" /></span><br />
+<span class="wpcf7-form-control-wrap your-email"><input type="email" name="email" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email *" /></span><br />
+<span class="wpcf7-form-control-wrap your-message"><textarea name="message" cols="40" rows="7" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Zpráva..."></textarea></span></p>
+<div class='edgtf-cf-button-wrapper'>
+<input type="submit" value="potvrdit" class="wpcf7-form-control wpcf7-submit" />
+</div>
+<div class="wpcf7-response-output wpcf7-display-none"></div></form></div><div class="vc_empty_space"   style="height: 40px" ><span class="vc_empty_space_inner"></span></div>
+</div></div></div></div></div></div>
+	                    </div>
+<div style="margin-top:100px;"> {% include "snippets/footer.html" %}</div>
+                                    </div>
+                                </div>
+
+            </div>
+
+</div> <!-- close div.content_inner -->
+</div>  <!-- close div.content -->
+<br><br><br>
+
+</div>
+</div> <!-- close div.edgtf-wrapper-inner  -->
+</div> <!-- close div.edgtf-wrapper -->
+{% include "snippets/script.html" %}
+
+
 {% endblock %}
 

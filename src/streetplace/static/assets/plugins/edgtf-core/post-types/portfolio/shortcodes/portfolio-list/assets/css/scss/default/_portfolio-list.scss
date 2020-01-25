@@ -1,0 +1,514 @@
+/* ==========================================================================
+   Portfolio shortcode style - begin
+   ========================================================================== */
+
+.edgtf-portfolio-list-holder {
+    @include edgtfRelativeHolderLayout();
+
+    /***** Article Global Style - begin *****/
+
+    article {
+        @include edgtfRelativeHolderLayout();
+        box-sizing: border-box;
+
+        .touch & {
+            cursor: pointer;
+        }
+
+        .edgtf-pl-item-inner {
+            @include edgtfRelativeHolderLayout();
+        }
+
+        .edgtf-pli-image {
+            @include edgtfRelativeHolderLayout();
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .edgtf-pli-link {
+            @include edgtfAbsoluteHolderLayout();
+        }
+
+        .edgtf-pli-text-wrapper {
+            @include edgtfTableLayout();
+        }
+
+        .edgtf-pli-text {
+            @include edgtfTableCellLayout();
+
+            .edgtf-pli-title {
+                margin: 0;
+            }
+
+            .edgtf-pli-category-holder {
+                display: block;
+                margin: 7px 0 0;
+                position: relative;
+
+                a {
+                    display: inline-block;
+                    font-size: 13px;
+                    margin: 0 3px 0 0;
+                    padding: 0 6px 0 0;
+                    position: relative;
+                    vertical-align: middle;
+                    z-index: 8;
+
+                    &:after {
+                        color: inherit;
+                        content: '/';
+                        font-size: 12px;
+                        line-height: inherit;
+                        position: absolute;
+                        right: -4px;
+                        top: 0;
+                    }
+
+                    &:last-child {
+                        margin: 0;
+                        padding: 0;
+
+                        &:after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .edgtf-pli-excerpt {
+                margin: 3px 0 0;
+            }
+        }
+    }
+
+    /***** Article Global Style - end *****/
+
+    /***** Specific Global Style - begin *****/
+
+    &.edgtf-pl-has-shadow {
+        article {
+            .edgtf-pli-image {
+                box-shadow: $default-box-shadow;
+            }
+        }
+    }
+
+    &.edgtf-pl-has-filter {
+        .edgtf-pl-inner {
+            overflow: hidden;
+        }
+    }
+
+    &.edgtf-pl-no-content {
+        .edgtf-pli-text-holder {
+            display: none;
+        }
+    }
+    /***** Specific Global Style - end *****/
+
+    /***** Portfolio Types - begin *****/
+
+    &.edgtf-pl-gallery {
+
+        &:not(.edgtf-pl-one-column) {
+
+            article {
+                float: left;
+            }
+        }
+
+        $gallery_columns_number: ('two', 'three', 'four', 'five');
+
+        @for $i from 0 to length($gallery_columns_number) {
+            &.edgtf-pl-#{nth($gallery_columns_number,$i+1)}-columns {
+                article {
+                    width: 100% / ($i+2);
+                }
+
+                @if ($i > 1) { // set different break point for four and five columns
+                    @media only screen and (min-width: $laptop-landscape-medium-plus-pixel) {
+                        article {
+                            &:nth-child(#{$i+2}n+1) {
+                                clear: both;
+                            }
+                        }
+                    }
+                } @else {
+                    @media only screen and (min-width: $ipad-landscape-plus-pixel) {
+                        article {
+                            &:nth-child(#{$i+2}n+1) {
+                                clear: both;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.edgtf-pl-masonry {
+        .edgtf-pl-inner {
+            opacity: 0;
+        }
+
+        article,
+        .edgtf-pl-grid-sizer {
+            width: 100%;
+        }
+
+        .edgtf-pl-grid-gutter {
+            width: 0;
+        }
+
+        $masonry_columns_number: ('two', 'three', 'four', 'five');
+
+        @for $i from 0 to length($masonry_columns_number) {
+            &.edgtf-pl-#{nth($masonry_columns_number,$i+1)}-columns {
+                $column_width: 100%/($i+2);
+
+                article,
+                .edgtf-pl-grid-sizer {
+                    width: $column_width;
+                }
+
+                article {
+                    &.edgtf-pl-masonry-large-width,
+                    &.edgtf-pl-masonry-large-width-height {
+                        width: $column_width * 2;
+                    }
+                }
+            }
+        }
+
+        &.edgtf-pl-images-fixed {
+            article {
+                .edgtf-pl-item-inner {
+                    height: 100%;
+                }
+
+                .edgtf-pli-image {
+                    height: 100%;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    /***** Portfolio Types - end *****/
+
+    /***** Additional Features - begin *****/
+
+    &.edgtf-pl-has-animation {
+        article {
+            opacity: 0;
+
+            @include edgtfTransform(translateY(80px));
+            @include edgtfTransition(opacity .8s cubic-bezier(0.34, 0.52, 0.57, 1.04), transform .8s cubic-bezier(0.34, 0.52, 0.57, 1.04));
+
+            &.edgtf-item-show {
+                opacity: 1;
+
+                @include edgtfTransform(translateY(0));
+
+                &.edgtf-item-shown {
+                    @include edgtfTransition(none);
+                }
+            }
+
+            .touch & {
+                opacity: 1;
+
+                @include edgtfTransform(translateY(0));
+            }
+        }
+    }
+
+    /***** Additional Features - end *****/
+}
+
+/* ==========================================================================
+   Portfolio shortcode style - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Portfolio filter style - begin
+   ========================================================================== */
+
+.edgtf-pl-filter-holder {
+    @include edgtfRelativeHolderLayout();
+
+    margin: 0 0 30px;
+    text-align: center;
+
+    ul {
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        vertical-align: middle;
+
+        li {
+            cursor: pointer;
+            display: inline-block;
+            margin: 0;
+            padding: 0 32px;
+            position: relative;
+            vertical-align: middle;
+
+            @include laptop-landscape-large {
+                padding: 0 16px;
+            }
+
+            @include ipad-landscape {
+                padding: 0 10px;
+            }
+
+            span {
+                color: $default-heading-color;
+                display: inline-block;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 22px;
+                position: relative;
+                text-transform: lowercase;
+                vertical-align: middle;
+                white-space: nowrap;
+
+                @include edgtfTransition(color .2s ease-out);
+            }
+
+            &.edgtf-pl-current,
+            &:hover {
+
+                span {
+                    color: $first-main-color;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Portfolio filter style - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Portfolio standard pagination style - begin
+   ========================================================================== */
+
+.edgtf-portfolio-list-holder {
+    &.edgtf-pl-pag-standard {
+        .edgtf-pl-inner {
+            opacity: 1;
+
+            @include edgtfTransition(opacity .2s ease-out);
+        }
+
+        &.edgtf-pl-pag-standard-animate {
+            .edgtf-pl-inner {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.edgtf-pl-standard-pagination {
+    @include edgtfRelativeHolderLayout();
+
+    clear: both;
+    margin: 20px 0 0;
+
+    ul {
+        @include edgtfRelativeHolderLayout();
+
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            margin: 0 12px;
+            padding: 0;
+            position: relative;
+            vertical-align: top;
+
+            a {
+                color: $additional-text-color;
+                display: inline-block;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                vertical-align: middle;
+
+                &:hover {
+                    color: $first-main-color;
+                }
+            }
+
+            &.edgtf-pl-pag-active {
+                a {
+                    color: inherit;
+                    text-decoration: underline;
+                }
+            }
+
+            &.edgtf-pl-pag-prev,
+            &.edgtf-pl-pag-next {
+                position: absolute;
+                top: 0;
+
+                a {
+                    font-size: 30px;
+
+                    @include edgtfTransition(color .2s ease-out, opacity .2s ease-out);
+
+                    span {
+                        display: block;
+                        line-height: inherit;
+
+                        &:before {
+                            display: block;
+                            line-height: inherit;
+                        }
+                    }
+                }
+            }
+
+            &.edgtf-pl-pag-prev {
+                left: 0;
+
+                a {
+                    opacity: 0;
+                }
+            }
+
+            &.edgtf-pl-pag-next {
+                right: 0;
+
+                a {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Portfolio standard pagination style - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Portfolio load more pagination style - begin
+   ========================================================================== */
+
+.edgtf-pl-load-more-holder {
+    @include edgtfRelativeHolderLayout();
+
+    .edgtf-pl-load-more {
+        margin: 40px 0 0;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   Portfolio load more pagination style - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Portfolio loading element style - begin
+   ========================================================================== */
+
+.edgtf-pl-loading {
+    color: $default-heading-color;
+    display: none;
+    margin: 40px 0 20px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    &.edgtf-filter-trigger {
+        left: 0;
+        position: absolute;
+        top: 250px;
+    }
+
+    &.edgtf-standard-pag-trigger {
+        left: 0;
+        position: absolute;
+        top: 50px;
+
+        .edgtf-pl-has-filter & {
+            top: 150px;
+        }
+    }
+
+    &.edgtf-showing {
+        display: block;
+    }
+
+    > div {
+        background-color: $default-heading-color;
+        border-radius: 100%;
+        display: inline-block;
+        height: 14px;
+        margin: 0 3px;
+        position: relative;
+        vertical-align: middle;
+        width: 14px;
+
+        @include edgtfAnimation(sk-bouncedelay 1.4s infinite ease-in-out both);
+    }
+
+    .edgtf-pl-loading-bounce1 {
+        animation-delay: -0.32s;
+        -moz-animation-delay: -0.32s;
+        -webkit-animation-delay: -0.32s;
+    }
+
+    .edgtf-pl-loading-bounce2 {
+        animation-delay: -0.16s;
+        -moz-animation-delay: -0.16s;
+        -webkit-animation-delay: -0.16s;
+    }
+}
+
+@-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1.0);
+    }
+}
+
+@-moz-keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        -moz-transform: scale(0);
+    }
+    40% {
+        -moz-transform: scale(1.0);
+    }
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
+
+/* ==========================================================================
+   Portfolio loading element style - end
+   ========================================================================== */

@@ -1,0 +1,135 @@
+/* ==========================================================================
+   Button shortcode style - begin
+   ========================================================================== */
+
+.edgtf-btn {
+    cursor: pointer;
+
+    @include edgtfButtonDefaultStyle();
+    @include edgtfButtonMediumParams();
+
+    &.edgtf-btn-simple {
+        @include edgtfButtonSimpleStyle();
+
+        .edgtf-btn-text {
+            display: inline-block;
+            margin-bottom: -20px;
+            vertical-align: middle;
+        }
+
+        &:not(.edgtf-btn-custom-hover-bg):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            background-color: transparent !important;
+        }
+
+        &:not(.edgtf-btn-custom-border-hover):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            border-color: transparent !important;
+        }
+
+        svg {
+            transform-origin:left;
+            fill: currentColor;
+            margin-top: 25px;
+            @include edgtfTransitionTransform(.2s cubic-bezier(.12,.68,.43,.95));
+        }
+
+        &:hover {
+            svg { 
+                @include edgtfTransform(scale(1.3,1));
+            }
+        }
+    }
+
+    &.edgtf-btn-solid {
+        @include edgtfButtonSolidColor();
+
+        &:not(.edgtf-btn-custom-hover-color):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            color: #ffffff !important;
+        }
+
+        &:not(.edgtf-btn-custom-hover-bg):not(.edgtf-btn-animation):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            background-color: $first-main-color !important;
+        }
+
+        &:not(.edgtf-btn-custom-border-hover):not(.edgtf-btn-animation):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            border-color: $first-main-color !important;
+        }
+
+        &.edgtf-btn-animation {
+            @include edgtfTransition(all .2s cubic-bezier(.12,.68,.43,.95));
+            box-shadow:0px 0px 0 0 #000;
+
+            &:hover {
+                @include edgtfTransform(translate3d(-5px,-5px,0));
+                box-shadow:5px 5px 0 0 #666;
+            }
+        }
+    }
+
+    &.edgtf-btn-outline {
+        @include edgtfButtonOutlineColor();
+
+        &:not(.edgtf-btn-custom-hover-color):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            //color: $default-heading-color !important;
+            color: $first-main-color !important; // tmp, instead of animation
+        }
+
+        &:not(.edgtf-btn-custom-hover-bg):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            background-color: transparent !important;
+        }
+
+        &:not(.edgtf-btn-custom-border-hover):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            //border-color: $default-heading-color !important;
+            border-color: $first-main-color !important; // tmp, instead of animation
+        }
+    }
+
+    &.edgtf-btn-gapped_outline { 
+        @include edgtfButtonGappedOutlineColor();
+    }
+
+    &.edgtf-btn-small {
+        @include edgtfButtonSmallParams();
+    }
+
+    &.edgtf-btn-medium {
+        //same as default
+    }
+
+    &.edgtf-btn-large {
+        @include edgtfButtonLargeParams();
+    }
+
+    &.edgtf-btn-huge {
+        @include edgtfButtonHugeParams();
+    }
+
+    &.edgtf-btn-icon {
+
+        > i,
+        > span:not(.edgtf-btn-text) {
+            display: inline-block;
+            font-size: 1.142857142857143em;
+            line-height: inherit;
+            margin: 0 0 0 4px;
+            position: relative;
+            vertical-align: top;
+
+            &:before {
+                display: block;
+                line-height: inherit;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Button shortcode style - end
+   ========================================================================== */

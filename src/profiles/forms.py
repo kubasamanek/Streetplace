@@ -1,25 +1,55 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserChangeForm
-from .models import Profile, Deals
+from .models import Profile, Deals, UserReport
 
 User = get_user_model()
+
+pass1_errors = {
+    'required': 'Tohle pole nesmí zůstat prádné!',
+    'invalid': 'Chyba v tomto poli. Zkus to znovu.'
+}
+
+pass2_errors = {
+    'required': 'Tohle pole nesmí zůstat prádné!',
+    'invalid': 'Chyba v tomto poli. Zkus to znovu.'
+}
+
+username_errors = {
+    'required': 'Tohle pole nesmí zůstat prádné!',
+    'invalid': 'Chyba v tomto poli. Zkus to znovu.'
+}
+
+first_name_errors = {
+    'required': 'Tohle pole nesmí zůstat prádné!',
+    'invalid': 'Chyba v tomto poli. Zkus to znovu.'
+}
+
+last_name_errors = {
+    'required': 'Tohle pole nesmí zůstat prádné!',
+    'invalid': 'Chyba v tomto poli. Zkus to znovu.'
+}
+
+email_errors = {
+    'required': 'Tohle pole nesmí zůstat prádné!',
+    'invalid': 'Chyba v tomto poli. Zkus to znovu.  '
+}
+
 
 class RegisterForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
     fields, plus a repeated password."""
-    password1 = forms.CharField(label='', widget=forms.PasswordInput(attrs={'placeholder': 'Heslo'}))
-    password2 = forms.CharField(label='', widget=forms.PasswordInput(attrs={'placeholder': 'Potvrzení hesla'}))
-    username = forms.CharField(label="",
-                               max_length=20,
-                               widget=forms.TextInput(attrs={'placeholder': 'Uživatelské jméno'}))
-    first_name = forms.CharField(label="", max_length=30, widget=forms.TextInput(attrs={'placeholder': 'Křestní jméno'}))
-    last_name = forms.CharField(label="", max_length=30,  widget=forms.TextInput(attrs={'placeholder': 'Příjmení'}))
-    email = forms.EmailField(label="", max_length=200, widget=forms.TextInput(attrs={'placeholder': 'Email'}))
+    password1 = forms.CharField(error_messages=pass1_errors, label="Heslo")
+    password2 = forms.CharField(label='Potvrzení hesla', error_messages=pass2_errors)
+    username = forms.CharField(label="Uživatelské jméno", max_length=20, error_messages=username_errors)
+    first_name = forms.CharField(label="Křestní jméno", max_length=30, error_messages=first_name_errors)
+    last_name = forms.CharField(label="Příjmení", max_length=30, error_messages=last_name_errors)
+    email = forms.EmailField(label="Email", max_length=200, error_messages=email_errors)
 
     class Meta:
         model = User
         fields = ('username', 'email', "first_name", "last_name")
+
 
     def clean_email(self):
         email = self.cleaned_data.get("email")
@@ -32,7 +62,6 @@ class RegisterForm(forms.ModelForm):
         username = self.cleaned_data.get("username")
         black_list = ["@", "-", ".", "+"]
         for char in black_list:
-            print(char)
             if char in username:
                 raise forms.ValidationError(str(char)+" není povolený znak.")
         return username
@@ -63,6 +92,38 @@ class RegisterForm(forms.ModelForm):
         return user
 
 
+class PasswordResetForm(forms.ModelForm):
+    password1 = forms.CharField(label='', widget=forms.PasswordInput(attrs={'placeholder': 'Heslo'}))
+    password2 = forms.CharField(label='', widget=forms.PasswordInput(attrs={'placeholder': 'Potvrzení hesla'}))
+    class Meta:
+        model = User
+        fields = [
+            "password1",
+            "password2", ]
+
+    def clean_password2(self):
+        # Check that the two password entries match
+        password = self.cleaned_data.get("password1")
+        password2 = self.cleaned_data.get("password2")
+
+        if len(password) < 5:
+            raise forms.ValidationError("Heslo musí být alespoň 5 znaků dlouhé.")
+
+        elif password and password2 and password != password2:
+            raise forms.ValidationError("Hesla se neshodují. Zkus to znovu.")
+        return password2
+
+    def save(self, commit=True):
+        # Save the provided password in hashed format
+        user = super(PasswordResetForm, self).save(commit=False)
+        user.set_password(self.cleaned_data["password1"])
+        # create a new user hash for activating email.
+
+        if commit:
+            user.save()
+        return user
+
+
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
     class Meta:
@@ -81,7 +142,8 @@ class ProfileUpdateForm(forms.ModelForm):
             "image",
             "city",
             "shoe_size",
-            "clothes_size"
+            "clothes_size",
+            "description",
             )
 
 class DealForm(forms.ModelForm):
@@ -106,3 +168,33 @@ class ProfileDealForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ("deals_counter", "rating",)
+
+class ActivationForm(forms.ModelForm):
+    activated = forms.TextInput()
+    class Meta:
+        model = Profile
+        fields = ("activated",)
+
+class LostPassword(forms.EmailInput):
+    email = forms.EmailField(required=True)
+
+class ReportUserForm(forms.ModelForm):
+    class Meta:
+        model = UserReport
+        fields = ("category",
+                  "reason",
+                  "reported", )
+
+
+class UserRatingForm(forms.ModelForm):
+    class Meta:
+        model = Deals
+        fields = (
+            "type",
+            "buyer",
+            "seller",
+            "system_rating",
+            "user_rating",
+            "why_system_rating",
+            "why_user_rating",
+        )

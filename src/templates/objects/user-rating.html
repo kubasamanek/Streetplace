@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+
+
+{% include "snippets/nav.html"%}
+{% if seller != user %}
+
+<center>
+
+
+    <form method='POST' id="ratingform" style="margin-top:100px;"> {% csrf_token %}
+                <div class="container" style="width:60%">
+                    <p style="font-size:20px">Vyplňte prosím tento formulář. Je to pro nás velmi důležité. Uživateli, se kterým
+                        jste obchodoval, následně dojde žádost o hodnocení Vaší osoby a pomůžete tak vytvářet
+                        komunitu. </p>
+                </div><br>
+
+
+
+    <div class="container" style="width:100%;text-align:center;">
+            <div class="left-stars" style="display:inline-block;">
+
+                 <h3>Spokojenost s prodejcem:</h3>
+                <div class="stars">
+                    <input class="star star-5" id="star-5" type="radio" name="user_rating" value="5"/>
+                    <label class="star star-5" for="star-5"></label>
+                    <input class="star star-4" id="star-4" type="radio" name="user_rating" value="4"/>
+                    <label class="star star-4" for="star-4"></label>
+                    <input class="star star-3" id="star-3" type="radio" name="user_rating" value="3"/>
+                    <label class="star star-3" for="star-3"></label>
+                    <input class="star star-2" id="star-2" type="radio" name="user_rating" value="2"/>
+                    <label class="star star-2" for="star-2"></label>
+                    <input class="star star-1" id="star-1" type="radio" name="user_rating" value="1"/>
+                    <label class="star star-1" for="star-1"></label>
+                </div>
+
+                <p><textarea placeholder="Proč? Co bylo dobré/špatné?" name="why_user_rating" cols="40" rows="5"
+                             class="description"></textarea></p>
+            </div>
+            <div class="right-stars" style="display:inline-block;">
+                <h3>Spokojenost se streetplace:</h3>
+
+                <div class="stars">
+                    <input class="star star-5" id="star-5_1" type="radio" name="system_rating" value="5"/>
+                    <label class="star star-5" for="star-5_1"></label>
+                    <input class="star star-4" id="star-4_1" type="radio" name="system_rating" value="4"/>
+                    <label class="star star-4" for="star-4_1"></label>
+                    <input class="star star-3" id="star-3_1" type="radio" name="system_rating" value="3"/>
+                    <label class="star star-3" for="star-3_1"></label>
+                    <input class="star star-2" id="star-2_1" type="radio" name="system_rating" value="2"/>
+                    <label class="star star-2" for="star-2_1"></label>
+                    <input class="star star-1" id="star-1_1" type="radio" name="system_rating" value="1"/>
+                    <label class="star star-1" for="star-1_1"></label>
+                </div>
+
+                <p><textarea placeholder="Proč? Co bylo dobré/špatné?" name="why_system_rating" cols="40" rows="5"
+                             class="description"></textarea></p>
+                {{ form.errors }}
+            </div>
+
+            <p>
+                <button type="submit" class="edgtf-btn edgtf-btn-medium edgtf-btn-solid edgtf-btn-custom-hover-bg">Potvrdit</button>
+            </p>
+    </form>
+
+
+
+</div></div>
+
+{% else %}
+
+<div class="alert alert-danger" role="alert">
+    Nemůžeš hodnotit sám sebe.
+</div>
+
+{% endif %}
+
+
+
+</center>
+
+
+{% csrf_token %}
+
+<script>
+function showDiv() {
+   document.getElementById('divtoshow').style.display = "block";
+}
+</script>
+
+{% include 'snippets/script.html' %}
+
+<script>$('.search-item').search({});
+</script>
+
+{% endblock %}

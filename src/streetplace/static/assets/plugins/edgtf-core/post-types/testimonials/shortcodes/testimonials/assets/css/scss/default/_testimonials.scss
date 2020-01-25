@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Testimonials shortcode style - begin
+   ========================================================================== */
+
+.edgtf-testimonials-holder {
+    text-align: center;
+
+    @include edgtfRelativeHolderLayout();
+
+    .edgtf-testimonials,
+    .edgtf-testimonial-content,
+    .edgtf-testimonial-text-holder {
+        @include edgtfRelativeHolderLayout();
+    }
+
+    .edgtf-testimonials {
+        padding: 0 12%;
+        box-sizing: border-box;
+    }
+
+    .edgtf-testimonial-text {
+        margin: 45px 0 0;
+
+        @include edgtfHeading5();
+
+        color: $additional-text-color;
+    }
+
+    .edgtf-testimonial-author {
+        margin: 50px 0 0;
+    }
+
+    .edgtf-testimonials-author-job {
+        margin: 3px 0 0 0;
+    }
+}
+
+/* ==========================================================================
+   Testimonials shortcode style - end
+   ========================================================================== */

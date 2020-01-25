@@ -1,0 +1,162 @@
+{% load staticfiles %}
+
+
+<script type="text/javascript">
+				function revslider_showDoubleJqueryError(sliderID) {
+					var errorMessage = "Revolution Slider Error: You have some jquery.js library include that comes after the revolution files js include.";
+					errorMessage += "<br> This includes make eliminates the revolution slider libraries, and make it not work.";
+					errorMessage += "<br><br> To fix it you can:<br>&nbsp;&nbsp;&nbsp; 1. In the Slider Settings -> Troubleshooting set option:  <strong><b>Put JS Includes To Body</b></strong> option to true.";
+					errorMessage += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jquery.js include and remove it.";
+					errorMessage = "<span style='font-size:16px;color:#BC0C06;'>" + errorMessage + "</span>";
+						jQuery(sliderID).show().html(errorMessage);
+				}
+
+</script>
+<script type="text/template" id="tmpl-variation-template">
+    <div class="woocommerce-variation-description">data popis</div>
+
+    <div class="woocommerce-variation-price">data price</div>
+
+    <div class="woocommerce-variation-availability">data dostupnost</div>
+</script>
+<script type="text/template" id="tmpl-unavailable-variation-template">
+    <p>Sorry, this product is unavailable. Please choose a different combination.</p>
+</script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/js_composer/assets/js/dist/js_composer_front.min.js' %}"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/hyperon.edge-themes.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}},"cached":"1"};
+/* ]]> */
+
+</script>
+<script type='text/javascript' src="{% static 'assets/js/scripts.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/jquery.lazy.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/rbt-modules.js' %}"></script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js' %}"></script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js' %}"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"{% static 'assets/admin-ajax.php' %}","wc_ajax_url":"https:\/\/hyperon.edge-themes.com\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+
+</script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/woocommerce/assets/js/frontend/woocommerce.min.js' %}"></script>
+<script type='text/javascript'>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"{% static 'assets/admin-ajax.php' %}","wc_ajax_url":"https:\/\/hyperon.edge-themes.com\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_2ed4fc667f04098bd2f4751a6d4b15c5","fragment_name":"wc_fragments_2ed4fc667f04098bd2f4751a6d4b15c5"};
+/* ]]> */
+
+</script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js' %}"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var yith_qv = {"ajaxurl":"{% static 'assets/admin-ajax.php' %}","loader":"https:\/\/hyperon.edge-themes.com\/wp-content\/plugins\/yith-woocommerce-quick-view\/assets\/image\/qv-loader.gif","is2_2":""};
+/* ]]> */
+
+</script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/yith-woocommerce-quick-view/assets/js/frontend.min.js' %}"></script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.min.js' %}"></script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/yith-woocommerce-wishlist/assets/js/jquery.selectBox.min.js' %}"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var yith_wcwl_l10n = {"ajax_url":"{% static 'assets/admin-ajax.php' %}","redirect_to_cart":"no","multi_wishlist":"","hide_add_button":"1","is_user_logged_in":"","ajax_loader_url":"https:\/\/hyperon.edge-themes.com\/wp-content\/plugins\/yith-woocommerce-wishlist\/assets\/images\/ajax-loader.gif","remove_from_wishlist_after_add_to_cart":"yes","labels":{"cookie_disabled":"We are sorry, but this feature is available only if cookies are enabled on your browser.","added_to_cart_message":"<div class=\"woocommerce-message\">Product correctly added to cart<\/div>"},"actions":{"add_to_wishlist_action":"add_to_wishlist","remove_from_wishlist_action":"remove_from_wishlist","move_to_another_wishlist_action":"move_to_another_wishlsit","reload_wishlist_and_adding_elem_action":"reload_wishlist_and_adding_elem"}};
+/* ]]> */
+
+</script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/yith-woocommerce-wishlist/assets/js/jquery.yith-wcwl.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/jquery/ui/core.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/jquery/ui/widget.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/jquery/ui/tabs.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/jquery/ui/accordion.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/mediaelement/wp-mediaelement.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/jquery.appear.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/modernizr.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/jquery.hoverIntent.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/jquery.plugin.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/owl.carousel.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/jquery.waypoints.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/fluidvids.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/jquery.prettyPhoto.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/ScrollToPlugin.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/parallax.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/jquery.waitforimages.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/jquery.easing.1.3.js' %}"></script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/packery-mode.pkgd.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/modules/plugins/jquery.parallax-scroll.js' %}"></script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/edgtf-core/shortcodes/countdown/assets/js/plugins/jquery.countdown.min.js' %}"></script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/edgtf-core/shortcodes/counter/assets/js/plugins/counter.js' %}"></script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/edgtf-core/shortcodes/counter/assets/js/plugins/absoluteCounter.min.js' %}"></script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/edgtf-core/shortcodes/custom-font/assets/js/plugins/typed.js' %}"></script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/edgtf-core/shortcodes/pie-chart/assets/js/plugins/easypiechart.js' %}"></script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/woocommerce/assets/js/select2/select2.full.min.js' %}"></script>
+<script type='text/javascript'
+        src='//maps.googleapis.com/maps/api/js?key=AIzaSyBZ9BIKAnDDHkTWdttnprH0jDV9GXi13mE&#038;ver=4.9.10'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var edgtfGlobalVars = {"vars":{"edgtfAddForAdminBar":0,"edgtfElementAppearAmount":-100,"edgtfAjaxUrl":"{% static 'assets/admin-ajax.php' %}","edgtfStickyHeaderHeight":0,"edgtfStickyHeaderTransparencyHeight":70,"edgtfTopBarHeight":0,"edgtfLogoAreaHeight":0,"edgtfMenuAreaHeight":90,"edgtfMobileHeaderHeight":70}};
+var edgtfPerPageVars = {"vars":{"edgtfMobileHeaderHeight":70,"edgtfStickyScrollAmount":0,"edgtfHeaderTransparencyHeight":0,"edgtfHeaderVerticalWidth":0}};
+/* ]]> */
+
+</script>
+<script type='text/javascript' src="{% static 'assets/js/modules.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/wp-embed.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'assets/js/underscore.min.js' %}"></script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"{% static 'assets/admin-ajax.php' %}"}};
+/* ]]> */
+
+</script>
+<script type='text/javascript' src="{% static 'assets/js/wp-util.min.js' %}"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_variation_params = {"wc_ajax_url":"https:\/\/hyperon.edge-themes.com\/?wc-ajax=%%endpoint%%","i18n_no_matching_variations_text":"Sorry, no products matched your selection. Please choose a different combination.","i18n_make_a_selection_text":"Please select some product options before adding this product to your cart.","i18n_unavailable_text":"Sorry, this product is unavailable. Please choose a different combination."};
+/* ]]> */
+
+</script>
+<script type='text/javascript'
+        src="{% static 'assets/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min.js' %}"></script>
+<script type="text/javascript">
+    	     $('input.form-control.search-game').search(function(){
+
+          		//execute after done typing.
+
+      });
+    </script>
+
+
+<script src="{% static 'js/e-search.min.js' %}"></script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>

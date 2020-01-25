@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Portfolio Single navigation style - begin
+   ========================================================================== */
+
+.edgtf-ps-navigation {
+    box-sizing: border-box;
+    clear: both;
+    display: table;
+    margin: 90px 0 0;
+    padding: 0;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+
+    .edgtf-ps-full-width-custom-layout & {
+        padding: 0 40px;
+    }
+
+    .edgtf-ps-back-btn {
+        display: inline-block;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        vertical-align: middle;
+
+        @include edgtfTransform(translateX(-50%) translateY(-50%));
+
+        a {
+            cursor: pointer;
+            display: inline-block;
+            font-size: 34px;
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            vertical-align: middle;
+
+            span {
+                display: block;
+                line-height: inherit;
+            }
+        }
+    }
+
+    .edgtf-ps-prev,
+    .edgtf-ps-next {
+        box-sizing: border-box;
+        display: table-cell;
+        padding: 0;
+        position: relative;
+        vertical-align: middle;
+        width: 49%;
+
+        a {
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+
+            .edgtf-ps-nav-mark {
+                color: $additional-text-color;
+                display: inline-block;
+                font-size: 15px;
+                line-height: 15px;
+                position: relative;
+                vertical-align: middle;
+
+                &:before {
+                    display: block;
+                    line-height: inherit;
+                }
+            }
+        }
+
+        h4 {
+            color: currentColor;
+            margin: 0 0 8px 0;
+        }
+
+        h6 {
+            color: $additional-text-color;
+            display: inline-block;
+            line-height: 15px;
+            margin: 0;
+            vertical-align: middle;
+        }
+    }
+
+    .edgtf-ps-prev {
+        a {
+            .edgtf-ps-nav-mark {
+                left: 0;
+                margin-right: 12px;
+            }
+        }
+    }
+
+    .edgtf-ps-next {
+        text-align: right;
+
+        a {
+            .edgtf-ps-nav-mark {
+                margin-left: 12px;
+                right: 0;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Portfolio Single navigation style - end
+   ========================================================================== */

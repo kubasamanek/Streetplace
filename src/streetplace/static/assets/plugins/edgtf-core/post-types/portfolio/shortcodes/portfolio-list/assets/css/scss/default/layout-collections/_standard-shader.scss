@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Portfolio Item Layout - Standard Shader style - begin
+   ========================================================================== */
+
+.edgtf-portfolio-list-holder {
+    &.edgtf-pl-standard-shader {
+        article {
+            &:hover {
+                .edgtf-pli-image {
+                    &:after {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .edgtf-pli-image {
+                &:after {
+                    @include edgtfImageOverlayHoverStyle(false);
+
+                    z-index: 1;
+                }
+            }
+
+            .edgtf-pli-link {
+                z-index: 2;
+            }
+        }
+
+        .edgtf-pli-text-holder {
+            @include edgtfRelativeHolderLayout();
+
+            margin: 27px 0 0;
+            text-align: center;
+        }
+
+        &.edgtf-no-space {
+            .edgtf-outer-space .edgtf-item-space {
+                margin-bottom: 30px;
+            }
+        }
+
+        &.edgtf-tiny-space {
+            .edgtf-outer-space .edgtf-item-space {
+                margin-bottom: 40px;
+            }
+        }
+
+        &.edgtf-small-space {
+            .edgtf-outer-space .edgtf-item-space {
+                margin-bottom: 50px;
+            }
+        }
+
+        &.edgtf-normal-space {
+            .edgtf-outer-space .edgtf-item-space {
+                margin-bottom: 60px;
+            }
+        }
+
+        &.edgtf-medium-space {
+            .edgtf-outer-space .edgtf-item-space {
+                margin-bottom: 70px;
+            }
+        }
+
+        &.edgtf-large-space {
+            .edgtf-outer-space .edgtf-item-space {
+                margin-bottom: 80px;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Portfolio Item Layout - Standard Shader style - end
+   ========================================================================== */

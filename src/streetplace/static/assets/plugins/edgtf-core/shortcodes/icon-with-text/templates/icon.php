@@ -1,0 +1,1 @@
+<?php echo hyperon_edgtf_execute_shortcode('edgtf_icon', $icon_parameters); ?>

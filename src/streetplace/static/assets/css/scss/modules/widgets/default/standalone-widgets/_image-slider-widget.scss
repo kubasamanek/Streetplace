@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Image Slider widget style - begin
+   ========================================================================== */
+
+.widget.edgtf-image-slider-widget {
+    @include edgtfRelativeHolderLayout();
+
+    .edgtf-is-widget-inner {
+        @include edgtfRelativeHolderLayout();
+    }
+
+    .edgtf-widget-title {
+        margin: 0 0 32px;
+    }
+
+    img {
+        display: block;
+    }
+}
+
+/* ==========================================================================
+   Image Slider widget style - end
+   ========================================================================== */

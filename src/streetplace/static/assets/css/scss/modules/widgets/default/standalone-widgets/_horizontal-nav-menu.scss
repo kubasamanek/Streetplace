@@ -1,0 +1,68 @@
+.widget.edgtf-horizontal-menu-widget {
+    @media (min-width: 768px) {
+        &:before,
+        &:after {
+            content: " ";
+            display: table;
+        }
+
+        &:after {
+            clear: both;
+        }
+
+        *zoom: 1;
+
+        ul {
+            color: inherit;
+            display: inline !important;
+            padding: 0 !important;
+
+            li {
+                color: inherit;
+                display: inline !important;
+                float: left;
+                padding: 0 !important;
+
+                a {
+                    color: inherit;
+                    padding-right: 50px;
+                }
+            }
+
+            &.menu {
+                li {
+                    a { 
+                        position:relative;
+                        color: inherit;
+                        padding-right: 50px;
+
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            left: -20px;
+                            top: 11px;
+                            width: 12px;
+                            background: currentColor;
+                            height: 2px;
+                            transform-origin: left;
+                            @include edgtfTransition(all .2s ease-out);
+                            @include edgtfTransform(scale(0,1));
+                        }
+
+                        &:hover {
+                            color: inherit;
+
+                            &:before {
+                                @include edgtfTransform(scale(1,1));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        > div > ul > li:last-child > a {
+            padding-right: 0;
+        }
+    }
+}

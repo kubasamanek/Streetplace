@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Pricing Tables shortcode style - begin
+   ========================================================================== */
+
+.edgtf-pricing-tables {
+    @include edgtfRelativeHolderLayout();
+
+    clear: both;
+
+    .edgtf-pt-wrapper {
+        position: relative;
+    }
+
+    $pricing_table_columns: ('edgtf-two-columns', 'edgtf-three-columns', 'edgtf-four-columns', 'edgtf-five-columns');
+    @for $i from 0 to length($pricing_table_columns) {
+        &.#{nth($pricing_table_columns, $i+1)} {
+            $column_width: 100%/($i+2);
+
+            .edgtf-price-table {
+                width: $column_width;
+            }
+        }
+    }
+}
+
+.edgtf-price-table {
+    box-sizing: border-box;
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+
+    .edgtf-pt-inner {
+        @include edgtfRelativeHolderLayout();
+        @include edgtfBorderWithImage();
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                margin: 0;
+                padding: 0 15%;
+                text-align: center;
+
+                .edgtf-btn-simple {
+                    text-align:left;
+                }
+
+                &.edgtf-pt-title-holder {
+                    padding-top: 54px;
+
+                    .edgtf-pt-title {
+                        margin: 0;
+                    }
+                }
+
+                &.edgtf-pt-prices {
+                    padding-top: 16px;
+
+                    .edgtf-pt-prices-holder {
+                        margin: 0;
+                    }
+
+                    .edgtf-pt-mark {
+                        margin-bottom: 0;
+                    }
+
+                    .edgtf-separator {
+                        margin: 23px 0 0 0;
+                    }
+                }
+
+                &.edgtf-pt-content {
+                    padding-bottom: 27px;
+                    padding-top: 12px;
+
+                    li {
+                        padding: 7px 0;
+
+                        &:before {
+                            content: "\f382";
+                            font-family: 'Ionicons';
+                            font-size: 23px;
+                            line-height: 23px;
+                            padding-right: 12px;
+                            position: relative;
+                            top: 4px;
+                        }
+                    }
+                }
+
+                &.edgtf-pt-button {
+                    padding-bottom: 48px;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Pricing Tables shortcode style - end
+   ========================================================================== */

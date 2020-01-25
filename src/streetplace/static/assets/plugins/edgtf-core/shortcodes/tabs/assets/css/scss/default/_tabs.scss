@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Tabs shortcode style - begin
+   ========================================================================== */
+
+.edgtf-tabs {
+    @include edgtfRelativeHolderLayout();
+
+    .edgtf-tabs-nav {
+        @include edgtfRelativeHolderLayout();
+
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            float: left;
+            margin: 0;
+            padding: 0;
+
+            a {
+                box-sizing: border-box;
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+
+                @include edgtfTransition(color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out);
+            }
+        }
+    }
+
+    .edgtf-tab-container {
+        box-sizing: border-box;
+        margin: 20px 0 0;
+
+        @include edgtfRelativeHolderLayout();
+
+        p {
+            margin: 0;
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // standard
+
+    &.edgtf-tabs-standard {
+        .edgtf-tabs-nav {
+            li {
+                margin-right: 10px;
+
+                a {
+                    @include edgtfHeading5();
+
+                    background-color: $additional-background-color;
+                    color: $default-heading-color;
+                    padding: 14px 30px;
+                }
+
+                &.ui-state-active a,
+                &.ui-state-hover a {
+                    background-color: $default-heading-color;
+                    color: $default-background-color;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // simple
+
+    &.edgtf-tabs-simple {
+        .edgtf-tabs-nav {
+            border-bottom: 2px solid $default-heading-color;
+
+            li {
+                margin: 0 60px 0 0;
+
+                a {
+                    @include edgtfHeading5();
+
+                    color: $default-heading-color;
+                    padding: 13px 0;
+                }
+
+                &.ui-state-active a,
+                &.ui-state-hover a {
+                    text-decoration: line-through;
+                }
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+
+        //.edgtf-tab-container {
+        //    border-bottom: 2px solid $default-heading-color;
+        //    padding: 20px 0;
+        //}
+    }
+}
+
+.ui-widget-content {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
+
+    .ui-widget-header {
+        background: none;
+        border: 0;
+        border-radius: 0;
+        color: initial;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+    }
+
+    .ui-tabs-nav {
+        li {
+            background: initial;
+            border: 0;
+            border-radius: 0;
+            color: inherit;
+            font-weight: inherit;
+            position: initial;
+        }
+    }
+
+    .ui-widget-content {
+        background: none;
+        border: 0;
+        border-radius: 0;
+        color: inherit;
+    }
+}
+
+/* ==========================================================================
+   Tabs shortcode style - end
+   ========================================================================== */

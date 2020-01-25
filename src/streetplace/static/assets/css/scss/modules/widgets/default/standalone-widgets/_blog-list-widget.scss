@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Blog List widget style - begin
+   ========================================================================== */
+
+.widget.edgtf-blog-list-widget {
+    margin: 0 0 20px;
+
+    > h4 {
+        margin: 0 0 15px;
+    }
+
+    footer .edgtf-footer-top &,
+    .edgtf-top-bar & {
+
+        > h2 {
+            margin: 0 0 8px;
+        }
+    }
+}
+
+//.widget.edgtf-recent-post-widget {
+//    .edgtf-recent-posts {
+//        .edgtf-rp-item {
+//            margin: 0 0 10px;
+//            padding: $widget-list-item-padding;
+//
+//            a {
+//                display: table;
+//                width: 100%;
+//
+//                .edgtf-rp-image,
+//                .edgtf-rp-title {
+//                    display: table-cell;
+//                    vertical-align: middle;
+//                }
+//
+//                .edgtf-rp-title {
+//                    @include edgtfTransition(color .2s ease-in-out);
+//                    font-weight: 600;
+//                }
+//
+//                .edgtf-rp-image {
+//                    padding-right: 20px;
+//                    width: 56px;
+//                    height: 56px;
+//                    img {
+//                        display: block;
+//                    }
+//                }
+//
+//                &:hover {
+//                    .edgtf-rp-title {
+//                        color: $default-text-color;
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
+
+/* ==========================================================================
+   Blog List widget style - end
+   ========================================================================== */

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+{% include "snippets/nav.html"%}
+<style>
+.containerItems{
+    width:60%;
+    margin: 20px auto;
+    clear:both;
+}
+.item{
+    float:left;
+    width: 200px;
+    padding:10px;
+}
+.item img{
+    width: 200px;
+    height: 200px;
+}
+</style>
+ <div class="edgtf-content" >
+            <div class="edgtf-content-inner">
+<br><br>
+<div class="container" style="width:100%;text-align:center;height:600px;">
+<div class="form-search">
+            <input style="width:50%" type="text" class="search-item" placeholder="Hledat uživatele (dejte pozor na velká a malá písmena)"/>
+
+        </div>
+        <div class="containerItems">
+            {% for x in user_list %}
+                <div class="item" style="" data-filter="{{x.user.first_name}}{{x.user.last_name}}" data-search="{{x.user.first_name}}{{x.user.last_name}}">
+                    <a href="/profiles/{{x.user}}/"> <img src="{{ x.user.profile.image.url }}"></a>
+                    <span style=""><b>{{x.user.first_name}} {{x.user.last_name}}</b></span>
+                </div>
+            {% endfor %}
+        </div>
+
+
+
+            </div></div>
+{% include "snippets/footer.html" %}
+{% include 'snippets/script.html' %}
+
+<script>
+function showDiv() {
+   document.getElementById('divtoshow').style.display = "block";
+}
+</script>
+
+{% include 'snippets/script.html' %}
+
+<script>
+$('.search-item').search({});
+</script>
+{% endblock content %}

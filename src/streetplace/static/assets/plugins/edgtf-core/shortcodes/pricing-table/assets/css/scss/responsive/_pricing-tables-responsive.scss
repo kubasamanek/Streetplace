@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Pricing Tables shortcode responsive style - begin
+   ========================================================================== */
+
+@media (max-width: 1366px) {
+    .edgtf-pricing-tables {
+        .edgtf-price-table {
+            .edgtf-pt-inner ul li {
+                padding-left: 12%;
+                padding-right: 12%;
+            }
+        }
+    }
+}
+
+@include laptop-landscape-medium {
+    .edgtf-pricing-tables {
+        $pricing_table_columns: ('edgtf-four-columns', 'edgtf-five-columns');
+        @for $i from 0 to length($pricing_table_columns) {
+            &.#{nth($pricing_table_columns, $i+1)} {
+                $column_width: 100%/2;
+
+                .edgtf-price-table {
+                    width: $column_width;
+
+                    @media only screen and (min-width: $phone-landscape-plus-pixel) {
+                        &:nth-child(2n+1) {
+                            clear: both;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include ipad-landscape {
+    .edgtf-pricing-tables {
+        $pricing_table_columns: ('edgtf-three-columns');
+        @for $i from 0 to length($pricing_table_columns) {
+            &.#{nth($pricing_table_columns, $i+1)} {
+
+                .edgtf-price-table {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@include phone-landscape {
+    .edgtf-pricing-tables {
+        .edgtf-price-table {
+            width: 100% !important;
+
+            .edgtf-pt-inner ul li {
+                padding-left: 9%;
+                padding-right: 9%;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Pricing Tables shortcode responsive style - end
+   ========================================================================== */

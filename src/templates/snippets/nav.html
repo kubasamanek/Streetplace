@@ -1,61 +1,469 @@
+{% load static %}
+{% load i18n %}
+{% language 'cs' %}
 
-{% load staticfiles %}
 <style>
-    a:hover {
-    color:#4588E7;
-    }
+    .button-msg {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-align:left;
+  cursor: pointer;
+}
 </style>
-
-<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light" >
-    <a class="navbar-brand" href="/" >
-          <img src="{% static 'personal/img/color_sp.png' %}" width="200" height="100%" class="d-inline-block align-top" alt="">
-    </a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link disabled" href="/listings/" style="">Nakupovat</a>
-        </li>
-      </ul>
+<body class="archive post-type-archive post-type-archive-product edgtf-core-1.0 woocommerce woocommerce-page hyperon-ver-1.0 edgtf-grid-1200 edgtf-fixed-on-scroll edgtf-dropdown-animate-height edgtf-header-standard edgtf-menu-area-shadow-disable edgtf-menu-area-in-grid-shadow-disable edgtf-menu-area-border-disable edgtf-menu-area-in-grid-border-disable edgtf-logo-area-border-disable edgtf-header-vertical-shadow-disable edgtf-header-vertical-border-disable edgtf-side-menu-slide-from-right edgtf-woocommerce-page edgtf-woo-main-page edgtf-woocommerce-columns-3 edgtf-woo-normal-space edgtf-woo-pl-info-below-image edgtf-woo-single-thumb-below-image edgtf-woo-single-has-pretty-photo edgtf-default-mobile-header edgtf-sticky-up-mobile-header wpb-js-composer js-comp-ver-5.4.5 vc_responsive edgtf-fullscreen-search edgtf-search-fade"
+      itemscope itemtype="http://schema.org/WebPage">
+<section class="edgtf-side-menu">
+    <div class="edgtf-close-side-menu-holder">
+        <a class="edgtf-close-side-menu edgtf-close-side-menu-svg-path" href="#">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+	 width="22.081px" height="17.735px" viewBox="0 0 22.081 17.735" enable-background="new 0 0 22.081 17.735" xml:space="preserve">
+<polygon points="4.375,17.735 22.081,0 17.789,0 0,17.735 "/>
+<polygon points="17.705,17.735 0,0 4.292,0 22.081,17.735 "/>
+</svg>
+        </a>
     </div>
-    
+    <div class="widget edgtf-separator-widget">
+        <div class="edgtf-separator-holder clearfix  edgtf-separator-center">
+            <div class="edgtf-separator" style="color: #ffffff;margin-top: 45px">
+                <svg x="0px" y="0px" width="65px" height="3px" viewBox="0 0 65 3" enable-background="new 0 0 65 3" xml:space="preserve">
+            <g>
+                <polygon class="edgtf-polygon edgtf-polygon-1" points="0,0 16.021,0 12.958,3 0,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-2" points="16.268,3 19.299,0 29.562,0 26.5,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-3" points="29.969,3 33,0 40,0 37.031,3 "/>
+                <polyline class="edgtf-polygon edgtf-polygon-4" points="41.031,3 44,0 49.031,0 46.031,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-5" points="50.969,3 54.031,0 58.031,0 55,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-6" points="59.96,3 62.96,0 65,0 61.992,3 "/>
+            </g>
+        </svg>
+            </div>
+        </div>
+    </div>
+    <div id="media_image-4" class="widget edgtf-sidearea widget_media_image"><img width="280" height="51"
+                                                                                  src="https://hyperon.edge-themes.com/wp-content/uploads/2018/03/logo-dark.png"
+                                                                                  class="image wp-image-4979  attachment-full size-full"
+                                                                                  alt="m"
+                                                                                  style="max-width: 100%; height: auto;"/>
+    </div>
+    <div id="edgtf_instagram_widget-6" class="widget edgtf-sidearea widget_edgtf_instagram_widget">
+        <ul class="edgtf-instagram-feed clearfix edgtf-col-3 edgtf-instagram-gallery edgtf-tiny-space">
+            <li>
+                <a href="https://www.instagram.com/p/Bf8f_qAgOjn/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/24cc64783132a2ee80eca6234ff8edc7/5D9A4627/t51.2885-15/e35/28155923_573088169732076_3550334672565174272_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8f9zhAUVC/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/2a85f97cfd92671b9405b4429f6a9dba/5D882E36/t51.2885-15/e35/28432589_579897699041976_7787560144769908736_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8f5_0g8aH/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/8bba946f0c2837fada334fb8475c1ea3/5D912A3B/t51.2885-15/e35/28428643_356588078189644_3471710962589892608_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8f3sOAr0L/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/77eb649ad7f901dc13301e5445e7bee8/5D868C4C/t51.2885-15/e35/28155913_2408081782551091_1069149700801691648_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8f0s6A9oz/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/56b6f2b37fa86508d93da55366a35e31/5D65CAD3/t51.2885-15/e35/28436223_1625257334220956_8618578102559178752_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8fvs5Alc3/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/fddc29db93b0996ad4c2639f4c97181e/5D9AA2A0/t51.2885-15/e35/28433896_683514592038942_8924365884110143488_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8ftEZA7XR/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/41225e238af99b3c3a497bf53646960e/5D861E80/t51.2885-15/e35/28428103_2090118434541911_1071684302736982016_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8fVYJAFAe/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/a3cc2ffa588f0df1a485003e8648bd4d/5D9D2733/t51.2885-15/e35/28155968_153780441987256_3628144563547275264_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/p/Bf8fTLKAyB2/" target="_blank">
+                    <img class="standard_resolution"
+                         src="https://scontent.cdninstagram.com/vp/6ad016fae62c9b42264f0d14270b898b/5D8A3C67/t51.2885-15/e35/28155270_162415311234875_6451454707280904192_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         alt="" width="640" height="640"/> </a>
+            </li>
+        </ul>
+    </div>
+    <div class="widget edgtf-separator-widget">
+        <div class="edgtf-separator-holder clearfix  edgtf-separator-center">
+            <div class="edgtf-separator" style="color: #ffffff;margin-top: 50px">
+                <svg x="0px" y="0px" width="65px" height="3px" viewBox="0 0 65 3" enable-background="new 0 0 65 3" xml:space="preserve">
+            <g>
+                <polygon class="edgtf-polygon edgtf-polygon-1" points="0,0 16.021,0 12.958,3 0,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-2" points="16.268,3 19.299,0 29.562,0 26.5,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-3" points="29.969,3 33,0 40,0 37.031,3 "/>
+                <polyline class="edgtf-polygon edgtf-polygon-4" points="41.031,3 44,0 49.031,0 46.031,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-5" points="50.969,3 54.031,0 58.031,0 55,3 "/>
+                <polygon class="edgtf-polygon edgtf-polygon-6" points="59.96,3 62.96,0 65,0 61.992,3 "/>
+            </g>
+        </svg>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="edgtf-wrapper">
+    <div class="edgtf-wrapper-inner">
+        <div class="edgtf-fullscreen-search-holder">
+            <a class="edgtf-search-close edgtf-search-close-svg-path" href="javascript:void(0)">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+	 width="22.081px" height="17.735px" viewBox="0 0 22.081 17.735" enable-background="new 0 0 22.081 17.735" xml:space="preserve">
+<polygon points="4.375,17.735 22.081,0 17.789,0 0,17.735 "/>
+<polygon points="17.705,17.735 0,0 4.292,0 22.081,17.735 "/>
+</svg>
+            </a>
+            <div class="edgtf-fullscreen-search-table">
+                <div class="edgtf-fullscreen-search-cell">
+                    <div class="edgtf-fullscreen-search-inner">
+                        <form action="https://hyperon.edge-themes.com/" class="edgtf-fullscreen-search-form"
+                              method="get">
+                            <div class="edgtf-form-holder">
+                                <div class="edgtf-form-holder-inner">
+                                    <div class="edgtf-field-holder">
+                                        <input type="text" placeholder="Search" name="s" class="edgtf-search-field"
+                                               autocomplete="off"/>
+                                    </div>
+                                    <button type="submit" class="edgtf-search-submit edgtf-search-submit-svg-path">
+                                    </button>
+                                    <div class="edgtf-line"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="edgtf-page-header">
 
-     <a href="/dialogs/" class="btn btn-outline-info my-2 my-sm-0" style="margin-right:10px">
-          <i class="far fa-comments"></i>
-     </a>
+            <div class="edgtf-fixed-wrapper">
 
-    {% if user.is_authenticated %}
+                <div class="edgtf-menu-area edgtf-menu-right">
 
-       <a href="/logout/" class="btn btn-outline-danger my-2 my-sm-0" style="margin-right:10px">
-          LOGOUT
+                    <div class="edgtf-grid">
+
+                        <div class="edgtf-vertical-align-containers">
+                            <div class="edgtf-position-left">
+                                <div class="edgtf-position-left-inner">
+
+
+                                    <div class="edgtf-logo-wrapper">
+                                        <a itemprop="url" href="/" style="height: 45px;">
+                                            <img itemprop="image" class="edgtf-normal-logo"
+                                                 src="{% static 'personal/img/blue_sp.png'%}" width="320" height="51"
+                                                 alt="logo"/>
+                                            <img itemprop="image" class="edgtf-dark-logo"
+                                                 src="https://hyperon.edge-themes.com/wp-content/uploads/2018/03/logo-dark.png"
+                                                 width="280" height="51" alt="dark logo"/> <img itemprop="image"
+                                                                                                class="edgtf-light-logo"
+                                                                                                src="https://hyperon.edge-themes.com/wp-content/uploads/2018/03/logo-light.png"
+                                                                                                width="280" height="51"
+                                                                                                alt="light logo"/> </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="edgtf-position-right">
+                                <div class="edgtf-position-right-inner">
+
+                                    <nav class="edgtf-main-menu edgtf-drop-down edgtf-default-nav">
+                                        <ul id="menu-main-menu" class="clearfix" style="color:black">
+                                            <li id="nav-menu-item-10"
+                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub narrow">
+                                                <a href="/"><span class="item_outer"><span class="item_text">domů</span></span></a>
+                                            </li>
+                                            <li id="nav-menu-item-11"
+                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub narrow">
+                                                <a href="/listings/vse/1/nevybrano/"><span class="item_outer"><span
+                                                        class="item_text">nakupovat</span><i
+                                                        class="edgtf-menu-arrow fa fa-angle-down"></i></span></a>
+                                                <div class="second">
+                                                    <div class="inner">
+                                                        <ul>
+                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+                                                                <a href="/listings/vse/1/nevybrano/" class=""><span
+                                                                        class="item_outer"><span
+                                                                        class="item_text">vše</span></span></a></li>
+                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+                                                                <a href="/listings/boty/1/nevybrano/" class=""><span
+                                                                        class="item_outer"><span
+                                                                        class="item_text">Boty</span></span></a></li>
+                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+                                                                <a href="/listings/trika/1/nevybrano/" class=""><span
+                                                                        class="item_outer"><span
+                                                                        class="item_text">Trika</span></span></a></li>
+                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+                                                                <a href="/listings/kosile/1/nevybrano/" class=""><span
+                                                                        class="item_outer"><span class="item_text">Košile</span></span></a>
+                                                            </li>
+                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+                                                                <a href="/listings/mikiny/1/nevybrano/" class=""><span
+                                                                        class="item_outer"><span class="item_text">Mikiny</span></span></a>
+                                                            </li>
+                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+                                                                <a href="/listings/bundy/1/nevybrano/" class=""><span
+                                                                        class="item_outer"><span
+                                                                        class="item_text">Bundy</span></span></a></li>
+                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+                                                                <a href="/listings/kalhoty/1/nevybrano/" class=""><span
+                                                                        class="item_outer"><span class="item_text">Kalhoty</span></span></a>
+                                                            </li>
+                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom ">
+                                                                <a href="/listings/kratasy/1/nevybrano/" class=""><span
+                                                                        class="item_outer"><span class="item_text">Kraťasy</span></span></a>
+                                                            </li>
+                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom ">
+                                                                <a href="/listings/spodnipradloponozky/1/nevybrano/"
+                                                                   class=""><span class="item_outer"><span
+                                                                        class="item_text">Spodní prádlo, ponožky</span></span></a>
+                                                            </li>
+                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom ">
+                                                                <a href="/listings/plavky/1/nevybrano/" class=""><span
+                                                                        class="item_outer"><span class="item_text">Plavky</span></span></a>
+                                                            </li>
+                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom ">
+                                                                <a href="/listings/sport/1/nevybrano/" class=""><span
+                                                                        class="item_outer"><span
+                                                                        class="item_text">Sport</span></span></a></li>
+                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom ">
+                                                                <a href="/listings/doplnky/1/nevybrano/" class=""><span
+                                                                        class="item_outer"><span class="item_text">Doplňky</span></span></a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li id="nav-menu-item-14"
+                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub wide">
+                                                <a href="/listings/add/"><span class="item_outer"><span
+                                                        class="item_text">prodávat</span><i
+                                                        class="edgtf-menu-arrow fa fa-angle-down"></i></span></a>
+                                            </li>
+
+                                            <li id="nav-menu-item-13"
+                                                class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                <a href="/about/"><span
+                                                        class="item_outer"><span class="item_text">o nás</span></span></a>
+
+                                            </li>
+                                            <li id="nav-menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub narrow">
+                                                <a href="#" class=" no_link" onclick="JavaScript: return false;"><span
+                                                        class="item_outer"><span class="item_text">další</span><i
+                                                        class="edgtf-menu-arrow fa fa-angle-down"></i></span></a>
+                                                <div class="second">
+                                                    <div class="inner">
+                                                        <ul>
+                                                            <li id="nav-menu-item-4149"
+                                                                class="menu-item menu-item-type-post_type menu-item-object-page ">
+                                                                <a href="/hledatprofil/" class=""><span
+                                                                        class="item_outer"><span
+                                                                        class="item_text">Hledat uživatele</span></span></a></li>
+                                                            <li id="nav-menu-item-4122"
+                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                                                                <a href="/faq/"><span class="item_outer"><span
+                                                                        class="item_text">FAQ</span></span></a>
+                                                            </li>
+                                                            <li id="nav-menu-item-4122"
+                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                                                                <a href="/kontakt/"><span class="item_outer"><span
+                                                                        class="item_text">kontakt</span></span></a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+
+                                        </ul>
+                                    </nav>
+                                    {% if user.is_authenticated %}
+                                        <div class="edgtf-shopping-cart-holder" style="padding: 0 0px 0px 23px">
+                                            <div class="edgtf-shopping-cart-inner">
+                                                <a itemprop="url" class="edgtf-header-cart edgtf-header-cart-icon-pack"
+                                                   href="/chat/{{last_message_user}}/">
+                                                    <span class="edgtf-text-no-icon">zprávy</span>
+                                                    <span class="edgtf-cart-number">({{pocet_zprav}})</span>
+                                                </a>
+                                                {% if pocet_zprav > 0 %}
+                                                    <div class="edgtf-shopping-cart-dropdown">
+                                                        <ul>
+                                                            {% for message in unread_messages%}
+                                                            <form method="post" action="{% url 'precteno' message.sender %}">{% csrf_token %}<button type="submit" class="button-msg"><li class="edgtf-empty-cart"><b>{{message.sender.first_name}} {{message.sender.last_name}} </b>: {{message.text}}</li></button></form>
+                                                            <hr>
+                                                            {%endfor%}
+                                                        </ul>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    {% if user.is_authenticated %}
+                                    <div class="edgtf-wishlist-widget-holder">
+                                        <a href="/logout/" class="edgtf-wishlist-widget-link">
+                                            <span class="edgtf-text-no-icon">odhlásit se</span>
+                                        </a></div>
+                                    {% else %}
+                                    <div class="edgtf-wishlist-widget-holder">
+                                        <a href="/login/" class="edgtf-wishlist-widget-link">
+                                            <span class="edgtf-text-no-icon">login/register</span>
+                                        </a></div>
+                                    {% endif %}
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </header>
+
+
+        <header class="edgtf-mobile-header">
+
+            <div class="edgtf-mobile-header-inner">
+                <div class="edgtf-mobile-header-holder">
+                    <div class="edgtf-grid">
+                        <div class="edgtf-vertical-align-containers">
+                            <div class="edgtf-vertical-align-containers">
+                                <div class="edgtf-mobile-menu-opener edgtf-mobile-menu-opener-icon-pack">
+                                    <a href="javascript:void(0)">
+									<span class="edgtf-mobile-menu-icon">
+										<i class="edgtf-icon-ion-icon ion-navicon "></i>									</span>
+                                    </a>
+                                </div>
+                                <div class="edgtf-position-center">
+                                    <div class="edgtf-position-center-inner">
+
+
+                                        <div class="edgtf-mobile-logo-wrapper">
+                                            <a itemprop="url" href="/"
+                                               style="height: 40px">
+                                                <img itemprop="image" src="{% static 'personal/img/blue_sp.png' %}"
+                                                     width="300" height="51" alt="Mobile Logo"/>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="edgtf-position-right">
+                                    <div class="edgtf-position-right-inner">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="edgtf-mobile-nav">
+                    <div class="edgtf-grid">
+                        <ul id="menu-mobile-menu" class=""><a href="/">
+                            <li id="mobile-menu-item-24"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub">
+                                <h6 style="margin-left:3px"><span>domů</span></h6></li>
+                        </a>
+                            <li id="mobile-menu-item-25"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub">
+                                <h6><span>nakupovat</span></h6><span class="mobile_arrow"><i
+                                    class="edgtf-sub-arrow fa fa-angle-right"></i><i
+                                    class="fa fa-angle-down"></i></span>
+                                <ul class="sub_menu">
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page "><a
+                                            href="/listings/vse/1/nevybrano/" class=""><span class="item_outer"><span
+                                            class="item_text">Vše</span></span></a></li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page "><a
+                                            href="/listings/boty/1/nevybrano/" class=""><span class="item_outer"><span
+                                            class="item_text">Boty</span></span></a></li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page "><a
+                                            href="/listings/trika/1/nevybrano/" class=""><span class="item_outer"><span
+                                            class="item_text">Trika</span></span></a></li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page "><a
+                                            href="/listings/kosile/1/nevybrano/" class=""><span class="item_outer"><span
+                                            class="item_text">Košile</span></span></a></li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page "><a
+                                            href="/listings/mikiny/1/nevybrano/" class=""><span class="item_outer"><span
+                                            class="item_text">Mikiny</span></span></a></li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page "><a
+                                            href="/listings/bundy/1/nevybrano/" class=""><span class="item_outer"><span
+                                            class="item_text">Bundy</span></span></a></li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page "><a
+                                            href="/listings/kalhoty/1/nevybrano/" class=""><span
+                                            class="item_outer"><span class="item_text">Kalhoty</span></span></a></li>
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom "><a
+                                            href="/listings/kratasy/1/nevybrano/" class=""><span
+                                            class="item_outer"><span class="item_text">Kraťasy</span></span></a></li>
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom "><a
+                                            href="/listings/spodnipradloponozky/1/nevybrano/" class=""><span
+                                            class="item_outer"><span
+                                            class="item_text">Spodní prádlo, ponožky</span></span></a></li>
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom "><a
+                                            href="/listings/plavky/1/nevybrano/" class=""><span class="item_outer"><span
+                                            class="item_text">Plavky</span></span></a></li>
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom "><a
+                                            href="/listings/sport/1/nevybrano/" class=""><span class="item_outer"><span
+                                            class="item_text">Sport</span></span></a></li>
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom "><a
+                                            href="/listings/doplnky/1/nevybrano/" class=""><span
+                                            class="item_outer"><span class="item_text">Doplňky</span></span></a></li>
+                                </ul>
+                            </li>
+                            <a href="/listings/add/">
+                                <li id="mobile-menu-item-28"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+                                    <h6 style="margin-left:3px"><span>prodávat</span></h6></li>
+                            </a>
+
+
+                            {% if user.is_authenticated %}
+                            <a href="/logout/">
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                                    <h6><span>odhlásit se</span></h6><span class="mobile_arrow"></span>
+                                </li>
+                            </a>
+                            {% else %}
+                            <a href="/login/">
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                                    <h6><span>login/register</span></h6><span class="mobile_arrow"></span>
+                                </li>
+                            </a>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </nav>
+
+            </div>
+
+        </header>
+
+        <a id='edgtf-back-to-top' href='#'>
+                <span class="edgtf-icon-stack">
+                                     </span>
         </a>
-
-       <div class="alert alert-info" role="alert" style="margin-top:15px; height:50px">
-           <p style="margin-top:5px;">Vítej {{ request.user }}!</p>
-       </div>
-
-       <a href="/profiles/{{ request.user }}" class="btn btn-sm" style="width:50;margin:0px">
-           <img class="rounded-circle" src="{{ request.user.profile.image.url }}" width="50" height="49" >
-       </a>
-
-    {% else %}
-
-        <a href="/login/" class="btn btn-outline-info my-2 my-sm-0" style="margin-right:10px">
-          LOGIN
-        </a>
-
-        <a href="/register/" class="btn btn-outline-info my-2 my-sm-0" style="margin-right:10px">
-          Register
-        </a>
-
-    {% endif %}
-
-</nav>
-
+        {% endlanguage %}

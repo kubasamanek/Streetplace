@@ -1,0 +1,245 @@
+/* ==========================================================================
+   Default WordPress widgets styles - begin
+   ========================================================================== */
+
+.widget {
+    color: $widget-text-color;
+    margin: 0 0 $widget-bottom-margin;
+    padding: 0;
+
+    &:last-child {
+        margin: 0;
+    }
+
+    .edgtf-widget-title-holder {
+        margin-bottom: $widget-list-item-padding;
+
+        .edgtf-widget-title {
+            color: $widget-heading-color;
+            margin-bottom: 18px;
+            margin-top: 0;
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: block;
+            line-height: $widget-list-item-height;
+            margin: 0;
+            padding: $widget-list-item-padding 0;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+
+            a {
+                color: $widget-link-color;
+                text-transform: lowercase;
+
+                &:hover {
+                    color: $widget-link-hover-color;
+                }
+            }
+        }
+
+        .children,
+        .sub-menu {
+            padding-top: $widget-list-item-padding;
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // calendar
+
+    #wp-calendar {
+        text-align: center;
+        width: 100%;
+
+        caption {
+            margin: 0 0 $widget-list-item-padding;
+
+        }
+
+        th, td {
+            padding: 3px 4px;
+            color: $widget-heading-color;
+        }
+
+        td#today {
+            background-color: $widget-list-item-background-color;
+            color: $widget-link-color;
+
+            a {
+                color: inherit;
+
+                &:hover {
+                    color: $first-main-color;
+                }
+            }
+        }
+
+        tfoot a {
+            color: $widget-link-color;
+
+            &:hover {
+                color: $widget-link-hover-color;
+            }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // rss
+
+    &.widget_rss {
+        .rss-widget-icon {
+            display: inline-block;
+        }
+
+        .rss-date {
+            display: block;
+            margin-bottom: $widget-list-item-padding;
+        }
+
+        cite {
+            display: block;
+            margin-top: calc(#{$widget-list-item-padding} / 2);
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // search
+
+    .edgtf-searchform {
+        .input-holder {
+            border-bottom-color: $widget-list-item-border-color;
+            border-bottom-style: $widget-list-item-border-style;
+            border-bottom-width: #{$widget-list-item-border-width * 2};
+
+            input,
+            button {
+                background-color: transparent;
+                border: 0;
+                border-radius: 0;
+                box-sizing: border-box;
+                color: $widget-text-color;
+                display: inline-block;
+                float: left;
+                font-family: $default-text-font;
+                font-size: 15px;
+                font-weight: inherit;
+                height: $widget-search-form-height;
+                line-height: calc(#{$widget-search-form-height} - 2px);
+                outline: 0;
+                position: relative;
+                vertical-align: top;
+                -webkit-appearance: none;
+
+                @include edgtfTransition(color .2s ease-in-out);
+            }
+
+            input.search-field {
+                padding: 0;
+                width: calc(100% - #{$widget-search-form-height});
+
+                @include edgtfPlaceholder {
+                    color: $widget-text-color;
+                    text-transform: lowercase;
+                }
+            }
+
+            button {
+                background: transparent;
+                color: $widget-text-color;
+                cursor: pointer;
+                font-size: 18px;
+                padding: 0;
+                width: $widget-search-form-height;
+
+                @include edgtfTransition(color .2s ease-in-out);
+
+                &:hover {
+                    background: transparent;
+                    color: $widget-link-hover-color;
+                }
+
+                span {
+                    display: block;
+                    left: 0;
+                    line-height: inherit;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+
+                    &:before {
+                        display: block;
+                        line-height: inherit;
+                    }
+                }
+            }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // combobox
+    // @see https://en.wikipedia.org/wiki/combo_box
+
+    &.widget_archive,
+    &.widget_categories,
+    &.widget_text {
+        select {
+            background-color: transparent;
+            border-color: $widget-list-item-border-color;
+            border-radius: 0;
+            border-style: $widget-list-item-border-style;
+            border-width: $widget-list-item-border-width;
+            box-sizing: border-box;
+            color: $widget-text-color;
+            display: inline-block;
+            font-family: $default-text-font;
+            font-size: 15px;
+            font-weight: inherit;
+            height: $widget-search-form-height;
+            line-height: calc(#{$widget-search-form-height} - 2px);
+            margin-top: $widget-list-item-padding;
+            outline: 0;
+            padding: 0 0 0 21px;
+            position: relative;
+            vertical-align: top;
+            width: 100%;
+
+            @include edgtfTransition(color .2s ease-in-out);
+
+            option {
+            }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // tag cloud
+
+    //&.widget_tag_cloud { // target only tagcloud class, it's the same as in woo tagcloud widget
+    .tagcloud {
+        a {
+            color: $widget-text-color;
+            display: inline-block;
+            font-family: $default-text-font;
+            font-size: 15px !important;
+            font-weight: inherit;
+            line-height: $widget-tag-cloud-height;
+            padding: $widget-list-item-padding 0;
+            text-transform: lowercase;
+
+            &:after {
+                content: ",";
+            }
+
+            &:hover {
+                color: $widget-link-hover-color;
+            }
+        }
+    }
+}

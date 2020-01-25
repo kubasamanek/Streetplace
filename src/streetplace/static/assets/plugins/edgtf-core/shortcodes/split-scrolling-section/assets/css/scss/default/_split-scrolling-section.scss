@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Split Scrolling Section shortcode style - begin
+   ========================================================================== */
+
+.edgtf-split-scrolling-section {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    .edgtf-sss-ms-left,
+    .edgtf-sss-ms-right {
+        box-sizing: border-box;
+        height: 100%;
+    }
+
+    .edgtf-sss-ms-section {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .edgtf-sss-ms-left {
+        position: fixed;
+        width: 49.5%;
+
+        div, ul, li {
+            height: 100%;
+        }
+
+        .edgtf-sss-ms-section {
+            background-position: 100% center;
+            background-size: cover;
+            left: 5%;
+            position: absolute;
+            top: 0;
+            width: 90%;
+            z-index: 1;
+        }
+
+        .edgtf-sss-background-slider {
+            left: 0;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+
+            .owl-lazy {
+                background-size: cover;
+            }
+        }
+
+        .owl-nav {
+            display: block !important;
+
+            .owl-prev,
+            .owl-next {
+                width: 5%;
+
+                > span {
+                    color: #ffffff;
+                    text-align: center;
+                    top: 50%;
+                    width: 100%;
+
+                    @include edgtfTransform(translateY(-50%));
+                }
+
+                &:hover {
+                    > span {
+                        color: $first-main-color;
+                    }
+                }
+            }
+
+            .owl-prev {
+                left: 0;
+            }
+
+            .owl-next {
+                right: 0;
+            }
+        }
+    }
+
+    .edgtf-sss-ms-right {
+        float: right;
+        padding: 50px 3%;
+        width: 50.5%;
+
+        .edgtf-sss-ms-section {
+            background-position: 0 center;
+            background-size: cover;
+        }
+    }
+}
+
+/* ==========================================================================
+   Split Scrolling Section shortcode style - end
+   ========================================================================== */

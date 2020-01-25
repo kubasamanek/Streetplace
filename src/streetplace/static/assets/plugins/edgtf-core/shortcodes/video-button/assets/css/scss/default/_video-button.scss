@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Video Button shortcode start styles
+   ========================================================================== */
+
+.edgtf-video-button-holder {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+
+    &.edgtf-vb-has-img {
+        .edgtf-video-button-play {
+            @include edgtfAbsoluteHolderLayout();
+
+            z-index: 1;
+
+            .edgtf-video-button-play-inner {
+                display: block;
+                left: 0;
+                position: relative;
+                text-align: center;
+                top: 50%;
+
+                @include edgtfTransform(translateY(-50%));
+            }
+        }
+    }
+
+    .edgtf-video-button-image {
+        @include edgtfRelativeHolderLayout();
+
+        img {
+            display: block;
+        }
+    }
+
+    .edgtf-video-button-play {
+        color: $default-heading-color;
+        display: inline-block;
+        font-size: 106px;
+        line-height: 1;
+        position: relative;
+        vertical-align: top;
+        z-index: 1;
+
+        span {
+            display: block;
+            line-height: inherit;
+
+            &:before {
+                display: block;
+                line-height: inherit;
+            }
+        }
+
+        &:hover {
+            color: $first-main-color;
+        }
+    }
+}
+
+/* ==========================================================================
+   Video Button shortcode end styles
+   ========================================================================== */

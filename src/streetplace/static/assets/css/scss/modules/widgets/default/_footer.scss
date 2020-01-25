@@ -1,0 +1,30 @@
+footer {
+    // widgets spacing
+    $widget-bottom-margin: 45px;
+
+    // list items dimensions
+    $widget-list-item-height: 20px;
+    $widget-list-item-padding: 5px;
+
+    // list items color
+    $widget-list-item-background-color: #333333;
+
+    // list items border
+    $widget-list-item-border-color: #ffffff;
+    $widget-list-item-border-width: 1px;
+    $widget-list-item-border-style: solid;
+
+    // text
+    $widget-text-color: #a6a6a6;
+    $widget-heading-color: #ffffff;
+
+    // links
+    $widget-link-color: #ffffff;
+    $widget-link-hover-color: $first-main-color;
+
+    // specific widgets
+    $widget-search-form-height: 52px;
+    $widget-tag-cloud-height: 20px;
+
+    @import 'default-wp-widgets/default-wordpress-widgets';
+}

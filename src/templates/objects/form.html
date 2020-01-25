@@ -4,74 +4,103 @@
 {% block content %}
 {% load widget_tweaks %}
 
-<style type="text/css">
-body {
-  background: url(https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-opacity: 0,5;
-  color:white;
-}
-</style>
+{% include "snippets/nav.html"%}
 
-<div class="transbox">
-<br><br>
+ <div class="edgtf-content" >
+            <div class="edgtf-content-inner">
+<div class="edgtf-title-holder edgtf-breadcrumbs-type edgtf-title-va-header-bottom" style="height: 120px" data-height="120">
+        <div class="edgtf-title-wrapper" style="height: 120px">
+        <div class="edgtf-title-inner">
+            <div class="edgtf-grid">
+                <div itemprop="breadcrumb" class="edgtf-breadcrumbs "><a itemprop="url" href="/">Domů</a><span class="edgtf-delimiter">&nbsp; / &nbsp;</span><a itemprop="url" href="/listings/vse/1/nevybrano/">Nakupovat</a><span class="edgtf-delimiter">&nbsp; / &nbsp;</span><span class="edgtf-current">Přidat zboží</span></div>            </div>
+        </div>
+    </div>
+</div>
 
-<h1 style="color:white">Přidat zboží:</h1>
-
-{% if form.errors %}
-{{ form.errors}}
-{% endif %}
-
-<form method="post" enctype="multipart/form-data">
+<div class="edgtf-full-width">
+                <div class="edgtf-full-width-inner" style="text-align:center">
+                                        <div class="edgtf-grid-row">
+                    <div class="edgtf-page-content-holder edgtf-grid-col-12">
+                        <div class="edgtf-row-grid-section-wrapper "  ><div class="edgtf-row-grid-section-wrapper "  ><div class="edgtf-row-grid-section"><div class="vc_row wpb_row vc_row-fluid vc_custom_1521196516131" ><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1513603063516" ><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="edgtf-tabs  edgtf-tabs-standard">
+    <form method="post" enctype="multipart/form-data" class="woocommerce-ordering" style="text-align:center;width:100%">
     {% csrf_token %}
 
-    <p><input type="text" name="name" placeholder="Název" required="required" style="width:250px"></p>
+        <p>
+            {% if form.errors %}
+            {{ form.errors}}
+            {% endif %}
+        </p>
+
+    <p><input type="text" name="name" placeholder="Název" required="required"></p>
     <p>
-        <input type="number" name="price" placeholder="Cena" style="display:inline">
-        <input type="text" name="size" placeholder="Velikost" style="display:inline">
+        <input type="number" name="price" placeholder="Cena (CZK)" class="numberinput">
+        <input type="text" name="size" placeholder="Velikost">
     </p>
 
-    <div class="select-box">
-        <label for="category" class="label category"><span class="label-desc">Vyber kategorii</span> </label>
-            <select name="category" id="category" class="select">
+    <p><input type="text" name="predani" placeholder="Způsob(y) předání"></p>
+
+    <p>
+        <label for="category" class="label category" style="display:block"><span class="label-desc">Vyber kategorii</span> </label>
+            <select name="category" id="category" class="custom-select">
                 <option value="Boty">Boty</option>
                 <option value="Trika">Trika</option>
+                <option value="Kosile">Košile</option>
                 <option value="Mikiny">Mikiny</option>
-                <option value="Kalhoty">Kalhoty</option>
                 <option value="Bundy">Bundy</option>
-                <option value="Košile">Košile</option>
-                <option value="Doplňky">Doplňky</option>
+                <option value="Kalhoty">Kalhoty</option>
+                <option value="Kratasy">Kraťasy</option>
+                <option value="Spodnipradloponozky">Spodní prádlo, ponožky</option>
+                <option value="Plavky">Plavky</option>
+                <option value="Sport">Sport</option>
+                <option value="Doplnky">Doplňky</option>
             </select>
-    </div>
 
-    <div class="select-box">
-        <label for="condition" class="label condition"><span class="label-desc">Vyber stav</span> </label>
-        <p>
-            <select name="condition" id="condition" class="select">
+
+
+        <label for="condition" class="label condition" style="display:block"><span class="label-desc">Vyber stav</span> </label>
+            <select name="condition" id="condition" class="custom-select">
             {% for x in condition %}
             <option value="{{x}}">{{x}}</option>
             {% endfor %}
             </select>
-        </p>
-    </div>
-
-    <p>
-        <input style="color:transparent" type="file" name="image" id="image" class="inputfile"/>
-        <label for="image">Vyber úvodní fotku</label>
     </p>
 
-    <p><textarea name="description" cols="40" rows="5" class="description"></textarea></p>
 
-    {{ formset.management_form }}
+    <p>
+
+    <br>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="image" name="image" aria-describedby="imageAddon">
+            <label class="custom-file-label" for="image">Vyber úvodní fotku</label>
+        </div>
+    </p>
+        <br>
+        <div class="custom-file">
+        <p><input type="file" name="images" class="custom-file-input" multiple></p>
+        <label class="custom-file-label" for="image">Přidej další fotky</label>
+             <br>
+    </div>
+
+    <p><textarea name="description" cols="40" rows="5" class="description" placeholder="Popis zboží:"></textarea></p>
+
+ <!--   {{ formset.management_form }}
     {% for form in formset %}
         <label class="inputfile_label">{{ form.images|add_class:"inputfile"|attr:"id:images"}}Vyber fotku</label>
-    {% endfor %}
+    {% endfor %} -->
+
 
     <p><button type="submit" class="btn btn-dark" style="margin-top:20px">Přidat</button></p>
 
 </form>
-</div>
+                            <div class="vc_empty_space"   style="height: 44px" ><span class="vc_empty_space_inner"></span></div>
+
+                        </div></div></div></div></div></div></div></div></div></div>
+    {% include "snippets/footer.html" %}
+
+
+
+<script type='text/javascript' src='{% static "assets/js/modules.min.js" %}'></script>
+
+
+{% include 'snippets/script.html' %}
 {% endblock content %}

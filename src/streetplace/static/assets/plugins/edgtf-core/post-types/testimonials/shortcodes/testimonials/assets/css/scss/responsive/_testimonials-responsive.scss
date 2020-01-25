@@ -1,0 +1,11 @@
+@include phone-landscape() {
+    .edgtf-testimonials-holder {
+        .edgtf-testimonials {
+            padding: 0;
+        }
+
+        .owl-nav {
+            display: none;
+        }
+    }
+}

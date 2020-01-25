@@ -1,0 +1,641 @@
+//layout mixins - start
+
+@mixin edgtfTableLayout() {
+    position: relative;
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+@mixin edgtfTableCellLayout() {
+    position: relative;
+    display: table-cell;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+}
+
+@mixin edgtfRelativeHolderLayout() {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+}
+
+@mixin edgtfAbsoluteHolderLayout() {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+@mixin edgtfTypographyLayout() {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+}
+
+//layout mixins - end
+
+//transition mixins - start
+
+@mixin edgtfTransition($transition-param...) {
+    -webkit-transition: $transition-param;
+    -moz-transition: $transition-param;
+    transition: $transition-param;
+}
+
+@mixin edgtfTransitionTransform($transition-param...) {
+    -webkit-transition: -webkit-transform $transition-param;
+    -moz-transition: -moz-transform $transition-param;
+    transition: transform $transition-param;
+}
+
+@mixin edgtfTransform($transform-param...) {
+    -webkit-transform: $transform-param;
+    -moz-transform: $transform-param;
+    transform: $transform-param;
+}
+
+@mixin edgtfAnimation($animation-param...) {
+    -webkit-animation: $animation-param;
+    -moz-animation: $animation-param;
+    animation: $animation-param;
+}
+
+@mixin edgtfTransformOrigin($animation-param...) {
+    -webkit-transform-origin: $animation-param;
+    -moz-transform-origin: $animation-param;
+    transform-origin: $animation-param;
+}
+
+//transition mixins - end
+
+//checkbox mixins - start
+
+$checkbox-size: 15px;
+$checkbox-border-width: 1px;
+%checkbox-style {
+    line-height: 1;
+    margin: 8px 0;
+    position: relative;
+
+    input[type=checkbox] {
+        display: inline-block;
+        height: $checkbox-size;
+        left: 0;
+        margin: 0;
+        max-height: $checkbox-size;
+        position: relative;
+        top: 0;
+        vertical-align: top;
+        width: $checkbox-size;
+    }
+
+    input[type=checkbox] + label {
+        cursor: pointer;;
+        display: inline-block;
+        left: 0;
+        line-height: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+    }
+
+    input[type=checkbox] + label span.edgtf-label-text {
+        color: $default-heading-color;
+        display: inline-block;
+        line-height: $checkbox-size;
+        padding-left: 10px;
+    }
+
+    input[type=checkbox] + label .edgtf-label-view {
+        background-color: $default-background-color;
+        border: $checkbox-border-width solid $default-border-color;
+        border-radius: 2px;
+        box-sizing: border-box;
+        cursor: pointer;
+        display: inline-block;
+        height: $checkbox-size;
+        vertical-align: top;
+        width: $checkbox-size;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    input[type=checkbox] + label .edgtf-label-view:after {
+        background-color: $first-main-color;
+        content: '';
+        height: $checkbox-size / 2 - $checkbox-border-width;
+        left: ($checkbox-size - ($checkbox-size / 2 - $checkbox-border-width)) / 2;
+        opacity: 0;
+        position: absolute;
+        top: ($checkbox-size - ($checkbox-size / 2 - $checkbox-border-width)) / 2;
+        width: $checkbox-size / 2 - $checkbox-border-width;
+
+        @include edgtfTransition(opacity 0.3s ease-in-out);
+    }
+
+    input[type=checkbox]:checked + label .edgtf-label-view:after {
+        opacity: 1;
+    }
+}
+
+//checkbox mixins - end
+
+/* common mixins - start */
+
+@mixin edgtfBckImageStyle() {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@mixin edgtfImageOverlayHoverStyle($with-hover: true) {
+    @if ($with-hover) {
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
+
+        &:after {
+            @include edgtfAbsoluteHolderLayout();
+
+            content: '';
+            background-color: $default-shading-color;
+            opacity: 0;
+
+            @include edgtfTransition(opacity .2s ease-in-out);
+        }
+
+    } @else {
+        @include edgtfAbsoluteHolderLayout();
+
+        content: '';
+        background-color: $default-shading-color;
+        opacity: 0;
+
+        @include edgtfTransition(opacity .2s ease-in-out);
+    }
+}
+
+@mixin edgtfButtonDefaultStyle() {
+    box-sizing: border-box;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600; // semibold
+    letter-spacing: 0.04em;
+    line-height: 16px;
+    margin: 0;
+    outline: none;
+    position: relative;
+    text-transform: lowercase;
+    vertical-align: middle;
+    width: auto;
+
+    @include edgtfTransition(color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out);
+}
+
+@mixin edgtfButtonSimpleStyle($important:null) {
+    background-color: transparent $important;
+    border: 0;
+    color: $default-text-color $important;
+    padding: 0 !important;
+    vertical-align: middle;
+}
+
+@mixin edgtfButtonSimpleHoverStyle() {
+    background-color: transparent !important;
+    color: $first-main-color !important;
+}
+
+@mixin edgtfButtonTransparentColor() {
+    color: $default-text-color;
+    background-color: transparent;
+}
+
+@mixin edgtfButtonTransparentHoverColor() {
+    color: $first-main-color;
+    background-color: transparent;
+}
+
+@mixin edgtfButtonSolidColor() {
+    color: #fff;
+    background-color: $default-heading-color;
+    border: 2px solid transparent;
+}
+
+@mixin edgtfButtonSolidHoverColor() {
+    color: #fff;
+    background-color: $first-main-color;
+}
+
+@mixin edgtfButtonOutlineColor($border-color:$default-heading-color) {
+    color: $default-heading-color;
+    background-color: transparent;
+    border: 2px solid $border-color;
+}
+
+@mixin edgtfHorizontalBackground($gradient) {
+    -moz-background: -moz-linear-gradient(left, $gradient);
+    -webkit-background: -webkit-linear-gradient(left, $gradient);
+    background: linear-gradient(to right, $gradient);
+}
+
+@mixin edgtfButtonGappedOutlineColor($border-color:$default-heading-color) {
+    $gradient1: currentColor 0%, currentColor 85%, transparent 85%, transparent 89%, currentColor 89%, currentColor 100%;
+    $gradient2: currentColor 0%, currentColor 15%, transparent 15%, transparent 19%, currentColor 19%, currentColor 100%;
+
+    @include keyframes(upperborder) {
+        from {
+            background-position: 0px;
+        }
+        to {
+            background-position: -1000px;
+        }
+    }
+    @include keyframes(lowerborder) {
+        from {
+            background-position: 0px;
+        }
+        to {
+            background-position: 1000px;
+        }
+    }
+
+    color: $default-heading-color;
+    background-color: transparent;
+    border-left: 2px solid $border-color;
+    border-right: 2px solid $border-color;
+
+    .edgtf-gapped-border {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        color: $default-heading-color;
+        @include edgtfTransition(all .15s cubic-bezier(.12, .68, .43, .95));
+        @include edgtfTransform(skew(-42deg));
+    }
+
+    .edgtf-gapped-border-top {
+        top: 0;
+        @include edgtfHorizontalBackground($gradient1);
+        @include edgtfAnimation(10s upperborder linear infinite forwards);
+        animation-play-state: paused;
+    }
+
+    .edgtf-gapped-border-bottom {
+        bottom: 0;
+        @include edgtfHorizontalBackground($gradient2);
+        @include edgtfAnimation(10s lowerborder linear infinite forwards);
+        animation-play-state: paused;
+    }
+
+    &:hover {
+        .edgtf-gapped-border-top {
+            animation-play-state: running;
+        }
+
+        .edgtf-gapped-border-bottom {
+            animation-play-state: running;
+        }
+    }
+}
+
+@mixin edgtfButtonOutlineHoverColor() {
+    color: $default-heading-color;
+    background-color: transparent;
+    border-color: $default-heading-color;
+}
+
+@mixin edgtfButtonSmallParams() {
+    padding: 13px 50px;
+}
+
+@mixin edgtfButtonMediumParams() {
+    padding: 16px 57px;
+}
+
+@mixin edgtfButtonLargeParams() {
+    padding: 19px 64px;
+}
+
+//@mixin edgtfButtonWooCommerceParams() {
+//    padding: 8px 35px;
+//}
+
+@mixin edgtfButtonHugeParams() {
+    display: block;
+    text-align: center;
+    padding: 19px 64px;
+}
+
+@mixin edgtfPlaceholder {
+    &::-webkit-input-placeholder {
+        @content
+    }
+    &:-moz-placeholder {
+        @content;
+
+        opacity: 1;
+    }
+    &::-moz-placeholder {
+        @content;
+
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        @content
+    }
+}
+
+/* common mixins - end */
+
+/* mixins styles - start */
+
+%input-style {
+    background-color: transparent;
+    border: 2px solid $default-border-color;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: $default-text-color;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: inherit;
+    line-height: 48px; // 52px - 2 x 2px for border
+    margin: 0 0 20px;
+    outline: 0;
+    padding: 0 18px;
+    width: 100%;
+
+    &:focus {
+        border-color: $default-text-color;
+        color: $default-heading-color;
+    }
+
+    @include edgtfTransition(border-color 0.2s ease-in-out);
+    @include edgtfPlaceholder {
+        color: inherit;
+    }
+
+    -webkit-appearance: none;
+}
+
+/* mixins styles - end */
+
+//media query mixins - start
+
+@mixin laptop-landscape-large {
+    @media only screen and (max-width: map-get($breakpoints, laptop-landscape-large)) {
+        @content;
+    }
+}
+
+@mixin laptop-landscape-medium {
+    @media only screen and (max-width: map-get($breakpoints, laptop-landscape-medium)) {
+        @content;
+    }
+}
+
+@mixin laptop-landscape {
+    @media only screen and (max-width: map-get($breakpoints, laptop-landscape)) {
+        @content;
+    }
+}
+
+@mixin ipad-landscape {
+    @media only screen and (max-width: map-get($breakpoints, ipad-landscape)) {
+        @content;
+    }
+}
+
+@mixin ipad-portrait {
+    @media only screen and (max-width: map-get($breakpoints, ipad-portrait)) {
+        @content;
+    }
+}
+
+@mixin phone-landscape {
+    @media only screen and (max-width: map-get($breakpoints, phone-landscape)) {
+        @content;
+    }
+}
+
+@mixin phone-portrait {
+    @media only screen and (max-width: map-get($breakpoints, phone-portrait)) {
+        @content;
+    }
+}
+
+@mixin smaller-phone-portrait {
+    @media only screen and (max-width: map-get($breakpoints, smaller-phone-portrait)) {
+        @content;
+    }
+}
+
+//media query mixins - end
+
+//animation mixin - start
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@mixin animation($name, $duration, $repeat, $timing, $delay) {
+    -webkit-animation-name: $name;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-iteration-count: $repeat;
+    -webkit-animation-timing-function: $timing;
+    -webkit-animation-delay: $delay;
+    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-iteration-count: $repeat;
+    animation-timing-function: $timing;
+    animation-delay: $delay;
+    animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+
+//animation mixin - end
+
+// heading mixins - start
+
+@mixin edgtfGlobalHeading() {
+    margin: 20px 0;
+    color: $default-heading-color;
+
+    a {
+        @include edgtfTypographyLayout();
+
+        &:hover {
+            color: $first-main-color;
+        }
+    }
+}
+
+@mixin edgtfHeading1() {
+    font-size: 45px;
+    font-weight: 600; // semi bold
+    line-height: 1.19em;
+    text-transform: lowercase;
+}
+
+@mixin edgtfHeading2() {
+    font-size: 35px;
+    font-weight: 600; // semi bold
+    line-height: 1.24em;
+    text-transform: lowercase;
+}
+
+@mixin edgtfHeading3() {
+    font-size: 25px;
+    font-weight: 600; // semi bold
+    line-height: 1.22em;
+    text-transform: lowercase;
+}
+
+@mixin edgtfHeading4() {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3em;
+    text-transform: lowercase;
+}
+
+@mixin edgtfHeading5() {
+    font-size: 17px;
+    font-weight: 300; // light
+    line-height: 1.53em;
+    text-transform: lowercase;
+}
+
+@mixin edgtfHeading6() {
+    font-size: 13px;
+    font-weight: 300; // light
+    line-height: 1.7em;
+    text-transform: lowercase;
+}
+
+// heading mixins - end
+
+// border with image mixin - start
+@mixin edgtfBorderWithImage() {
+    border: $border-with-image-width solid $default-heading-color;
+    border-image: url(../img/border_image.png) 10 repeat;
+    box-sizing: border-box;
+}
+
+// border with image mixin - end
+
+// post info begin
+@mixin edgtfPostInfo($background-color:$default-heading-color,$background-hover-color:$first-main-color) {
+    background-color: $background-color;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 9px;
+    padding: 0 7px;
+    position: relative;
+    text-align: center;
+    text-transform: lowercase;
+    vertical-align: middle;
+
+    &.edgtf-post-info-comments-holder {
+        //margin-left: 1px; // stupid rendering fix
+
+        .edgtf-post-info-icon {
+            font-size: 12px;
+        }
+    }
+
+    @include edgtfTransition(background-color .2s ease-in-out);
+
+    a {
+        color: inherit;
+    }
+
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+        height: 0;
+        position: absolute;
+        top: 0;
+        width: 0;
+
+        @include edgtfTransition(border-color .2s ease-in-out);
+    }
+
+    &:before {
+        border-color: transparent $background-color transparent transparent;
+        border-style: solid;
+        border-width: 0 9px 20px 0;
+        left: -9px;
+    }
+
+    &:after {
+        border-color: transparent transparent transparent $background-color;
+        border-style: solid;
+        border-width: 20px 0 0 9px;
+        right: -9px;
+    }
+
+    &:hover {
+        background-color: $background-hover-color;
+
+        &:before {
+            border-color: transparent $background-hover-color transparent transparent;
+        }
+
+        &:after {
+            border-color: transparent transparent transparent $background-hover-color;
+        }
+    }
+
+    &:first-child {
+        &:before {
+            display: none;
+        }
+    }
+
+    .edgtf-post-info-icon {
+        margin-right: 5px;
+    }
+}
+
+// post info end
+
+// widget openers begin
+@mixin edgtfOpenerStyle() {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1em;
+    padding: 0 0 0 50px;
+    position: relative;
+    top: 2px;
+    vertical-align: middle;
+}

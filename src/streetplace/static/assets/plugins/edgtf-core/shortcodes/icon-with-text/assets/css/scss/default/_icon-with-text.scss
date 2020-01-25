@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Icon With Text shortcode style - begin
+   ========================================================================== */
+
+.edgtf-iwt {
+    @include edgtfRelativeHolderLayout();
+
+    .edgtf-iwt-icon {
+        a {
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+        }
+
+        .edgtf-animated-svg {
+            width: 130px;
+        }
+
+        .edgtf-icon-shortcode {
+            line-height: 1;
+
+            &.edgtf-circle,
+            &.edgtf-square {
+                line-height: 2;
+            }
+        }
+    }
+
+    .edgtf-iwt-title {
+        margin: 0;
+
+        a {
+            display: inline-block;
+            position: relative;
+            vertical-align: top;
+        }
+    }
+
+    .edgtf-iwt-title-text {
+        display: block;
+    }
+
+    .edgtf-iwt-text {
+        margin: 8px 0 0;
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // left from content
+
+    &.edgtf-iwt-icon-left {
+        width: auto;
+
+        .edgtf-iwt-icon,
+        .edgtf-iwt-content {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .edgtf-iwt-icon {
+            position: relative;
+            top: 1px;
+
+            img {
+                max-width: none;
+            }
+        }
+
+        .edgtf-iwt-content {
+            padding: 0 0 0 13px;
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // left from title
+
+    &.edgtf-iwt-icon-left-from-title {
+        .edgtf-iwt-icon,
+        .edgtf-iwt-title-text {
+            display: table-cell;
+            position: relative;
+            vertical-align: middle;
+        }
+
+        .edgtf-iwt-icon {
+            .edgtf-icon-element {
+                @include edgtfTransition(none);
+            }
+
+            img {
+                max-width: none;
+            }
+        }
+
+        .edgtf-iwt-title-text {
+            padding: 0 0 0 17px;
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // icon abowe
+
+    &.edgtf-iwt-icon-top {
+        text-align: center;
+
+        .edgtf-iwt-content {
+            padding: 20px 0 0;
+        }
+    }
+}
+
+/* ==========================================================================
+   Icon With Text shortcode style - end
+   ========================================================================== */

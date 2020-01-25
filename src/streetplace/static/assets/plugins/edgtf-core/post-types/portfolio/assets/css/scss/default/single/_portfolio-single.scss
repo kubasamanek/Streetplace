@@ -1,0 +1,167 @@
+/* ==========================================================================
+   Portfolio Single page style - begin
+   ========================================================================== */
+
+.edgtf-portfolio-single-holder {
+    @include edgtfRelativeHolderLayout();
+
+    margin: 61px 0 50px;
+
+    .edgtf-ps-image-holder {
+        @include edgtfRelativeHolderLayout();
+
+        .edgtf-ps-image {
+            @include edgtfRelativeHolderLayout();
+
+            box-sizing: border-box;
+
+            a, img {
+                display: block;
+                position: relative;
+            }
+        }
+    }
+
+    .edgtf-ps-info-holder {
+        @include edgtfRelativeHolderLayout();
+
+        .edgtf-ps-info-item {
+            @include edgtfRelativeHolderLayout();
+
+            margin: 0 0 8px;
+
+            p, a {
+                color: $additional-text-color;
+                display: inline-block;
+
+                @include edgtfHeading5();
+
+                margin: 0;
+            }
+
+            a:hover {
+                color: $first-main-color;
+            }
+        }
+
+        .edgtf-ps-info-title {
+            display: inline-block;
+            margin: 0 21px 0 0;
+        }
+    }
+
+    .edgtf-owl-slider .owl-nav .owl-next,
+    .edgtf-owl-slider .owl-nav .owl-prev {
+        color: #ffffff;
+
+        &:hover {
+            color: $first-main-color;
+        }
+    }
+}
+
+/* ==========================================================================
+   Portfolio Single page style - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Portfolio Single page specific style for types - begin
+   ========================================================================== */
+
+.edgtf-portfolio-single-holder {
+    .edgtf-ps-image-holder {
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // gallery
+
+        &.edgtf-ps-gallery-images {
+
+            $columns_number: ('two', 'three', 'four');
+
+            @for $i from 0 to length($columns_number) {
+                &.edgtf-ps-#{nth($columns_number,$i+1)}-columns {
+
+                    .edgtf-ps-image {
+                        width: 100% / ($i+2);
+                    }
+
+                    @if ($i > 1) { // set different break point for four columns
+                        @media only screen and (min-width: $laptop-landscape-plus-pixel) {
+
+                            .edgtf-ps-image {
+
+                                &:nth-child(#{$i+2}n+1) {
+                                    clear: both;
+                                }
+                            }
+                        }
+                    } @else {
+                        @media only screen and (min-width: $ipad-landscape-plus-pixel) {
+
+                            .edgtf-ps-image {
+
+                                &:nth-child(#{$i+2}n+1) {
+                                    clear: both;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // masonry
+
+        &.edgtf-ps-masonry-images {
+            .edgtf-ps-image,
+            .edgtf-ps-grid-sizer {
+                width: 25%;
+            }
+
+            .edgtf-ps-grid-gutter {
+                width: 0;
+            }
+
+            .edgtf-masonry-size-small,
+            .edgtf-masonry-size-large-width-height,
+            .edgtf-masonry-size-large-height,
+            .edgtf-masonry-size-large-width {
+                &.edgtf-ps-image {
+                    a,
+                    img {
+                        height: 100%;
+                    }
+                }
+            }
+
+            .edgtf-ps-masonry-large-width {
+                img {
+                    width: 100%;
+                }
+            }
+
+            $columns_number: ('two', 'three', 'four');
+
+            @for $i from 0 to length($columns_number) {
+                &.edgtf-ps-#{nth($columns_number,$i+1)}-columns {
+                    $column_width: 100%/($i+2);
+
+                    .edgtf-ps-image,
+                    .edgtf-ps-grid-sizer {
+                        width: $column_width;
+                    }
+
+                    .edgtf-ps-image.edgtf-ps-masonry-large-width,
+                    .edgtf-ps-image.edgtf-ps-masonry-large-width-height {
+                        width: $column_width * 2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Portfolio Single page specific style for types - end
+   ========================================================================== */

@@ -1,0 +1,229 @@
+.edgtf-cards-gallery-holder {
+    position: relative;
+
+    .edgtf-cards-gallery-wrapper {
+        float: left;
+        width: 45%;
+        position: relative;
+        z-index: 1;
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // title section holder begin
+
+    .edgtf-section-title-holder {
+        position: absolute;
+        top: 50%;
+        width: 55%;
+        z-index: 0;
+
+        @include edgtfTransform(translateY(-50%));
+
+        .edgtf-st-inner {
+            padding: 58px 27%;
+            position: relative;
+        }
+
+        .edgtf-st-background-holder {
+            @include edgtfAbsoluteHolderLayout();
+            @include edgtfBorderWithImage();
+
+            background: #ffffff;
+            left: 0%;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .edgtf-st-text {
+            margin-top: 20px;
+        }
+
+        .edgtf-btn {
+            padding-top: 22px !important;
+
+            &:hover {
+                @include edgtfTransform(translateZ(0));
+            }
+        }
+    }
+
+    &.edgtf-stack-images-right {
+        .edgtf-cards-gallery-wrapper {
+            float: right;
+        }
+
+        .edgtf-section-title-holder {
+            text-align: right;
+        }
+
+        .edgtf-st-background-holder {
+            left: 0;
+        }
+
+        .edgtf-btn.edgtf-btn-simple svg {
+            transform-origin: right;
+        }
+    }
+
+    // title section holder end
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    .edgtf-cards-gallery {
+        position: relative;
+        width: 100%;
+    }
+
+    &.edgtf-has-shadow {
+        .edgtf-bundle-item {
+            box-shadow: $default-box-shadow;
+        }
+    }
+
+    img {
+        display: block;
+        position: relative;
+
+        @include edgtfTransition(opacity 0.3s ease);
+    }
+
+    .edgtf-fake-card {
+        display: block;
+        height: 0;
+        opacity: 0;
+        pointer-events: none;
+        position: relative;
+        visibility: hidden;
+    }
+
+    .edgtf-card {
+        box-sizing: border-box;
+        position: absolute;
+        transition: transform .7s cubic-bezier(0, 0, 0, 1), top .7s cubic-bezier(0, 0, 0, 1), left .7s cubic-bezier(0, 0, 0, 1), right .7s cubic-bezier(0, 0, 0, 1), margin .2s ease-in-out, opacity .5s ease-out;
+        -webkit-transition: -webkit-transform .7s cubic-bezier(0, 0, 0, 1), top .7s cubic-bezier(0, 0, 0, 1), left .7s cubic-bezier(0, 0, 0, 1), right .7s cubic-bezier(0, 0, 0, 1), margin .2s ease-in-out, opacity .5s ease-out;
+        width: 100%;
+
+        .edgtf-bundle-item {
+            background-color: #fff;
+            display: block;
+            position: relative;
+        }
+
+        //translateZ because of the white outline on items
+        &:nth-last-child(8) {
+            @include edgtfTransform(scale(0.37) translateZ(0));
+
+            left: 95%;
+        }
+
+        &:nth-last-child(7) {
+            @include edgtfTransform(scale(0.46) translateZ(0));
+
+            left: 85%;
+        }
+
+        &:nth-last-child(6) {
+            @include edgtfTransform(scale(0.55) translateZ(0));
+
+            left: 75%;
+        }
+
+        &:nth-last-child(5) {
+            @include edgtfTransform(scale(0.64) translateZ(0));
+
+            left: 60%;
+        }
+
+        &:nth-last-child(4) {
+            @include edgtfTransform(scale(0.73) translateZ(0));
+
+            left: 45%;
+        }
+
+        &:nth-last-child(3) {
+            @include edgtfTransform(scale(0.82) translateZ(0));
+
+            left: 30%;
+        }
+
+        &:nth-last-child(2) {
+            @include edgtfTransform(scale(0.91) translateZ(0));
+
+            left: 15%;
+        }
+
+        &:last-child {
+            @include edgtfTransform(translateZ(0));
+
+            left: 0;
+            padding: 0;
+            position: relative;
+
+            &.edgtf-transform-x {
+                opacity: 0;
+
+                @include edgtfTransform(translateX(-30%) translateZ(0));
+            }
+        }
+
+        &:not(:last-of-type) {
+            cursor: pointer;
+        }
+
+        &:not(:last-of-type):not(.active):hover {
+            margin-left: -10px;
+        }
+    }
+
+    &.edgtf-stack-images-right .edgtf-card {
+        //translateZ because of the white outline on items
+        &:nth-last-child(8) {
+            @include edgtfTransform(scale(0.37) translateZ(0));
+
+            left: -95%;
+        }
+
+        &:nth-last-child(7) {
+            @include edgtfTransform(scale(0.46) translateZ(0));
+
+            left: -85%;
+        }
+
+        &:nth-last-child(6) {
+            @include edgtfTransform(scale(0.55) translateZ(0));
+
+            left: -75%;
+        }
+
+        &:nth-last-child(5) {
+            @include edgtfTransform(scale(0.64) translateZ(0));
+
+            left: -60%;
+        }
+
+        &:nth-last-child(4) {
+            @include edgtfTransform(scale(0.73) translateZ(0));
+
+            left: -45%;
+        }
+
+        &:nth-last-child(3) {
+            @include edgtfTransform(scale(0.82) translateZ(0));
+
+            left: -30%;
+        }
+
+        &:nth-last-child(2) {
+            @include edgtfTransform(scale(0.91) translateZ(0));
+
+            left: -15%;
+        }
+
+        &:last-child {
+            left: 0;
+
+            &.edgtf-transform-x {
+                @include edgtfTransform(translateX(30%) translateZ(0));
+            }
+        }
+    }
+}

@@ -1,0 +1,180 @@
+/* ==========================================================================
+   Image With Text shortcode style - begin
+   ========================================================================== */
+
+.edgtf-image-with-text-holder {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    
+    &.edgtf-has-shadow {
+        .edgtf-iwt-image {
+            box-shadow: $default-box-shadow;
+        }
+    }
+
+    .edgtf-iwt-image {
+        @include edgtfRelativeHolderLayout();
+
+        a, img {
+            display: block;
+            position: relative;
+        }
+    }
+
+    .edgtf-iwt-text-holder {
+        text-align: center;
+    }
+
+    .edgtf-iwt-title {
+        margin: 32px 0 0;
+    }
+
+    .edgtf-iwt-text {
+        margin: 14px 0 0;
+    }
+
+    /***** Custom Link Behavior Style - begin *****/
+
+    &.edgtf-image-behavior-custom-link {
+        .edgtf-iwt-image {
+            @include edgtfTransform(translate3d(0, 0, 0));
+            @include edgtfTransitionTransform(.25s cubic-bezier(.12, .68, .43, .95));
+            will-change: transform;
+
+            a:not(.edgtf-btn) {
+                z-index: 10;
+
+                &:after {
+                    content:'';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgba(#fff, .95);
+                    opacity: 0;
+                    @include edgtfTransition(opacity .3s cubic-bezier(.12,.68,.43,.95));
+                    will-change: opacity;
+                }
+            }
+
+            .edgtf-iwt-button {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                @include edgtfTransform(translate(-50%, -50%));
+                z-index: 20;
+                pointer-events:none;
+                opacity: 0;
+                @include edgtfTransition(opacity .6s cubic-bezier(.12,.68,.43,.95));
+
+                .edgtf-btn {
+                    padding: 18px 50px;
+
+                }
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: #0d0d0d;
+                @include edgtfTransition(all .25s cubic-bezier(.12, .68, .43, .95));
+            }
+
+            &:hover {
+                @include edgtfTransform(translate3d(-11px, -11px, 0));
+
+                a:after {
+                    opacity: 1;
+                }
+
+                .edgtf-iwt-button {
+                    opacity: 1;
+
+                    .edgtf-gapped-border-top,
+                    .edgtf-gapped-border-bottom {
+                        animation-play-state: running;
+                    }
+                }
+
+                &:after {
+                    @include edgtfTransform(translate3d(11px, 11px, 0));
+                }
+            }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // lightbox
+
+    &.edgtf-image-behavior-lightbox {
+        .edgtf-iwt-image {
+            a {
+                @include edgtfImageOverlayHoverStyle();
+            }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // zoom
+
+    &.edgtf-image-behavior-zoom {
+        .edgtf-iwt-image {
+            overflow: hidden;
+
+            .touch & {
+                cursor: pointer;
+            }
+
+            &:hover {
+                img {
+                    @include edgtfTransform(scale(1.04));
+                }
+            }
+
+            img {
+                @include edgtfTransform(scale(1));
+                @include edgtfTransitionTransform(.3s ease-in-out);
+            }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // grayscale
+
+    &.edgtf-image-behavior-grayscale {
+        .edgtf-iwt-image {
+            overflow: hidden;
+
+            .touch & {
+                cursor: pointer;
+            }
+
+            &:hover {
+                img {
+                    filter: none;
+                    -webkit-filter: grayscale(0);
+                }
+            }
+
+            img {
+                filter: url('img/desaturate.svg#grayscale');
+                filter: gray;
+                filter: grayscale(100%);
+                -webkit-filter: grayscale(100%);
+                -moz-filter: grayscale(100%);
+
+                @include edgtfTransition(all .3s ease-in-out);
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Image With Text shortcode style - end
+   ========================================================================== */

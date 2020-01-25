@@ -1,0 +1,118 @@
+.edgtf-cards-gallery-holder {
+    @include ipad-landscape {
+        .edgtf-cards-gallery {
+            height: auto !important;
+        }
+
+        .edgtf-cards-gallery-wrapper {
+            float: none;
+            width: 100%;
+        }
+
+        .edgtf-section-title-holder {
+            position: relative;
+            top: 0;
+            width: 100%;
+
+            @include edgtfTransform(translateY(0));
+
+            .edgtf-st-inner {
+                padding: 0;
+            }
+        }
+
+        .edgtf-st-background-holder {
+            display: none !important;
+        }
+    }
+
+    &.edgtf-stack-images-left {
+        .edgtf-section-title-holder {
+            @include ipad-landscape {
+                margin-top: 20px;
+            }
+
+            .edgtf-st-inner {
+                @include laptop-landscape-large {
+                    padding: 27px 4% 37px 21%;
+                }
+
+                @include laptop-landscape-medium {
+                    padding: 22px 2% 26px 23%;
+                }
+
+                @include ipad-landscape {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    &.edgtf-stack-images-right {
+        .edgtf-section-title-holder {
+            @include ipad-landscape {
+                margin-bottom: 20px;
+            }
+
+            .edgtf-st-inner {
+                @include laptop-landscape-large {
+                    padding: 27px 21% 37px 4%;
+                }
+
+                @include laptop-landscape-medium {
+                    padding: 22px 23% 26px 2%;
+                }
+
+                @include ipad-landscape {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .edgtf-card {
+        @include ipad-portrait {
+            &:nth-last-child(8) {
+                @include edgtfTransform(scale(0.3));
+
+                left: -70%;
+            }
+
+            &:nth-last-child(7) {
+                @include edgtfTransform(scale(0.4));
+
+                left: -60%;
+            }
+
+            &:nth-last-child(6) {
+                @include edgtfTransform(scale(0.5));
+
+                left: -50%;
+            }
+
+            &:nth-last-child(5) {
+                @include edgtfTransform(scale(0.6));
+
+                left: -40%;
+            }
+
+            &:nth-last-child(4) {
+                @include edgtfTransform(scale(0.7));
+
+                left: -30%;
+            }
+
+            &:nth-last-child(3) {
+                @include edgtfTransform(scale(0.8));
+
+                left: -20%;
+            }
+
+            &:nth-last-child(2) {
+                @include edgtfTransform(scale(0.9));
+
+                left: -10%;
+            }
+        }
+    }
+}

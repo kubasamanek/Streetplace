@@ -1,152 +1,161 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 
 {% block content %}
-{% load widget_tweaks %}
+
+<style>
+.containerItems{
+    width:60%;
+    margin: 20px auto;
+    clear:both;
+}
+.item{
+    float:left;
+    width: 200px;
+    padding:10px;
+}
+.item img{
+    width: 200px;
+    height: 200px;
+}
+</style>
+
+{% include "snippets/nav.html"%}
+
+<!-- vlastní uživatel produkt? -->
+{% if request.user == obj.owner %}
+
+<center>
 <h1 class="wow tada" style="margin-top:100px">
     Proč mažeš zboží?
 </h1>
 
+<p>
+    <a style="margin-bottom:10px;" itemprop="url" href="/listings/{{obj.pk}}/delete/" target="_self"
+       class="edgtf-btn edgtf-btn-medium edgtf-btn-solid edgtf-btn-custom-hover-bg" data-hover-bg-color="#efbf48">
+        <span class="edgtf-btn-text">Už ho nechci prodat</span>
+    </a>
+
+    <a style="margin-bottom:10px;" itemprop="url" onclick="showDiv()" target="_self"
+       class="edgtf-btn edgtf-btn-medium edgtf-btn-solid edgtf-btn-custom-hover-bg" data-hover-bg-color="#efbf48">
+        <span class="edgtf-btn-text">Prodal jsem ho na StreetPlace</span>
+    </a>
+
+    <a style="margin-bottom:10px;" itemprop="url" href="/listings/{{obj.pk}}/delete/" target="_self"
+       class="edgtf-btn edgtf-btn-medium edgtf-btn-solid edgtf-btn-custom-hover-bg" data-hover-bg-color="#efbf48">
+        <span class="edgtf-btn-text">Jiný důvod</span>
+    </a>
+</p>
 
 
-<div class="btn-group" role="group" aria-label="Basic example">
-  <a href="/"><button type="button" class="btn btn-secondary">Už ho nechci prodat.</button></a>
-  <button onclick="showDiv()" class="btn btn-secondary">Prodal jsem ho na této stránce.</button>
-  <button onclick="showDiv2()" class="btn btn-secondary">Jiný důvod.</button>
+
+
+<div id="divtoshow" style="display:none">
+    <form method='POST' id="ratingform"> {% csrf_token %}
+                <div class="container" style="width:60%">
+                    <p style="font-size:20px">Vyplňte prosím tento formulář. Je to pro nás velmi důležité. Uživateli, se kterým
+                        jste obchodoval, následně dojde žádost o hodnocení Vaší osoby a pomůžete tak vytvářet
+                        komunitu. </p>
+                </div><br>
+
+
+        <div class="form-search">
+            <input style="width:50%" type="text" class="search-item" placeholder="Komu jste prodal toto zboží? (Dejte pozor na velká a malá písmena)"/>
+
+        </div>
+        <div class="containerItems" style="height:540px;overflow:hidden;">
+            {% for x in users %}
+                <div class="item" data-filter="{{x.first_name}}{{x.last_name}}" data-search="{{x.first_name}}{{x.last_name}}">
+                    <img src="{{ x.profile.image.url }}">
+                    <span><b>{{x.first_name}} {{x.last_name}}</b><input class="form-radio" type="radio" name="buyer_form" value="{{x.username}}"/></span>
+                </div>
+            {% endfor %}
+        </div>
+
+    <div class="container" style="width:100%;text-align:center;">
+            <div class="left-stars" style="display:inline-block;">
+
+                 <h3>Spokojenost s nakupujícím:</h3>
+                <div class="stars">
+                    <input class="star star-5" id="star-5" type="radio" name="user_rating" value="5"/>
+                    <label class="star star-5" for="star-5"></label>
+                    <input class="star star-4" id="star-4" type="radio" name="user_rating" value="4"/>
+                    <label class="star star-4" for="star-4"></label>
+                    <input class="star star-3" id="star-3" type="radio" name="user_rating" value="3"/>
+                    <label class="star star-3" for="star-3"></label>
+                    <input class="star star-2" id="star-2" type="radio" name="user_rating" value="2"/>
+                    <label class="star star-2" for="star-2"></label>
+                    <input class="star star-1" id="star-1" type="radio" name="user_rating" value="1"/>
+                    <label class="star star-1" for="star-1"></label>
+                </div>
+
+                <p><textarea placeholder="Proč? Co bylo dobré/špatné?" name="why_user_rating" cols="40" rows="5"
+                             class="description"></textarea></p>
+            </div>
+            <div class="right-stars" style="display:inline-block;">
+                <h3>Spokojenost se streetplace:</h3>
+
+                <div class="stars">
+                    <input class="star star-5" id="star-5_1" type="radio" name="system_rating" value="5"/>
+                    <label class="star star-5" for="star-5_1"></label>
+                    <input class="star star-4" id="star-4_1" type="radio" name="system_rating" value="4"/>
+                    <label class="star star-4" for="star-4_1"></label>
+                    <input class="star star-3" id="star-3_1" type="radio" name="system_rating" value="3"/>
+                    <label class="star star-3" for="star-3_1"></label>
+                    <input class="star star-2" id="star-2_1" type="radio" name="system_rating" value="2"/>
+                    <label class="star star-2" for="star-2_1"></label>
+                    <input class="star star-1" id="star-1_1" type="radio" name="system_rating" value="1"/>
+                    <label class="star star-1" for="star-1_1"></label>
+                </div>
+
+                <p><textarea placeholder="Proč? Co bylo dobré/špatné?" name="why_system_rating" cols="40" rows="5"
+                             class="description"></textarea></p>
+                {{ form.errors }}
+            </div>
+
+            <p>
+                <button type="submit" class="edgtf-btn edgtf-btn-medium edgtf-btn-solid edgtf-btn-custom-hover-bg">Potvrdit</button>
+            </p>
+    </form>
+
+
 </div>
+</div></div>
 
-<div class="div1">
-<form method='POST'> {% csrf_token %}
-<div id="prodal" style="display:none;">
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <p class="lead">Vyplňte prosím tento formulář. Je to pro nás velmi důležité. Uživateli, se kterým jste obchodoval, následně dojde žádost o hodnocení Vaší osoby a pomůžete tak vytvářet komunitu. </p>
-  </div>
+{% else %}
+{% if not request.user.is_superuser %}
+<div class="alert alert-danger" role="alert">
+    Nemáš povolení vymazat tento produkt.
 </div>
+{% endif %}
+{% endif %}
 
-
-<input type="text" class="live-search-box" placeholder="Komu jste zboží prodal?" />
-
-
-
-<div class="live-search-div">
-  <ul class="live-search-list">
-    {% for x in users %}
-  <li> <input type="radio" name="buyer_form" value="{{x.username}}"/> {{x.first_name}} {{x.last_name}} <img class="rounded-circle" style="margin-bottom:5px" src="{{ x.profile.image.url }}" width="50" height="50" ></li>
-    {% endfor %}
-    </ul>
-</div>
-
-<h3>Spokojenost s nakupujícím:</h3>
-<div class="stars">
-  <input class="star star-5" id="star-5" type="radio" name="user_rating" value="5"/>
-  <label class="star star-5" for="star-5"></label>
-  <input class="star star-4" id="star-4" type="radio" name="user_rating" value="4"/>
-  <label class="star star-4" for="star-4"></label>
-  <input class="star star-3" id="star-3" type="radio" name="user_rating" value="3"/>
-  <label class="star star-3" for="star-3"></label>
-  <input class="star star-2" id="star-2" type="radio" name="user_rating" value="2"/>
-  <label class="star star-2" for="star-2"></label>
-  <input class="star star-1" id="star-1" type="radio" name="user_rating" value="1"/>
-  <label class="star star-1" for="star-1"></label>
-</div>
-
-<p><textarea placeholder="Proč? Co bylo dobré/špatné?" name="why_user_rating" cols="40" rows="5" class="description"></textarea></p>
-
-<h3>Spokojenost se streetplace:</h3>
-
-<div class="stars">
-  <input class="star star-5" id="star-5_1" type="radio" name="system_rating" value="5"/>
-  <label class="star star-5" for="star-5_1"></label>
-  <input class="star star-4" id="star-4_1" type="radio" name="system_rating" value="4"/>
-  <label class="star star-4" for="star-4_1"></label>
-  <input class="star star-3" id="star-3_1" type="radio" name="system_rating" value="3"/>
-  <label class="star star-3" for="star-3_1"></label>
-  <input class="star star-2" id="star-2_1" type="radio" name="system_rating" value="2"/>
-  <label class="star star-2" for="star-2_1"></label>
-  <input class="star star-1" id="star-1_1" type="radio" name="system_rating" value="1"/>
-  <label class="star star-1" for="star-1_1"></label>
-</div>
-
-<p><textarea placeholder="Proč? Co bylo dobré/špatné?" name="why_system_rating" cols="40" rows="5" class="description"></textarea></p>
-{{ form.errors }}
-
-
-  <p><button type="submit" class="btn btn-danger">Potvrdit</button></p>
-</form>
-
-
-</div>
-
-<!--   <div class="div2" style="display:none">
-
-<h3>Spokojenost s nakupujícím:</h3>
-<div class="stars">
-  <input class="star star-5" id="star-5_2" type="radio" name="user_rating" value="5"/>
-  <label class="star star-5" for="star-5_2"></label>
-  <input class="star star-4" id="star-4_2" type="radio" name="user_rating" value="4"/>
-  <label class="star star-4" for="star-4_2"></label>
-  <input class="star star-3" id="star-3_2" type="radio" name="user_rating" value="3"/>
-  <label class="star star-3" for="star-3_2"></label>
-  <input class="star star-2" id="star-2_2" type="radio" name="user_rating" value="2"/>
-  <label class="star star-2" for="star-2_2"></label>
-  <input class="star star-1" id="star-1_2" type="radio" name="user_rating" value="1"/>
-  <label class="star star-1" for="star-1_2"></label>
-</div>
-
-<h3>Spokojenost se streetplace:</h3>
-<div class="stars">
-  <input class="star star-5" id="star-5_3" type="radio" name="system_rating" value="5"/>
-  <label class="star star-5" for="star-5_3"></label>
-  <input class="star star-4" id="star-4_3" type="radio" name="system_rating" value="4"/>
-  <label class="star star-4" for="star-4_3"></label>
-  <input class="star star-3" id="star-3_3" type="radio" name="system_rating" value="3"/>
-  <label class="star star-3" for="star-3_3"></label>
-  <input class="star star-2" id="star-2_3" type="radio" name="system_rating" value="2"/>
-  <label class="star star-2" for="star-2_3"></label>
-  <input class="star star-1" id="star-1_3" type="radio" name="system_rating" value="1"/>
-  <label class="star star-1" for="star-1_3"></label>
-</div>
-</div>
-
-
-<div class="div3" style="display:none">
-
-    <h3>Spokojenost s nakupujícím:</h3>
-<div class="stars">
-  <input class="star star-5" id="star-5_4" type="radio" name="user_rating" value="5" />
-  <label class="star star-5" for="star-5_4"></label>
-  <input class="star star-4" id="star-4_4" type="radio" name="user_rating" value="4"/>
-  <label class="star star-4" for="star-4_4"></label>
-  <input class="star star-3" id="star-3_4" type="radio" name="user_rating" value="3"/>
-  <label class="star star-3" for="star-3_4"></label>
-  <input class="star star-2" id="star-2_4" type="radio" name="user_rating" value="2"/>
-  <label class="star star-2" for="star-2_4"></label>
-  <input class="star star-1" id="star-1_4" type="radio" name="user_rating" value="1"/>
-  <label class="star star-1" for="star-1_4"></label>
-</div>
-
-<h3>Spokojenost se streetplace:</h3>
-<div class="stars">
-  <input class="star star-5" id="star-5_5" type="radio" name="system_rating" value="5"/>
-  <label class="star star-5" for="star-5_5"></label>
-  <input class="star star-4" id="star-4_5" type="radio" name="system_rating" value="4"/>
-  <label class="star star-4" for="star-4_5"></label>
-  <input class="star star-3" id="star-3_5" type="radio" name="system_rating" value="3"/>
-  <label class="star star-3" for="star-3_5"></label>
-  <input class="star star-2" id="star-2_5" type="radio" name="system_rating" value="2"/>
-  <label class="star star-2" for="star-2_5"></label>
-  <input class="star star-1" id="star-1_5" type="radio" name="system_rating" value="1"/>
-  <label class="star star-1" for="star-1_5"></label>
-</div>
-
-</div> -->
 
 <div id="jiny" style="display:none;">
-{{ userform }}
+    {{ userform }}
 </div>
+
+{% if request.user == obj.owner or request.user.is_superuser %}
+<div class="alert alert-danger" role="alert">
+    <a href="{% url 'delete_view' pk=obj.pk %}">
+        <button type="button" class="btn btn-secondary">Smazat jako admin</button>
+    </a>
+</div>
+
+    </center>
+{% endif %}
 
 {% csrf_token %}
 
+<script>
+function showDiv() {
+   document.getElementById('divtoshow').style.display = "block";
+}
+</script>
+
+{% include 'snippets/script.html' %}
+
+<script>$('.search-item').search({});
+</script>
 
 {% endblock %}

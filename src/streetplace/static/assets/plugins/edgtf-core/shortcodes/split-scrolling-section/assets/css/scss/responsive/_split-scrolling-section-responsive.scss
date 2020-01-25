@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Split Scrolling Section shortcode responsive style - begin
+   ========================================================================== */
+
+@include ipad-landscape() {
+    .edgtf-split-scrolling-section {
+        .edgtf-sss-ms-left {
+            width: 100%;
+            float: none;
+            position: relative;
+
+            .edgtf-sss-ms-section {
+                position: relative;
+            }
+        }
+
+        .edgtf-sss-ms-right {
+            width: 100%;
+            float: none;
+        }
+    }
+}
+
+@include ipad-portrait() {
+    .edgtf-split-scrolling-section {
+        .edgtf-sss-ms-left {
+            .edgtf-sss-ms-section {
+                left: 0;
+                width: 100%;
+            }
+
+            .owl-nav {
+                display: none !important;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Split Scrolling Section shortcode responsive style - end
+   ========================================================================== */

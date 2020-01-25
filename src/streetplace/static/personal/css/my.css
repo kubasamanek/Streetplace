@@ -21,6 +21,8 @@
     position: relative;
     display: inline-block;
     cursor: pointer;
+    color:#C0C0C0;
+    margin-bottom:5px
   }
 
   /* The actual popup (appears on top) */
@@ -37,6 +39,7 @@
     bottom: 125%;
     left: 50%;
     margin-left: -80px;
+    color:#C0C0C0;
   }
 
   /* Popup arrow */
@@ -71,12 +74,26 @@
 
   div.transbox {
       background-color: rgba(5,4,2,0.4);
-      width:850px;
+      width:70%;
       height: 100%;
       margin-left:auto;
       margin-right:auto;
       padding: 15px;
       margin-top:100px
+  }
+
+  #register-h1{
+  color:white;
+  margin-top:30px;
+  }
+
+  #register-login_redirect{
+  margin-top:10px;
+  }
+
+  #register-login_redirect a{
+  color:white;
+  text-decoration:underline;
   }
 
   html,
@@ -168,7 +185,8 @@
    }
 }
 
-nav a:hover, footer a:hover { color: blue !important; }
+footer a:hover { color: #4588E7 !important; }
+nav a:hover { color: #4588E7; }
 
 
 
@@ -233,66 +251,67 @@ margin: 10px 0 0 0px
 }
 
 
-.search_form{
-position: relative;
-display: inline-block;
-padding: 0px 0 0 0px;
-border: none;
-border-radius: 5px;
-margin-left:40px;
+#search-and-add{
+margin-top:0px;
+text-align:center;
 }
 
-.search_form form{
-  outline: 0;
-  float: left;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
+#search-and-add input{
+position:relative;
+margin-left:10px;
+width:100%;
+height:60px;
+border:none;
 }
 
-form > .textbox {
-  outline: 0;
-  height: 42px;
-  width: 400px;
-  line-height: 42px;
-  padding: 0 16px;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #212121;
-  border: 0;
-  float: left;
-  -webkit-border-radius: 4px 0 0 4px;
-  border-radius: 4px 0 0 4px;
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
 }
 
-form > .textbox:focus {
-  outline: 0;
-  background-color: #FFF;
+#search-and-add input{
+font-size:35px;
+border-left: 3px solid ;
+border-bottom: 3px solid ;
+border-radius: 0px 0px 0px 0px;
 }
 
-form > .button {
-  outline: 0;
-  background: none;
-  background-color: rgba(38, 50, 56, 0.8);
-  float: left;
-  height: 42px;
-  width: 42px;
+#search-and-add input:focus{
+outline:none;
+}
+
+.searchButton {
+  width: 80px;
+  height: 60px;
+  border: 1px solid #4588E7;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  background: #4588E7;
   text-align: center;
-  line-height: 42px;
-  border: 0;
-  color: #FFF;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 16px;
-  text-rendering: auto;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  -webkit-transition: background-color .4s ease;
-  transition: background-color .4s ease;
-  -webkit-border-radius: 0 4px 4px 0;
-  border-radius: 0 4px 4px 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
 }
 
-form > .button:hover {
-  background-color: #4588E7;
+#pridat-zbozi{
+width:100%;
+
+height:60px;
+border: 3px solid;
+border-radius: 10px 10px 0px 0px;
+font-size:35px;
+margin-bottom:-40px;
+margin-top:16px;
+}
+
+#pridat-zbozi a{
+  font-size:20px;
+  color:black;
+  font-weight:bold;
+  font-family: "Calibri";
+  text-transform:uppercase;
+
 }
 
 /* Shine */
@@ -320,13 +339,15 @@ form > .button:hover {
 }
 
 .flair {
-  margin-right: 15%;
-  width: 65%;
+  margin-right: 10%;
+  width: 80%;
   height: 0px;
   border-style: solid;
   border-color: hsla(0, 0%, 75%, 0.9);
   border-width: 1px 0 0 0;
   border-radius: 30px;
+  margin-bottom: 40px;
+  margin-top:-16px
 }
 .flair:before {
   display: block;
@@ -346,7 +367,6 @@ form > .button:hover {
 .transbox input{
       outline: 0;
       height: 42px;
-      width: 100px;
       line-height: 42px;
       padding: 0 16px;
       background-color: rgba(255, 255, 255, 0.8);
@@ -376,8 +396,106 @@ form > .button:hover {
     float:none;
 }
 
+.hledat-nav{
+position:absolute;
+width:20%;
+
+}
+
+.hledat-nav #myInput{
+height:50px;
+outline:none;
+width:80%;
+color:black;
+font-size:20px;
+border: 2px solid #4588E7;
+border-radius: 10px 0px 0px 10px;
+text-indent: 10px;
+}
+
+.hledat-nav #myInput::placeholder{
+color:black;
+font-family:"Arial";
+font-size:20px;
+
+}
+
+.hledat-nav #submit{
+float:right;
+position:flex;
+height:50px;
+outline:none;
+width:20%;
+background-color:#4588E7;
+border:2px solid #4588E7;
+border-radius: 0px 10px 10px 0px;
+}
+
+.hledat-nav #submit:hover i{
+color:white;
+}
+
+#nastaveni{
+margin-left:-5px;
+transform: rotate(0deg);
+padding:0px;
+margin-right:5px
+}
+
+#nastaveni:hover{
+    transform: rotate(1000deg);
+    transition: transform 10s;
+    transition-timing-function: ease-out;
+}
+
+.settings-content{
+display:none;
+position: absolute;
+text-align:center;
+right:-3px;
+top:50px;
+width:300px;
+transform:translate(0px,0px);
+transition: transform 1s;
+transition-timing-function: ease-out;
+}
+
+.settings-content:hover{
+display:block;
+}
+
+.settings-content a{
+margin:0px;
+display:block;
+background-color:white;
+font-size:25px;
+border:1px solid;
+border-top:0;
+}
+
+.filter {
+margin-top:-2px;
+padding:5px;
+text-transform:uppercase;
+font-weight:bold;}
+
+.settings-content #first{
+margin-top:69px;
+display:block;
+}
+
+.settings-content #last{
+border-radius:0px 0px 0px 20px;
+}
+
+#nastaveni:hover + .settings-content{
+    display:block;
+    transition: transform 0.5s;
+    transform:translate(250px,0px);
+    transition-timing-function: ease-out;
 
 
+}
 
 .select-box {
   cursor: pointer;
@@ -631,14 +749,19 @@ padding: 0;
 margin: 5px 0;
 }
 
-.live-search-div ul li:nth-child(-n+2) {
-    display:none;
-}
+
 
 .live-search-div {
     height:180px;
     width:300px;
     overflow:hidden;
+    border:none;
+    margin-bottom:50px;
+}
+
+#big-live-search{
+    height:100%;
+    width:300px;
     border:none;
     margin-bottom:50px;
 }
@@ -650,6 +773,12 @@ color:#4588E7;
 .content {
 margin-top:25px;
 }
+
+#vitej {
+margin-top:15px;
+height:50px;
+}
+
 
 .my-button{
 color:white;
@@ -667,6 +796,9 @@ border:none;
   color:#4588E7;
 }
 
+.navbar-brand{
+    margin:auto;
+    }
 
 #deals_and_rating{
   position:absolute;
@@ -684,6 +816,7 @@ border:none;
 #user-navbar{
   color:#C83455;
 }
+
 
 #user-navbar a{
   color:#4588E7;
@@ -706,10 +839,20 @@ border:none;
   border-radius:10px;
 }
 
-textarea::placeholder{
+.card-img{
+object-fit:fill;
+}
+
+.card-img-div{
+object-fit:fill;
+}
+
+textarea.description::placeholder{
 line-height:150px;
 text-indent:20%;
 }
+
+
 
 col-sidebar{
   position: relative;
@@ -719,3 +862,101 @@ col-sidebar{
   padding-left: 15px;
   width:400px;
 }
+
+
+.navbar-toggler-icon{
+width:40px;
+height:40px;
+}
+
+#brand{
+transition: transform .3s ease;
+}
+
+#hidebrand:hover + #brand{
+transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) ;
+}
+
+@media (min-width: 991px) {
+
+.navbar-brand{
+position:relative;
+left:50%;
+margin-left:-100px;
+}
+
+}
+
+
+@media (max-width: 991px) {
+
+
+
+    #vitej {
+        display:none;
+    }
+
+    #nav-profile {
+        position:absolute;
+        right:20px;
+        top:25px;
+    }
+
+
+    .small-menu{
+    display:block;
+    position:absolute;
+    left:20px;
+    top:30px;
+    }
+
+    #nav-profile {
+    position:absolute;
+    right:55px;
+    }
+
+    .hledat-nav #myInput::placeholder{
+    color:black;
+    font-family:"Arial";
+    font-size:18px;
+    }
+
+    .navbar-brand{
+        position:relative;
+        left:50%;
+        margin-left:-100px;
+    }
+
+
+
+}
+
+@media (max-width: 850px) {
+
+ #login {
+    display:none;
+    }
+
+    #register {
+    width:100px;
+    height:50px;
+    text-align:center;
+    display:block;
+    padding: 0.5rem 1rem;
+    vertical-align: middle;
+    line-height:2.5;
+    }
+
+    #pridat-zbozi a{
+    font-size:18px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    #product-card{
+    width:70%;
+    }
+
+}
+

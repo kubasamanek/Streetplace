@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Separator shortcode style - begin
+   ========================================================================== */
+
+.edgtf-separator-holder {
+    font-size: 0;
+    height: auto;
+    position: relative;
+
+    &.edgtf-separator-center {
+        text-align: center;
+    }
+
+    &.edgtf-separator-left {
+        text-align: left;
+    }
+
+    &.edgtf-separator-right {
+        text-align: right;
+    }
+}
+
+.edgtf-separator {
+    color: $default-heading-color;
+    display: inline-block;
+    margin: 10px 0;
+    position: relative;
+    vertical-align: middle;
+
+    svg {
+        * {
+            fill: currentColor;
+        }
+
+        .edgtf-polygon {
+            opacity:0;
+            @include edgtfTransition(opacity .37s cubic-bezier(.12,.68,.43,.95)); 
+        }
+
+        .edgtf-separator-appeared & .edgtf-polygon { 
+            opacity:1;
+
+            @for $i from 1 to 7 {
+                &:nth-child(#{$i}) {
+                    -webkit-transition-delay: #{.1375 * ($i - 1)}s;
+                    transition-delay: #{.1375 * ($i - 1)}s;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Separator shortcode style - end
+   ========================================================================== */

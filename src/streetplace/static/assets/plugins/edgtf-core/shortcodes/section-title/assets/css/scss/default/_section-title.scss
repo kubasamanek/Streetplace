@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Section Title shortcode styles - begin
+   ========================================================================== */
+
+.edgtf-section-title-holder {
+    @include edgtfRelativeHolderLayout();
+
+    box-sizing: border-box;
+
+    .edgtf-st-title {
+        display: block;
+        margin: 0;
+
+        .edgtf-st-title-bold {
+            font-weight: 700;
+        }
+
+        .edgtf-st-title-light {
+            font-weight: 300;
+        }
+    }
+
+    .edgtf-st-text {
+        display: block;
+        margin: 14px 0 0;
+    }
+}
+
+/* ==========================================================================
+   Section Title shortcode styles - end
+   ========================================================================== */
+
+

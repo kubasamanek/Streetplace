@@ -1,0 +1,169 @@
+# Copyright (C) 2019 Edge Themes
+# This file is distributed under the same license as the Hyperon Twitter Feed plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Hyperon Twitter Feed 1.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/edgtf-twitter-feed\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-05-23T10:40:25+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.1.0\n"
+"X-Domain: edgtf-twitter-feed\n"
+
+#. Plugin Name of the plugin
+msgid "Hyperon Twitter Feed"
+msgstr ""
+
+#. Description of the plugin
+msgid "Plugin that adds Twitter feed functionality to our theme"
+msgstr ""
+
+#. Author of the plugin
+msgid "Edge Themes"
+msgstr ""
+
+#: lib/edgtf-twitter-api.php:236
+#: lib/edgtf-twitter-api.php:304
+#: lib/edgtf-twitter-api.php:369
+msgid "Internal WP error"
+msgstr ""
+
+#: lib/edgtf-twitter-api.php:253
+msgid "Redirect URL couldn't be generated"
+msgstr ""
+
+#: lib/edgtf-twitter-api.php:256
+#: lib/edgtf-twitter-api.php:373
+#: lib/edgtf-twitter-api.php:390
+msgid "Ok"
+msgstr ""
+
+#: lib/edgtf-twitter-api.php:260
+msgid "Couldn't connect with Twitter API"
+msgstr ""
+
+#: lib/edgtf-twitter-api.php:317
+msgid "Access token obtained"
+msgstr ""
+
+#: lib/edgtf-twitter-api.php:322
+msgid "Authorize token and it's secret were not obtained"
+msgstr ""
+
+#: lib/edgtf-twitter-api.php:379
+msgid "Couldn't connect with Twitter"
+msgstr ""
+
+#: lib/edgtf-twitter-api.php:384
+msgid "It seems like you haven't connected with your Twitter account"
+msgstr ""
+
+#: lib/edgtf-twitter-api.php:394
+msgid "Couldn't retrieve content from database"
+msgstr ""
+
+#: lib/edgtf-twitter-helper.php:79
+msgid "ago"
+msgstr ""
+
+#: shortcodes/twitter-list/holder.php:20
+#: widgets/edgtf-twitter-widget.php:204
+msgid "It seems that you haven't connected with your Twitter account"
+msgstr ""
+
+#: shortcodes/twitter-list/twitter-list.php:25
+msgid "Edge Twitter List"
+msgstr ""
+
+#: shortcodes/twitter-list/twitter-list.php:27
+msgid "by EDGE"
+msgstr ""
+
+#: shortcodes/twitter-list/twitter-list.php:34
+#: widgets/edgtf-twitter-widget.php:41
+msgid "User ID"
+msgstr ""
+
+#: shortcodes/twitter-list/twitter-list.php:40
+msgid "Number of Columns"
+msgstr ""
+
+#: shortcodes/twitter-list/twitter-list.php:42
+msgid "One"
+msgstr ""
+
+#: shortcodes/twitter-list/twitter-list.php:43
+msgid "Two"
+msgstr ""
+
+#: shortcodes/twitter-list/twitter-list.php:44
+msgid "Three"
+msgstr ""
+
+#: shortcodes/twitter-list/twitter-list.php:45
+msgid "Four"
+msgstr ""
+
+#: shortcodes/twitter-list/twitter-list.php:46
+msgid "Five"
+msgstr ""
+
+#: shortcodes/twitter-list/twitter-list.php:53
+msgid "Space Between Columns"
+msgstr ""
+
+#: shortcodes/twitter-list/twitter-list.php:59
+#: widgets/edgtf-twitter-widget.php:46
+msgid "Number of Tweets"
+msgstr ""
+
+#: shortcodes/twitter-list/twitter-list.php:64
+#: widgets/edgtf-twitter-widget.php:69
+msgid "Tweets Cache Time"
+msgstr ""
+
+#: widgets/edgtf-twitter-widget.php:13
+msgid "Edge Twitter Widget"
+msgstr ""
+
+#: widgets/edgtf-twitter-widget.php:15
+msgid "Display your Twitter feed"
+msgstr ""
+
+#: widgets/edgtf-twitter-widget.php:27
+msgid "Title"
+msgstr ""
+
+#: widgets/edgtf-twitter-widget.php:32
+msgid "Type"
+msgstr ""
+
+#: widgets/edgtf-twitter-widget.php:34
+msgid "Standard"
+msgstr ""
+
+#: widgets/edgtf-twitter-widget.php:35
+msgid "Slider"
+msgstr ""
+
+#: widgets/edgtf-twitter-widget.php:51
+msgid "Show Tweet Icon"
+msgstr ""
+
+#: widgets/edgtf-twitter-widget.php:53
+#: widgets/edgtf-twitter-widget.php:63
+msgid "Yes"
+msgstr ""
+
+#: widgets/edgtf-twitter-widget.php:54
+#: widgets/edgtf-twitter-widget.php:62
+msgid "No"
+msgstr ""
+
+#: widgets/edgtf-twitter-widget.php:60
+msgid "Show Tweet Time"
+msgstr ""
